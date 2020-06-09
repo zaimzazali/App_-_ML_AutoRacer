@@ -8,7 +8,7 @@ MSc Computer Science - Final Project
 ## System Design and Architecture
 
 <p align="center">
-  <img src="./README_Assets/System_Architecture.png" width="700"> <br>
+  <img src="./README_Assets/System_Architecture.png" width="500"> <br>
   <b>Figure 1: System Architecture Overview</b>
 </p>
 
