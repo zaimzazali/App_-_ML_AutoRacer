@@ -14,6 +14,5 @@ public class tileEvents : MonoBehaviour
 
     public void tileNormal() {
         LeanTween.scale(gameObject, new Vector3(1f,1f,1f), expandDuration);
-        // gameObject.GetComponent<AudioSource>().Stop();
     }
 }

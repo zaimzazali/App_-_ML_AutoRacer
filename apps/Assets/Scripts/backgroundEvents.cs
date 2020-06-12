@@ -25,7 +25,7 @@ public class backgroundEvents : MonoBehaviour
     }
 
     private void initFunctions() {
-        LeanTween.moveX(gameObject.GetComponent<RectTransform>(), toPoint, swingTiming).setEaseInOutQuad().setLoopPingPong();
+        LeanTween.moveX(gameObject.GetComponent<RectTransform>(), toPoint, swingTiming).setEaseLinear().setLoopPingPong();
         InvokeRepeating("backgroundTransition", startTransitionAt, waitToTransition);
 
         backgroundImages[1].GetComponent<Image>().overrideSprite = images[imgIndex];
