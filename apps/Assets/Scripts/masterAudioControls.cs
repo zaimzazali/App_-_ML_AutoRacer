@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class masterAudioControls : MonoBehaviour
 {
-    void Awake() {
-        AudioListener.volume = 0.5f;
+    [SerializeField]
+    private float initialMasterVolume = 0f;
+
+    private void Awake() {
+        AudioListener.volume = initialMasterVolume;
     }
+    
     public void setVolume(float myVolume) {
         AudioListener.volume = myVolume;
     }

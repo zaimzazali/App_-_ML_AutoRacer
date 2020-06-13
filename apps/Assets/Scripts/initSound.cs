@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class initSound : MonoBehaviour
 {
-    public float waitingTime = 0;
+    [SerializeField]
+    private float waitingTime = 0f;
     private AudioSource thisSound;
 
     private void Start()
@@ -16,5 +17,9 @@ public class initSound : MonoBehaviour
     private void playSound()
     {
         thisSound.PlayDelayed(waitingTime);
+    }
+
+    public float getWaitingTime() {
+        return waitingTime;
     }
 }

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class tileEvents : MonoBehaviour
 {
-    public bool isActive = true;
+    [SerializeField]
+    private bool isActive = true;
 
-    public float expandSize = 0.1f;
-    public float expandDuration = 0.1f;
+    [SerializeField]
+    private float expandSize = 0f, expandDuration = 0f;
     
     public void tileExpand() {
         if (isActive) {

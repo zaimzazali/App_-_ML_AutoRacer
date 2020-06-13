@@ -5,27 +5,33 @@ using UnityEngine.UI;
 
 public class backgroundEvents : MonoBehaviour
 {
-    public float waitingTime = 0f;
-    public float fromPoint = -5f;
-    public float toPoint = 5f;
-    public float swingTiming = 8f;
-    public GameObject[] backgroundImages;
-    public Sprite[] images;
+    private initSound initSoundScript;
+
+    [SerializeField]
+    private float fromPoint = 0f, swingTiming = 0f;
+
+    [SerializeField]
+    public GameObject[] backgroundImages = null;
+
+    [SerializeField]
+    private Sprite[] images = null;
 
     private int stateIndex = 0;
     private int imgIndex = 0;
-    public float startTransitionAt = 0f;
-    public float waitToTransition = 0f;
-    public float fadingTiming = 1f;
 
-    void Start()
+    [SerializeField]
+    private float startTransitionAt = 0f, waitToTransition = 0f, fadingTiming = 0f;
+
+    private void Start()
     {
+        initSoundScript = GameObject.Find("Background_Music").GetComponent<initSound>();
+
         gameObject.GetComponent<RectTransform>().localPosition = new Vector3(fromPoint, 0f, 0f);
-        Invoke("initFunctions", waitingTime);
+        Invoke("initFunctions", initSoundScript.getWaitingTime());
     }
 
     private void initFunctions() {
-        LeanTween.moveX(gameObject.GetComponent<RectTransform>(), toPoint, swingTiming).setEaseLinear().setLoopPingPong();
+        LeanTween.moveX(gameObject.GetComponent<RectTransform>(), -1*fromPoint, swingTiming).setEaseLinear().setLoopPingPong();
         InvokeRepeating("backgroundTransition", startTransitionAt, waitToTransition);
 
         backgroundImages[1].GetComponent<Image>().overrideSprite = images[imgIndex];
@@ -55,11 +61,11 @@ public class backgroundEvents : MonoBehaviour
             theColor.a = val;
             theImg.color = theColor;
 
-            if (from == 0f && val == 0f) {
+            if (to == 0f && val == 0f) {
                 backgroundImages[1].GetComponent<Image>().overrideSprite = images[getNextImageIndex()];
             }
 
-            if (from == 1f && val == 1f) {
+            if (to == 1f && val == 1f) {
                 backgroundImages[0].GetComponent<Image>().overrideSprite = images[getNextImageIndex()];
             }
             

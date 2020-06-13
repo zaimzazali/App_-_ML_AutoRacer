@@ -6,22 +6,29 @@ using UnityEngine.UI;
 
 public class controlAudio : MonoBehaviour
 {
-    public masterAudioControls masterAudioControls;
-    public Text theText;
-    public Image audioImage;
-    public Sprite[] images;
+    private masterAudioControls masterAudioControls;
+    private Text theText;
+    private Image audioImage;
     
-    void Start()
+    [SerializeField]
+    private Sprite[] images = null;
+    
+    private void Start()
     {
+        masterAudioControls = GameObject.Find("Main Camera").GetComponent<masterAudioControls>();
+        theText = GameObject.Find("Slider_Text").GetComponent<Text>();
+        audioImage = GameObject.Find("Image_Speaker").GetComponent<Image>();
+
         gameObject.GetComponent<Slider>().value = masterAudioControls.getVolume();
         theText.text = (gameObject.GetComponent<Slider>().value * 100).ToString("F0") + "%";
     }
+
     public void updateText() {
         theText.text = (gameObject.GetComponent<Slider>().value * 100).ToString("F0") + "%";
-        if (gameObject.GetComponent<Slider>().value == 0) {
+        if (gameObject.GetComponent<Slider>().value == 0f) {
             audioImage.overrideSprite = images[2];
         }
-        else if (gameObject.GetComponent<Slider>().value == 1) {
+        else if (gameObject.GetComponent<Slider>().value == 1f) {
             audioImage.overrideSprite = images[0];
         }
         else {

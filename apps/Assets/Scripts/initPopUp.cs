@@ -5,35 +5,46 @@ using UnityEngine.UI;
 
 public class initPopUp : MonoBehaviour
 {
-    public enum type
+    private enum type
     {
         horizontal,
         vertical
     }
-    public enum direction
+
+    private enum direction
     {
         right,
         left,
         top,
         down
     }
-    public GameObject targetCanvas;
-    public GameObject initialObj;
-    public GameObject newObj;
-    public GameObject serverStatusHolder;
 
-    private float to_horizontal = 1500f;
-    private float to_vertical = 1000f;
-    private float timing = 0.5f;
+    [SerializeField]
+    private GameObject targetCanvas = null, initialObj = null, newObj = null, serverStatusHolder = null;
 
-    public type animType;
-    public direction animDirection;
+    [SerializeField]
+    private float to_horizontal = 0, to_vertical = 0, timing = 0f;
+
+    [SerializeField]
+    private type animType = type.horizontal;
+
+    [SerializeField]
+    private direction animDirectionTowards = direction.right;
 
     public void nextDiv() {
-        if (animDirection == direction.right) {
-            newObj.GetComponent<RectTransform>().localPosition = new Vector3(-1*to_horizontal, 0f, 0f);       
-        } else if (animDirection == direction.left) {
-            newObj.GetComponent<RectTransform>().localPosition = new Vector3(to_horizontal, 0f, 0f);       
+
+        switch (animDirectionTowards) {
+            case direction.right:
+                newObj.GetComponent<RectTransform>().localPosition = new Vector3(-1*to_horizontal, 0f, 0f);  
+                break;
+
+            case direction.left:
+                newObj.GetComponent<RectTransform>().localPosition = new Vector3(to_horizontal, 0f, 0f); 
+                break;
+
+            default:
+                // Do Nothing
+                break;
         }
 
         targetCanvas.SetActive(true);
@@ -43,10 +54,10 @@ public class initPopUp : MonoBehaviour
             case type.horizontal: 
                 newObj.SetActive(true);
 
-                if (animDirection == direction.right) {
+                if (animDirectionTowards == direction.right) {
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), to_horizontal, timing).setEaseInOutCubic();
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();     
-                } else if (animDirection == direction.left) {
+                } else if (animDirectionTowards == direction.left) {
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), -1*to_horizontal, timing).setEaseInOutCubic();
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();   
                 }
@@ -70,14 +81,13 @@ public class initPopUp : MonoBehaviour
         switch (animType)
         {
             case type.horizontal: 
-                if (animDirection == direction.right) {
+                if (animDirectionTowards == direction.right) {
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), -1*to_horizontal, timing).setEaseInOutCubic();   
-                } else if (animDirection == direction.left) {
+                } else if (animDirectionTowards == direction.left) {
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), to_horizontal, timing).setEaseInOutCubic();  
                 }
-                
                 break;
             case type.vertical: 
                 // Do Nothing

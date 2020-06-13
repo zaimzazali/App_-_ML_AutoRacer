@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class cursorEvents : MonoBehaviour
 {
-    public Texture2D cursorImg;
+    [SerializeField]
+    private Texture2D cursorImg = null;
     
-    void Start()
+    private void Awake()
     {
         Cursor.SetCursor(cursorImg, Vector2.zero, CursorMode.ForceSoftware);
     }
