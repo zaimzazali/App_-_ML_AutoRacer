@@ -39,17 +39,17 @@ public class backgroundEvents : MonoBehaviour
         if (stateIndex == 1) {
             // To hide
             stateIndex = 0;
-            to = stateIndex;
-            from = 1f;
+            from = stateIndex;
+            to = 1f;
         }
         else {
             // To show
             stateIndex = 1;
-            to = stateIndex;
-            from = 0f;
+            from = stateIndex;
+            to = 0f;
         }
 
-        LeanTween.value(backgroundImages[1], to, from, fadingTiming).setOnUpdate((float val) =>
+        LeanTween.value(backgroundImages[1], from, to, fadingTiming).setOnUpdate((float val) =>
         {
             Color theColor = theImg.color;
             theColor.a = val;
