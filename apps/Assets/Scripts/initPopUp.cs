@@ -10,31 +10,50 @@ public class initPopUp : MonoBehaviour
         horizontal,
         vertical
     }
+    public enum direction
+    {
+        right,
+        left,
+        top,
+        down
+    }
     public GameObject targetCanvas;
     public GameObject initialObj;
     public GameObject newObj;
     public GameObject serverStatusHolder;
 
-    private float positive_to_horizontal = 1500f;
-    private float negative_to_horizontal = -1500f;
-    private float positive_to_vertical = 1000f;
-    private float negative_to_vertical = -1000f;
+    private float to_horizontal = 1500f;
+    private float to_vertical = 1000f;
     private float timing = 0.5f;
 
     public type animType;
+    public direction animDirection;
 
     public void nextDiv() {
+        if (animDirection == direction.right) {
+            newObj.GetComponent<RectTransform>().localPosition = new Vector3(-1*to_horizontal, 0f, 0f);       
+        } else if (animDirection == direction.left) {
+            newObj.GetComponent<RectTransform>().localPosition = new Vector3(to_horizontal, 0f, 0f);       
+        }
+
         targetCanvas.SetActive(true);
 
         switch (animType)
         {
             case type.horizontal: 
                 newObj.SetActive(true);
-                LeanTween.moveX(initialObj.GetComponent<RectTransform>(), positive_to_horizontal, timing).setEaseInOutCubic();
-                LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
+
+                if (animDirection == direction.right) {
+                    LeanTween.moveX(initialObj.GetComponent<RectTransform>(), to_horizontal, timing).setEaseInOutCubic();
+                    LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();     
+                } else if (animDirection == direction.left) {
+                    LeanTween.moveX(initialObj.GetComponent<RectTransform>(), -1*to_horizontal, timing).setEaseInOutCubic();
+                    LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();   
+                }
+                
                 break;
             case type.vertical: 
-                LeanTween.moveY(initialObj.GetComponent<RectTransform>(), positive_to_vertical, timing).setEaseInOutCubic();
+                LeanTween.moveY(initialObj.GetComponent<RectTransform>(), to_vertical, timing).setEaseInOutCubic();
                 InvokeRepeating("blinkServerStatus", timing*2/3, 2f);
                 break;
             default:
@@ -51,8 +70,14 @@ public class initPopUp : MonoBehaviour
         switch (animType)
         {
             case type.horizontal: 
-                LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
-                LeanTween.moveX(initialObj.GetComponent<RectTransform>(), negative_to_horizontal, timing).setEaseInOutCubic();
+                if (animDirection == direction.right) {
+                    LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
+                    LeanTween.moveX(initialObj.GetComponent<RectTransform>(), -1*to_horizontal, timing).setEaseInOutCubic();   
+                } else if (animDirection == direction.left) {
+                    LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
+                    LeanTween.moveX(initialObj.GetComponent<RectTransform>(), to_horizontal, timing).setEaseInOutCubic();  
+                }
+                
                 break;
             case type.vertical: 
                 // Do Nothing

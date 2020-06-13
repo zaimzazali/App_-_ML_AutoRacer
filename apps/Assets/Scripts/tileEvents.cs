@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class tileEvents : MonoBehaviour
 {
+    public bool isActive = true;
+
     public float expandSize = 0.1f;
     public float expandDuration = 0.1f;
     
     public void tileExpand() {
-        LeanTween.scale(gameObject, new Vector3(expandSize,expandSize,expandSize), expandDuration);
-        gameObject.GetComponent<AudioSource>().Play();
+        if (isActive) {
+            LeanTween.scale(gameObject, new Vector3(expandSize,expandSize,expandSize), expandDuration);
+            gameObject.GetComponent<AudioSource>().Play();
+        }
     }
 
     public void tileNormal() {
-        LeanTween.scale(gameObject, new Vector3(1f,1f,1f), expandDuration);
+        if (isActive) {
+            LeanTween.scale(gameObject, new Vector3(1f,1f,1f), expandDuration);
+        }
     }
 }

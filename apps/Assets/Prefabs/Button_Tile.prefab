@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1085883513588914304}
   - component: {fileID: 1085883513588914305}
   m_Layer: 5
-  m_Name: Tile_Exit
+  m_Name: Button_Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +201,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 806b3206fbe14478a85da553f4920da2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -356,5 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbf3d4f3b237564a858f3219cbe8c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActive: 1
   expandSize: 1.05
   expandDuration: 0.05

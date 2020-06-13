@@ -54,10 +54,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\backgroundEvents.cs" />
+     <Compile Include="Assets\Scripts\controlAudio.cs" />
      <Compile Include="Assets\Scripts\cursorEvents.cs" />
      <Compile Include="Assets\Scripts\exitGame.cs" />
      <Compile Include="Assets\Scripts\initPopUp.cs" />
      <Compile Include="Assets\Scripts\initSound.cs" />
+     <Compile Include="Assets\Scripts\masterAudioControls.cs" />
      <Compile Include="Assets\Scripts\tileEvents.cs" />
      <None Include="Assets\Shaders\Blur.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
