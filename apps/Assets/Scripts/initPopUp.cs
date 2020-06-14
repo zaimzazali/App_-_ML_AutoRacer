@@ -16,11 +16,11 @@ public class initPopUp : MonoBehaviour
         right,
         left,
         top,
-        down
+        bottom
     }
 
     [SerializeField]
-    private GameObject targetCanvas = null, initialObj = null, newObj = null, serverStatusHolder = null;
+    private GameObject targetCanvas = null, initialObj = null, newObj = null;
 
     [SerializeField]
     private float to_horizontal = 0, to_vertical = 0, timing = 0f;
@@ -33,27 +33,35 @@ public class initPopUp : MonoBehaviour
 
     public void nextDiv() {
 
-        switch (animDirectionTowards) {
-            case direction.right:
-                newObj.GetComponent<RectTransform>().localPosition = new Vector3(-1*to_horizontal, 0f, 0f);  
-                break;
+        if (newObj != null) {
+            newObj.SetActive(true);
 
-            case direction.left:
-                newObj.GetComponent<RectTransform>().localPosition = new Vector3(to_horizontal, 0f, 0f); 
-                break;
+            // Setup Position
+            switch (animDirectionTowards) {
+                case direction.right:
+                    newObj.GetComponent<RectTransform>().localPosition = new Vector3(-1*to_horizontal, 0f, 0f);  
+                    break;
 
-            default:
-                // Do Nothing
-                break;
+                case direction.left:
+                    newObj.GetComponent<RectTransform>().localPosition = new Vector3(to_horizontal, 0f, 0f); 
+                    break;
+
+                case direction.bottom:
+                    newObj.GetComponent<RectTransform>().localPosition = new Vector3(0f, to_vertical, 0f); 
+                    break;
+
+                default:
+                    // Do Nothing
+                    break;
+            }
         }
 
         targetCanvas.SetActive(true);
 
+        // Animate
         switch (animType)
         {
             case type.horizontal: 
-                newObj.SetActive(true);
-
                 if (animDirectionTowards == direction.right) {
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), to_horizontal, timing).setEaseInOutCubic();
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();     
@@ -61,12 +69,23 @@ public class initPopUp : MonoBehaviour
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), -1*to_horizontal, timing).setEaseInOutCubic();
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();   
                 }
-                
                 break;
+
             case type.vertical: 
-                LeanTween.moveY(initialObj.GetComponent<RectTransform>(), to_vertical, timing).setEaseInOutCubic();
-                InvokeRepeating("blinkServerStatus", timing*2/3, 2f);
+                if (animDirectionTowards == direction.bottom) {
+                    LeanTween.moveY(initialObj.GetComponent<RectTransform>(), -1*to_vertical, timing).setEaseInOutCubic();
+                    LeanTween.moveY(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();     
+                } else if (animDirectionTowards == direction.top) {
+                    if (newObj == null) {
+                        LeanTween.moveY(initialObj.GetComponent<RectTransform>(), to_vertical, timing).setEaseInOutCubic();
+                        InvokeRepeating("blinkServerStatus", timing*2/3, 2f);
+                    } else {
+                        LeanTween.moveY(initialObj.GetComponent<RectTransform>(), to_vertical, timing).setEaseInOutCubic();
+                        LeanTween.moveY(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();  
+                    } 
+                }
                 break;
+
             default:
                 // Do Nothing
                 break;
@@ -89,9 +108,17 @@ public class initPopUp : MonoBehaviour
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), to_horizontal, timing).setEaseInOutCubic();  
                 }
                 break;
+
             case type.vertical: 
-                // Do Nothing
+                if (animDirectionTowards == direction.bottom) {
+                    LeanTween.moveY(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
+                    LeanTween.moveY(initialObj.GetComponent<RectTransform>(), to_vertical, timing).setEaseInOutCubic();   
+                } else if (animDirectionTowards == direction.top) {
+                    LeanTween.moveY(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
+                    LeanTween.moveY(initialObj.GetComponent<RectTransform>(), -1*to_vertical, timing).setEaseInOutCubic();  
+                }
                 break;
+
             default:
                 // Do Nothing
                 break;
@@ -106,36 +133,5 @@ public class initPopUp : MonoBehaviour
         thisObj.SetActive(false);
     }
 
-    private void blinkServerStatus() {
-        Text theText;
-        float to = 0f, from = 0f;
-        bool proceed = false;
-
-        if (serverStatusHolder.activeSelf == false) {
-            serverStatusHolder.SetActive(true);
-        }
-
-        theText = serverStatusHolder.transform.GetChild(0).GetComponent<Text>();
-
-        if (theText.color.a == 1f) {
-            proceed = true;
-            from  = 1f;
-            to = 0f;
-        }
-        else if (theText.color.a == 0f) {
-            proceed = true;
-            from  = 0f;
-            to = 1f;
-        }
-
-        if (proceed) {
-            LeanTween.value(serverStatusHolder, from, to, 1f).setOnUpdate((float val) =>
-            {
-                Color theColor = theText.color;
-                theColor.a = val;
-                theText.color = theColor;
-            });
-        }
-    }
 }
 
