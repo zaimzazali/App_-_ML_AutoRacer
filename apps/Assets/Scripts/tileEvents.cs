@@ -1,14 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class tileEvents : MonoBehaviour
 {
     [SerializeField]
-    private bool isActive = true;
-
-    [SerializeField]
     private float expandSize = 0f, expandDuration = 0f;
+
+    private bool isActive;
+
+    private void Awake() {
+        if (gameObject.GetComponent<Button>() != null) { 
+            isActive = gameObject.GetComponent<Button>().interactable;
+        } else {
+            isActive = gameObject.GetComponentInParent<Button>().interactable;
+        }
+    }
     
     public void tileExpand() {
         if (isActive) {
