@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Any_Dropdown.cs" />
      <Compile Include="Assets\Scripts\backgroundEvents.cs" />
      <Compile Include="Assets\Scripts\blinkingText.cs" />
      <Compile Include="Assets\Scripts\controlAudio.cs" />
@@ -61,7 +62,11 @@
      <Compile Include="Assets\Scripts\initPopUp.cs" />
      <Compile Include="Assets\Scripts\initSound.cs" />
      <Compile Include="Assets\Scripts\masterAudioControls.cs" />
+     <Compile Include="Assets\Scripts\registerUser.cs" />
+     <Compile Include="Assets\Scripts\setCountryListing.cs" />
+     <Compile Include="Assets\Scripts\setYearListing.cs" />
      <Compile Include="Assets\Scripts\tileEvents.cs" />
+     <None Include="Assets\Text Files\countryList.txt" />
      <None Include="Assets\Shaders\Blur.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Git Clone/ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
