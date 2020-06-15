@@ -15,7 +15,7 @@ public class setYearListing : MonoBehaviour
     private void Start()
     {
         thisDropDown = gameObject.GetComponent<Dropdown>();
-        thisDropDown.options.Clear();
+        // thisDropDown.options.Clear();
 
         currentYear = int.Parse(System.DateTime.Now.ToString("yyyy"));
         endYear = currentYear;

@@ -15,7 +15,7 @@ public class setCountryListing : MonoBehaviour
     private void Start()
     {
         thisDropDown = gameObject.GetComponent<Dropdown>();
-        thisDropDown.options.Clear();
+        // thisDropDown.options.Clear();
 
         countryArray = textFile.text.Split('\n');
         foreach (string str in countryArray) {
