@@ -1,0 +1,75 @@
+body {
+  background-color: #bf2f38;
+  color: #D6D6D6;
+}
+
+#Holder {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+#logo {
+  max-width: 22em;
+}
+
+@media (min-width: 576px) {
+  #logo {
+    max-width: 35em;
+  }
+}
+
+@media (min-width: 768px) {
+  #logo {
+    max-width: 40em;
+  }
+}
+
+@media (min-width: 992px) {
+  #logo {
+    max-width: 50em;
+  }
+}
+
+@media (min-width: 1200px) {
+  #logo {
+    max-width: 60em;
+  }
+}
+
+.myText {
+  font-size: 1em;
+  text-shadow: 0.05em 0.05em 0.1em #000000;
+}
+
+@media (min-width: 576px) {
+  .myText {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 768px) {
+  .myText {
+    font-size: 1.4em;
+  }
+}
+
+@media (min-width: 992px) {
+  .myText {
+    font-size: 1.6em;
+  }
+}
+
+#Footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.5);
+}
+
+#footer_text {
+  font-size: 1em;
+}
+
