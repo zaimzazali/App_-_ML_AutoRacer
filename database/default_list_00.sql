@@ -1,14 +1,14 @@
-INSERT INTO "schema-ML_AutoRacer".list_gender (name_gender)
+INSERT INTO list_gender (name_gender)
 VALUES
     ('Male'),
     ('Female');
 
-INSERT INTO "schema-ML_AutoRacer".list_account_type (name_account_type)
+INSERT INTO list_account_type (name_account_type)
 VALUES
     ('Normal'),
     ('Event');
 
-INSERT INTO "schema-ML_AutoRacer".list_country (name_country)
+INSERT INTO list_country (name_country)
 VALUES
     ('Afghanistan'),
     ('Albania'),
