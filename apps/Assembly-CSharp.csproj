@@ -62,10 +62,12 @@
      <Compile Include="Assets\Scripts\cursorEvents.cs" />
      <Compile Include="Assets\Scripts\exitGame.cs" />
      <Compile Include="Assets\Scripts\initPopUp.cs" />
+     <Compile Include="Assets\Scripts\initPopUp2.cs" />
      <Compile Include="Assets\Scripts\initSound.cs" />
      <Compile Include="Assets\Scripts\inputValidator.cs" />
      <Compile Include="Assets\Scripts\masterAudioControls.cs" />
      <Compile Include="Assets\Scripts\registerUser.cs" />
+     <Compile Include="Assets\Scripts\serverAPI.cs" />
      <Compile Include="Assets\Scripts\setCountryListing.cs" />
      <Compile Include="Assets\Scripts\setYearListing.cs" />
      <Compile Include="Assets\Scripts\tileEvents.cs" />
