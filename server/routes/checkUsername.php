@@ -8,31 +8,32 @@
 // -------------------------------------------------------------------------
     include "dbCredentials.php";
 
-    echo $_POST['thisUsername'];
-    echo "</br>";
-
     try {
         $myPDO = new PDO("pgsql:host=$db_host;port=$db_port;dbname=$db_name", $db_user, $db_pass);
 
         try {
             $myPDO->beginTransaction();
 
-            $sql = 'SELECT count(1) as c FROM view_user_account WHERE username = :thisUsername;';
+            $sql = "SELECT count(1) as c FROM view_user_account WHERE username = :theUsername;";
         
             $stmt = $myPDO->prepare($sql);
-            $stmt->bindValue(':thisUsername', $_POST['thisUsername']);
+            $stmt->bindValue(':theUsername', $_POST['theUsername']);
 
             $stmt->execute();
             $result = $stmt->fetch();
 
-            if ($result['c'] == 1) {
-                echo 'not available';
-            }
-            else if ($result['c'] == 0) {
-                echo 'available';
-            }
-
             $myPDO->commit();
+
+            $isAvailable = $result['c'];
+
+            if ($isAvailable == 0) {
+                echo "available";
+            } elseif ($isAvailable == 1) {
+                echo "not available";
+            } else {
+                echo "ERROR";
+            }
+                       
         } catch (PDOException $e2) {
             $myPDO->rollBack();
             echo $e2->getMessage();

@@ -12,20 +12,44 @@ public class registerUser : MonoBehaviour
     private GameObject inputObj_Name = null, inputObj_Gender = null, inputObj_Year = null, inputObj_Country = null,
     inputObj_Username = null, inputObj_Email = null, inputObj_Pass_00 = null, inputObj_Pass_01 = null, inputObj_Status = null;
 
+    private ArrayList resultArray = null;
+
+    [SerializeField]
+    private initPopUp2 initPopUp2 = null;
+
+    [SerializeField]
+    private serverAPI serverAPI = null;
+
     public void initRegistration() {
+        resultArray = new ArrayList();
+
         bool passedInputCheck = false;
 
         passedInputCheck = checkInput();
 
         if (passedInputCheck) {
+            Debug.Log("Passed");
+
             // Push to Database
-            
+            StartCoroutine(serverAPI.registerUser(resultArray, result => {
+                if (result == "OK") {
+                    //statusText.text = "Available";
+                    //statusText.color = new Color(0f, 1f, 0f, 1f);
+                }
+                else if (result == "not available") {
+                    //statusText.text = "Not Available";
+                    //statusText.color = new Color(1f, 0f, 0f, 1f);
+                }
+                else {
+                    // Error
+                    initPopUp2.displayPopUp_One_Button("There was an error occurred during the Registration.\nPlease try again.", true);
+                }
+            })); 
         }
     }
 
     private bool checkInput() {
         string theInput = null;
-        ArrayList resultArray = new ArrayList();
         string tmpString = null;
 
         // Check for Name
@@ -39,7 +63,7 @@ public class registerUser : MonoBehaviour
         // Check for Gender
         theInput = inputObj_Gender.GetComponent<Any_Dropdown>().getSelectedValueText();
         if (theInput != "") {
-            resultArray.Add(theInput);
+            resultArray.Add(inputObj_Gender.GetComponent<Dropdown>().value.ToString());
         } else {
             inputObj_Gender.GetComponent<Any_Dropdown>().setDropError();
         }
@@ -53,7 +77,7 @@ public class registerUser : MonoBehaviour
         // Check for Country
         theInput = inputObj_Country.GetComponent<Any_Dropdown>().getSelectedValueText();
         if (theInput != "") {
-            resultArray.Add(theInput);
+            resultArray.Add(inputObj_Country.GetComponent<Dropdown>().value.ToString());
         } else {
             inputObj_Country.GetComponent<Any_Dropdown>().setDropError();
         }
@@ -61,7 +85,7 @@ public class registerUser : MonoBehaviour
         // Check for Username
         theInput = inputObj_Status.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
         if (theInput == "Available") {
-            resultArray.Add(theInput);
+            resultArray.Add(inputObj_Username.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim());
         }
         else {
             inputObj_Username.GetComponent<Any_Inputfield>().setInputError();
@@ -93,6 +117,10 @@ public class registerUser : MonoBehaviour
             resultArray.Add(theInput);
         } else {
             inputObj_Pass_01.GetComponent<Any_Inputfield>().setInputError();
+        }
+
+        if (resultArray.Count != 8) {
+            return false;
         }
 
         return true;

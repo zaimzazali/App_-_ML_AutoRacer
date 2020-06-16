@@ -15,13 +15,22 @@ public class initPopUp2 : MonoBehaviour
     private GameObject panel_parent = null, panel_blur = null, panel_child = null;
     private GameObject popObj = null;
 
+    private Color color_red = new Color32(191, 47, 56, 30);
+    private Color color_normal = new Color(0f, 0f, 0f, 0f);
+
     private void Start() {
         panel_parent = canvas_popup_00.transform.Find("Panel").gameObject;
         panel_blur = canvas_popup_01.transform.Find("Panel_Blur").gameObject;
         panel_child = canvas_popup_01.transform.Find("Panel").gameObject;
     }
 
-    public void displayPopUp_One_Button(string message) {
+    public void displayPopUp_One_Button(string message, bool isError) {
+        if (isError) {
+            panel_child.GetComponent<Image>().color = color_red;
+        } else {
+            panel_child.GetComponent<Image>().color = color_normal;
+        }
+
         if (canvas_popup_00.activeSelf) {
             panel_parent.GetComponent<Image>().enabled = false;
             panel_blur.SetActive(true);

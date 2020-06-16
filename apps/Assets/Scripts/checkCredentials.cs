@@ -20,6 +20,8 @@ public class checkCredentials : MonoBehaviour
     public void checkUsername() {
         string theUsername;
 
+        usernameField.GetComponent<Any_Inputfield>().setInputNormal();
+
         theUsername = usernameField.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
 
         if (theUsername.Length > 0) {
@@ -35,7 +37,7 @@ public class checkCredentials : MonoBehaviour
                 }
                 else {
                     // Error
-                    initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the Username.\nPlease try again.");
+                    initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the Username.\nPlease try again.", true);
                 }
             })); 
         } else {
