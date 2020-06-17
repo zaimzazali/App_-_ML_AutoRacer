@@ -8,7 +8,6 @@ public class initPopUp2 : MonoBehaviour
     [SerializeField]
     private GameObject canvas_next = null;
 
-    [SerializeField]
     private float openingTiming = 1.3f, closingTiming = 0.5f;
 
     private GameObject canvas_parent = null, panel_parent = null, panel_blur = null, panel_child = null, popObj = null;

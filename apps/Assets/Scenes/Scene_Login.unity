@@ -1679,6 +1679,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!1 &849269822 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1660574561112859444, guid: be5fdc997d2d30f47bf988417d177d0f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1588341779}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &849269823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849269822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a695a9ded9be87f47940ee87b71fef73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &976299351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3046,10 +3064,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1367693498}
     m_Modifications:
+    - target: {fileID: 1660574561112859442, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Waiting for Server Response
+
+        Please Wait'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660574561112859442, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660574561112859442, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660574561112859442, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660574561112859442, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8392157
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660574561112859442, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660574561112859442, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660574561112859442, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660574561112859442, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1660574561112859444, guid: be5fdc997d2d30f47bf988417d177d0f,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1660574561112859444, guid: be5fdc997d2d30f47bf988417d177d0f,
+        type: 3}
+      propertyPath: m_Name
+      value: Wait_Server
       objectReference: {fileID: 0}
     - target: {fileID: 3006713390905040552, guid: be5fdc997d2d30f47bf988417d177d0f,
         type: 3}
@@ -3908,8 +3978,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas_next: {fileID: 1247817119}
-  openingTiming: 1.5
-  closingTiming: 0.5
 --- !u!114 &2014573840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5642,6 +5710,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2059871603}
     m_Modifications:
+    - target: {fileID: 1270151922675018937, guid: a5d179a0e13040a46990529d590a8c97,
+        type: 3}
+      propertyPath: targetCanvas
+      value: 
+      objectReference: {fileID: 1247817119}
+    - target: {fileID: 1270151922675018937, guid: a5d179a0e13040a46990529d590a8c97,
+        type: 3}
+      propertyPath: canvas_next
+      value: 
+      objectReference: {fileID: 1247817119}
     - target: {fileID: 6921235977439591297, guid: a5d179a0e13040a46990529d590a8c97,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6687,6 +6765,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: button_close
       objectReference: {fileID: 0}
+    - target: {fileID: 9202507404506304562, guid: a5d179a0e13040a46990529d590a8c97,
+        type: 3}
+      propertyPath: canvas_next
+      value: 
+      objectReference: {fileID: 1247817119}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5d179a0e13040a46990529d590a8c97, type: 3}
 --- !u!1001 &9106035344206623673

@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\setDropdownOptions.cs" />
      <Compile Include="Assets\Scripts\setYearListing.cs" />
      <Compile Include="Assets\Scripts\tileEvents.cs" />
+     <Compile Include="Assets\Scripts\waitForServer.cs" />
      <None Include="Assets\Shaders\Blur.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Git Clone/ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>

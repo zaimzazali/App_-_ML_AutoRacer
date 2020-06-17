@@ -9,6 +9,7 @@ public class checkCredentials : MonoBehaviour
     private Text statusText = null;
     private initPopUp2 initPopUp2 = null;
     private serverAPI serverAPI = null;
+    private waitForServer waitForServer = null;
 
     private void Awake() {
         GameObject parentObj = gameObject.transform.parent.parent.parent.gameObject;
@@ -17,6 +18,7 @@ public class checkCredentials : MonoBehaviour
 
         initPopUp2 = gameObject.GetComponent<initPopUp2>();
         serverAPI = gameObject.GetComponent<serverAPI>();
+        waitForServer = gameObject.GetComponent<waitForServer>();
     }
 
     public void checkUsername() {
@@ -27,18 +29,22 @@ public class checkCredentials : MonoBehaviour
         theUsername = usernameField.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
 
         if (theUsername.Length > 0) {
+            waitForServer.showWaitingText();
+
             // Check username in Database
             StartCoroutine(serverAPI.checkUsername(theUsername, result => {
-                if (result == "available") {
-                    statusText.text = "Available";
-                    statusText.color = new Color(0f, 1f, 0f, 1f);
-                } else if (result == "not available") {
-                    statusText.text = "Not Available";
-                    statusText.color = new Color(1f, 0f, 0f, 1f);
-                } else {
-                    // Error
-                    initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
-                }
+                StartCoroutine(waitForServer.hideWaitingText(callback => {
+                    if (result == "available") {
+                        statusText.text = "Available";
+                        statusText.color = new Color(0f, 1f, 0f, 1f);
+                    } else if (result == "not available") {
+                        statusText.text = "Not Available";
+                        statusText.color = new Color(1f, 0f, 0f, 1f);
+                    } else {
+                        // Error
+                        initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
+                    }
+                }));
             })); 
         } else {
             usernameField.GetComponent<Any_Inputfield>().setError();

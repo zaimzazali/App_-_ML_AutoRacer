@@ -8,6 +8,7 @@ public class registerUser : MonoBehaviour
     private inputValidator inputValidator = null;
     private initPopUp2 initPopUp2 = null;
     private serverAPI serverAPI = null;
+    private waitForServer waitForServer = null;
 
     private GameObject inputObj_Name = null, inputObj_Gender = null, inputObj_Year = null, inputObj_Country = null,
     inputObj_Username = null, inputObj_Email = null, inputObj_Pass_00 = null, inputObj_Pass_01 = null, inputObj_Status = null;
@@ -18,6 +19,7 @@ public class registerUser : MonoBehaviour
         inputValidator = gameObject.GetComponent<inputValidator>();
         initPopUp2 = gameObject.GetComponent<initPopUp2>();
         serverAPI = gameObject.GetComponent<serverAPI>();
+        waitForServer = gameObject.GetComponent<waitForServer>();
 
         GameObject parentObj = gameObject.transform.parent.parent.parent.gameObject;
 
@@ -42,14 +44,18 @@ public class registerUser : MonoBehaviour
         passedInputCheck = checkInput();
 
         if (passedInputCheck) {
+            waitForServer.showWaitingText();
+            
             // Push to Database
             StartCoroutine(serverAPI.registerUser(resultArray, result => {
-                if (result == "OK") {
-                    initPopUp2.displayPopUp_One_Button("Thank you for registering!\nYou may now login!", false);
-                } else {
-                    // Error
-                    initPopUp2.displayPopUp_One_Button("There was an error occurred during the registration.\nPlease try again.", true);
-                }
+                StartCoroutine(waitForServer.hideWaitingText(callback => {
+                    if (result == "OK") {
+                        initPopUp2.displayPopUp_One_Button("Thank you for registering!\nYou may now login!", false);
+                    } else {
+                        // Error
+                        initPopUp2.displayPopUp_One_Button("There was an error occurred during the registration.\nPlease try again.", true);
+                    }
+                }));
             })); 
         }
     }
