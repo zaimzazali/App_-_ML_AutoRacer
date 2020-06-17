@@ -15,7 +15,7 @@
         try {
             $myPDO->beginTransaction();
 
-            $sql = "SELECT count(1) as c FROM view_user_account WHERE username = :theUsername;";
+            $sql = "SELECT count(1) as c FROM 'view_user_account' WHERE 'username' = :theUsername;";
         
             $stmt = $myPDO->prepare($sql);
             $stmt->bindValue(':theUsername', encodeString($_POST['theUsername']));
