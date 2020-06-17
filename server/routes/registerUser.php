@@ -17,41 +17,57 @@
     $theGender = (int)$_POST["theGender"];
     $theCountry = (int)$_POST["theCountry"];
 
-    echo $_POST["theName"]; echo "<br>";
-    echo $theGender; echo "<br>";
-    echo $_POST["theYear"]; echo "<br>";
-    echo $theCountry; echo "<br>";
-    echo $_POST["theUsername"]; echo "<br>";
-    echo $_POST["theEmail"]; echo "<br>";
-    echo $hashedPassword; echo "<br>";
-    echo $currentTime; echo "<br>";
-/*
+    // Encode strings
+    $theName = encodeString($_POST["theName"]);
+    $theUsername = encodeString($_POST["theUsername"]);
+    $theEmail = encodeString($_POST["theEmail"]);
+
     try {
         $myPDO = new PDO("pgsql:host=$db_host;port=$db_port;dbname=$db_name", $db_user, $db_pass);
 
         try {
             $myPDO->beginTransaction();
 
-            $sql = "SELECT count(1) as c FROM view_user_account WHERE username = :theUsername;";
+            // Insert into list_details
+            $sql = "INSERT INTO list_details (user_name, code_gender, year_of_birth, code_country, user_email, last_update) 
+                    VALUES (:theName, :theGender, :theYear, :theCountry, :theEmail, :currentTime);";
         
             $stmt = $myPDO->prepare($sql);
-            $stmt->bindValue(':theUsername', $_POST['theUsername']);
+            $stmt->bindValue(':theName', $theName);
+            $stmt->bindValue(':theGender', $theGender);
+            $stmt->bindValue(':theYear', $_POST["theYear"]);
+            $stmt->bindValue(':theCountry', $theCountry);
+            $stmt->bindValue(':theEmail', $theEmail);
+            $stmt->bindValue(':currentTime', $currentTime);
 
             $stmt->execute();
-            $result = $stmt->fetch();
+            $id_details = $myPDO->lastInsertId();
+
+            // Insert into list_password
+            $sql = "INSERT INTO list_password (user_password, need_reset, last_update) 
+                    VALUES (:hashedPassword, false, :currentTime);";
+
+            $stmt = $myPDO->prepare($sql);
+            $stmt->bindValue(':hashedPassword', $hashedPassword);
+            $stmt->bindValue(':currentTime', $currentTime);
+
+            $stmt->execute();
+            $id_password = $myPDO->lastInsertId();
+
+            // Insert into list_user
+            $sql = "INSERT INTO list_user (username, is_active, code_account_type, code_password, code_details) 
+                    VALUES (:theUsername, true, 1, :id_password, :id_details);";
+
+            $stmt = $myPDO->prepare($sql);
+            $stmt->bindValue(':theUsername', $theUsername);
+            $stmt->bindValue(':id_password', $id_password);
+            $stmt->bindValue(':id_details', $id_details);
+
+            $stmt->execute();
 
             $myPDO->commit();
 
-            $isAvailable = $result['c'];
-
-            if ($isAvailable == 0) {
-                echo "available";
-            } elseif ($isAvailable == 1) {
-                echo "not available";
-            } else {
-                echo "ERROR";
-            }
-                       
+            echo "OK";
         } catch (PDOException $e2) {
             $myPDO->rollBack();
             echo $e2->getMessage();
@@ -61,5 +77,4 @@
     } catch (PDOException $e1) {
         echo $e1->getMessage();
     }
-    */
 ?>

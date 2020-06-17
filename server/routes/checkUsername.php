@@ -7,6 +7,7 @@
 // ------------------------------------------------------------------------- 
 // -------------------------------------------------------------------------
     include "dbCredentials.php";
+    include "extraFunctions.php";
 
     try {
         $myPDO = new PDO("pgsql:host=$db_host;port=$db_port;dbname=$db_name", $db_user, $db_pass);
@@ -17,7 +18,7 @@
             $sql = "SELECT count(1) as c FROM view_user_account WHERE username = :theUsername;";
         
             $stmt = $myPDO->prepare($sql);
-            $stmt->bindValue(':theUsername', $_POST['theUsername']);
+            $stmt->bindValue(':theUsername', encodeString($_POST['theUsername']));
 
             $stmt->execute();
             $result = $stmt->fetch();
