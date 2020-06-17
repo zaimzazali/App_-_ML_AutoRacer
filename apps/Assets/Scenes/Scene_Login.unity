@@ -3184,12 +3184,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animType: 0
-  directionTowards: 0
+  directionTowards: 1
   to_horizontal: 1500
   to_vertical: 1000
   timing: 0.5
   initialObj: {fileID: 1849773638}
   newObj: {fileID: 3199698905653364636}
+  targetCanvas: {fileID: 1232916435}
 --- !u!1 &412792338
 GameObject:
   m_ObjectHideFlags: 0
@@ -10129,7 +10130,6 @@ GameObject:
   - component: {fileID: 1392375650}
   - component: {fileID: 1392375649}
   - component: {fileID: 1392375648}
-  - component: {fileID: 1392375647}
   m_Layer: 5
   m_Name: Tile
   m_TagString: Untagged
@@ -10157,25 +10157,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1392375647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392375645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68603f0bb7c17264e9ecafcd4760d5e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animType: 0
-  directionTowards: 0
-  to_horizontal: 1500
-  to_vertical: 0
-  timing: 0.5
-  initialObj: {fileID: 3199698905653364636}
-  newObj: {fileID: 1849773638}
 --- !u!114 &1392375648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10395,7 +10376,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1392375647}
+      - m_Target: {fileID: 0}
         m_MethodName: nextDiv
         m_Mode: 1
         m_Arguments:
@@ -11723,6 +11704,7 @@ MonoBehaviour:
   timing: 0.5
   initialObj: {fileID: 243671324}
   newObj: {fileID: 3199698905653364636}
+  targetCanvas: {fileID: 1232916435}
 --- !u!224 &1563145045 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3749738404893460919, guid: eb02c130f9423ae46872a35552c5f8d7,
@@ -13608,6 +13590,7 @@ MonoBehaviour:
   timing: 0.5
   initialObj: {fileID: 3199698905653364636}
   newObj: {fileID: 1849773638}
+  targetCanvas: {fileID: 1232916435}
 --- !u!1 &1922292196
 GameObject:
   m_ObjectHideFlags: 0
@@ -15859,7 +15842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1464317434068505131
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15893,12 +15876,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animType: 1
-  directionTowards: 0
+  directionTowards: 3
   to_horizontal: 0
   to_vertical: 1100
   timing: 0.5
   initialObj: {fileID: 1464317434068505130}
   newObj: {fileID: 3199698905653364636}
+  targetCanvas: {fileID: 1232916435}
 --- !u!114 &1464317434452311712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17777,6 +17761,11 @@ PrefabInstance:
       propertyPath: newObj
       value: 
       objectReference: {fileID: 243671324}
+    - target: {fileID: 4055679473108099306, guid: 5b691b6f8818fa642a4d8bbf416a708b,
+        type: 3}
+      propertyPath: targetCanvas
+      value: 
+      objectReference: {fileID: 1232916435}
     - target: {fileID: 4055679473108099310, guid: 5b691b6f8818fa642a4d8bbf416a708b,
         type: 3}
       propertyPath: m_Name
@@ -17911,6 +17900,11 @@ PrefabInstance:
       propertyPath: newObj
       value: 
       objectReference: {fileID: 1464317434068505130}
+    - target: {fileID: 4268949225933875060, guid: 2ef5d05761b9dc348bd83dfe9728f5ab,
+        type: 3}
+      propertyPath: targetCanvas
+      value: 
+      objectReference: {fileID: 1232916435}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ef5d05761b9dc348bd83dfe9728f5ab, type: 3}
 --- !u!224 &4461854557976442024

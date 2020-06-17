@@ -29,12 +29,7 @@ public class initPopUp : MonoBehaviour
     private float to_horizontal = 0, to_vertical = 0, timing = 0.5f;
 
     [SerializeField]
-    private GameObject initialObj = null, newObj = null;
-    private GameObject targetCanvas = null;
-
-    private void Awake() {
-        targetCanvas = newObj.transform.parent.parent.gameObject;
-    }  
+    private GameObject initialObj = null, newObj = null, targetCanvas = null;
 
     public void nextDiv() {
         if (newObj != null) {
