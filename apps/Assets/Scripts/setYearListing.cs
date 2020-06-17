@@ -5,17 +5,15 @@ using UnityEngine.UI;
 
 public class setYearListing : MonoBehaviour
 {
-    [SerializeField]
-    private int bufferYear = 0;
+    private int bufferYear = 100;
 
     private int currentYear, startYear, endYear;
     private Dropdown thisDropDown;
     private int i;
 
-    private void Start()
+    private void Awake()
     {
         thisDropDown = gameObject.GetComponent<Dropdown>();
-        // thisDropDown.options.Clear();
 
         currentYear = int.Parse(System.DateTime.Now.ToString("yyyy"));
         endYear = currentYear;

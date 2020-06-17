@@ -6,6 +6,7 @@ TagManager:
   tags:
   - input_field
   - input_field_tmp
+  - drop_down
   layers:
   - Default
   - TransparentFX
