@@ -5,20 +5,34 @@ using UnityEngine.UI;
 
 public class registerUser : MonoBehaviour
 {
-    [SerializeField]
     private inputValidator inputValidator = null;
+    private initPopUp2 initPopUp2 = null;
+    private serverAPI serverAPI = null;
 
-    [SerializeField]
     private GameObject inputObj_Name = null, inputObj_Gender = null, inputObj_Year = null, inputObj_Country = null,
     inputObj_Username = null, inputObj_Email = null, inputObj_Pass_00 = null, inputObj_Pass_01 = null, inputObj_Status = null;
 
     private ArrayList resultArray = null;
 
-    [SerializeField]
-    private initPopUp2 initPopUp2 = null;
+    private void Awake() {
+        inputValidator = gameObject.GetComponent<inputValidator>();
+        initPopUp2 = gameObject.GetComponent<initPopUp2>();
+        serverAPI = gameObject.GetComponent<serverAPI>();
 
-    [SerializeField]
-    private serverAPI serverAPI = null;
+        GameObject parentObj = gameObject.transform.parent.parent.parent.gameObject;
+
+        inputObj_Name = parentObj.transform.Find("Holder_00/Holder_Name/Holder_Content/Holder_InputField/InputField_Register_Name").gameObject;
+        inputObj_Gender = parentObj.transform.Find("Holder_00/Holder_Details/Holder_Gender/Holder_Content/Dropdown_Gender").gameObject;
+        inputObj_Year = parentObj.transform.Find("Holder_00/Holder_Details/Holder_Year/Holder_Content/Dropdown_Year").gameObject;
+        inputObj_Country = parentObj.transform.Find("Holder_00/Holder_Details/Holder_Country/Holder_Content/Dropdown_Country").gameObject;
+
+        inputObj_Username = parentObj.transform.Find("Holder_01/Holder_Username/Holder_Content/Holder_InputField/InputField_Register_Username").gameObject;
+        inputObj_Status = parentObj.transform.Find("Holder_01/Holder_Username/Holder_Content/Holder_Check_Result").gameObject;
+
+        inputObj_Email = parentObj.transform.Find("Holder_01/Holder_Email/Holder_Content/Holder_Text/InputField_Register_Email").gameObject;
+        inputObj_Pass_00 = parentObj.transform.Find("Holder_01/Holder_Password/Holder_Pass_00/Holder_Content/InputField_Register_Pass_00").gameObject;
+        inputObj_Pass_01 = parentObj.transform.Find("Holder_01/Holder_Password/Holder_Pass_01/Holder_Content/InputField_Register_Pass_01").gameObject;
+    }
 
     public void initRegistration() {
         resultArray = new ArrayList();
@@ -33,16 +47,10 @@ public class registerUser : MonoBehaviour
             // Push to Database
             StartCoroutine(serverAPI.registerUser(resultArray, result => {
                 if (result == "OK") {
-                    //statusText.text = "Available";
-                    //statusText.color = new Color(0f, 1f, 0f, 1f);
-                }
-                else if (result == "not available") {
-                    //statusText.text = "Not Available";
-                    //statusText.color = new Color(1f, 0f, 0f, 1f);
-                }
-                else {
+                    initPopUp2.displayPopUp_One_Button("Thank you for registering!\nYou may now login!", false);
+                } else {
                     // Error
-                    initPopUp2.displayPopUp_One_Button("There was an error occurred during the Registration.\nPlease try again.", true);
+                    initPopUp2.displayPopUp_One_Button("There was an error occurred during the registration.\nPlease try again.", true);
                 }
             })); 
         }

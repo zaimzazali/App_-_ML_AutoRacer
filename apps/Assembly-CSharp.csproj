@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\controlAudio.cs" />
      <Compile Include="Assets\Scripts\cursorEvents.cs" />
      <Compile Include="Assets\Scripts\exitGame.cs" />
+     <Compile Include="Assets\Scripts\GameObjectSearcher.cs" />
      <Compile Include="Assets\Scripts\getListDataFromDatabase.cs" />
      <Compile Include="Assets\Scripts\initPopUp.cs" />
      <Compile Include="Assets\Scripts\initPopUp2.cs" />

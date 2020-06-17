@@ -5,17 +5,22 @@ using UnityEngine.UI;
 
 public class checkCredentials : MonoBehaviour
 {
-    [SerializeField]
     private GameObject usernameField = null;
 
-    [SerializeField]
     private Text statusText = null;
 
-    [SerializeField]
     private initPopUp2 initPopUp2 = null;
 
-    [SerializeField]
     private serverAPI serverAPI = null;
+
+    private void Awake() {
+        GameObject parentObj = gameObject.transform.parent.parent.parent.gameObject;
+        usernameField = parentObj.transform.GetChild(0).gameObject.transform.Find("InputField_Register_Username").gameObject;
+        statusText = parentObj.transform.GetChild(2).gameObject.transform.Find("Text").gameObject.GetComponent<Text>();
+
+        initPopUp2 = gameObject.GetComponent<initPopUp2>();
+        serverAPI = gameObject.GetComponent<serverAPI>();
+    }
 
     public void checkUsername() {
         string theUsername;
@@ -37,7 +42,9 @@ public class checkCredentials : MonoBehaviour
                 }
                 else {
                     // Error
-                    initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
+                    // initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
+
+                    initPopUp2.displayPopUp_One_Button("Thank you for registering!\nYou may now login!", false);
                 }
             })); 
         } else {

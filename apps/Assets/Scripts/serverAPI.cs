@@ -12,7 +12,7 @@ public class serverAPI : MonoBehaviour
 
     public IEnumerator checkUsername(string theUsername, System.Action<string> result) {
         List<IMultipartFormSection> wwwForm = new List<IMultipartFormSection>();
-        wwwForm.Add(new MultipartFormDataSection("isAllowed", "true"));
+        wwwForm.Add(new MultipartFormDataSection("isAllowed", "false"));
         wwwForm.Add(new MultipartFormDataSection("theUsername", theUsername));
 
         UnityWebRequest www = UnityWebRequest.Post(url_checkUsername, wwwForm);

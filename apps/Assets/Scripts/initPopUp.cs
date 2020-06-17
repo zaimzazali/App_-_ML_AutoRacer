@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class initPopUp : MonoBehaviour
 {
@@ -31,9 +32,16 @@ public class initPopUp : MonoBehaviour
     [SerializeField]
     private GameObject initialObj = null, newObj = null, targetCanvas = null;
 
+    private GameObjectSearcher GameObjectSearcher = null;
+
+    private void Awake() {
+        GameObjectSearcher = gameObject.GetComponent<GameObjectSearcher>();
+    }
+
     public void nextDiv() {
         if (newObj != null) {
             setNewObjPosition();
+            clearInputs();
         }
         targetCanvas.SetActive(true);
         animateDivs();
@@ -106,6 +114,7 @@ public class initPopUp : MonoBehaviour
 
     public void previousDiv() {
         newObj.SetActive(true);
+        clearInputs();
 
         switch (animType)
         {
@@ -147,5 +156,25 @@ public class initPopUp : MonoBehaviour
         thisObj.SetActive(false);
     }
 
+    private void clearInputs() {
+        List<GameObject> theObj = null;
+
+        theObj = GameObjectSearcher.getChildObjectsWithTag("input_field", newObj);
+        foreach (GameObject obj in theObj) {
+            obj.GetComponent<InputField>().text = "";
+            obj.GetComponent<Any_Inputfield>().setNormal();
+        }
+
+        theObj = GameObjectSearcher.getChildObjectsWithTag("drop_down", newObj);
+        foreach (GameObject obj in theObj) {
+            obj.GetComponent<Dropdown>().value = 0;
+            obj.GetComponent<Any_Dropdown>().setNormal();
+        }
+
+        theObj = GameObjectSearcher.getChildObjectsWithTag("input_field_tmp", newObj);
+        foreach (GameObject obj in theObj) {
+            obj.GetComponent<TMP_InputField>().text = "";
+        }
+    }
 }
 
