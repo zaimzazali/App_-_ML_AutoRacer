@@ -13,8 +13,7 @@ public class controlAudio : MonoBehaviour
     [SerializeField]
     private Sprite[] images = null;
     
-    private void Start()
-    {
+    private void Awake() {
         masterAudioControls = GameObject.Find("Main Camera").GetComponent<masterAudioControls>();
         theText = GameObject.Find("Slider_Text").GetComponent<Text>();
         audioImage = GameObject.Find("Image_Speaker").GetComponent<Image>();
@@ -27,11 +26,9 @@ public class controlAudio : MonoBehaviour
         theText.text = (gameObject.GetComponent<Slider>().value * 100).ToString("F0") + "%";
         if (gameObject.GetComponent<Slider>().value == 0f) {
             audioImage.overrideSprite = images[2];
-        }
-        else if (gameObject.GetComponent<Slider>().value == 1f) {
+        } else if (gameObject.GetComponent<Slider>().value == 1f) {
             audioImage.overrideSprite = images[0];
-        }
-        else {
+        } else {
             audioImage.overrideSprite = images[1];
         }
     }

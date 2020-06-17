@@ -6,11 +6,8 @@ using UnityEngine.UI;
 public class checkCredentials : MonoBehaviour
 {
     private GameObject usernameField = null;
-
     private Text statusText = null;
-
     private initPopUp2 initPopUp2 = null;
-
     private serverAPI serverAPI = null;
 
     private void Awake() {
@@ -35,16 +32,12 @@ public class checkCredentials : MonoBehaviour
                 if (result == "available") {
                     statusText.text = "Available";
                     statusText.color = new Color(0f, 1f, 0f, 1f);
-                }
-                else if (result == "not available") {
+                } else if (result == "not available") {
                     statusText.text = "Not Available";
                     statusText.color = new Color(1f, 0f, 0f, 1f);
-                }
-                else {
+                } else {
                     // Error
-                    // initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
-
-                    initPopUp2.displayPopUp_One_Button("Thank you for registering!\nYou may now login!", false);
+                    initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
                 }
             })); 
         } else {

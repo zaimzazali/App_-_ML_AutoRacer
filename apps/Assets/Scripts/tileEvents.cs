@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class tileEvents : MonoBehaviour
 {
     private bool isActive;
-
     private float expandSize = 1.05f, expandDuration = 0.05f;
 
     private void Awake() {

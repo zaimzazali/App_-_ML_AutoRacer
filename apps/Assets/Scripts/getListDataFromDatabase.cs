@@ -11,15 +11,34 @@ public class getListDataFromDatabase : MonoBehaviour
     private bool isDropdown = true;
 
     private serverAPI serverAPI = null;
-    
     private setDropdownOptions setDropdownOptions = null;
 
     private void Awake() {
         serverAPI = gameObject.GetComponent<serverAPI>();
         setDropdownOptions = gameObject.GetComponent<setDropdownOptions>();
-        if (tableName != null || tableName.Trim() != "") {
+
+        if (validTable(tableName)) {
             setDropDown();
         }
+    }
+
+    private bool validTable(string tableName) {
+        bool result = false;
+
+        switch (tableName)
+        {
+            case "list_country":
+                result = true;
+                break;
+            case "list_gender":
+                result = true;
+                break;
+            default:
+                // Do Nothing
+                break;
+        }
+
+        return result;
     }
 
     private void setDropDown() {

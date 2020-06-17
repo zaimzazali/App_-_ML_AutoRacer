@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class setDropdownOptions : MonoBehaviour
 {
-   [SerializeField]
+    [SerializeField]
     private int interestedColumnNumber = 0;
 
     private Dropdown thisDropDown;
-
     private List<string[]> returnTable = new List<string[]>();
 
     private void Awake() {

@@ -42,8 +42,6 @@ public class registerUser : MonoBehaviour
         passedInputCheck = checkInput();
 
         if (passedInputCheck) {
-            Debug.Log("Passed");
-
             // Push to Database
             StartCoroutine(serverAPI.registerUser(resultArray, result => {
                 if (result == "OK") {
@@ -94,8 +92,7 @@ public class registerUser : MonoBehaviour
         theInput = inputObj_Status.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
         if (theInput == "Available") {
             resultArray.Add(inputObj_Username.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim());
-        }
-        else {
+        } else {
             inputObj_Username.GetComponent<Any_Inputfield>().setError();
         }
 

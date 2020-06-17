@@ -6,18 +6,12 @@ using TMPro;
 
 public class initPopUp : MonoBehaviour
 {
-    private enum type
-    {
-        horizontal,
-        vertical
+    private enum type {
+        horizontal, vertical
     }
 
-    private enum direction
-    {
-        right,
-        left,
-        top,
-        bottom
+    private enum direction {
+        right, left, top, bottom
     }
 
     [SerializeField]
@@ -177,4 +171,3 @@ public class initPopUp : MonoBehaviour
         }
     }
 }
-

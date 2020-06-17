@@ -8,7 +8,6 @@ public class inputValidator : MonoBehaviour
         if (input.Length >= 2) {
             return true;
         }
-
         return false;
     }
     
@@ -38,7 +37,6 @@ public class inputValidator : MonoBehaviour
         if (input.Length < 8) {
             return false;
         }
-
         return true;
     }
 
@@ -46,7 +44,6 @@ public class inputValidator : MonoBehaviour
         if (input1 != input2) {
             return false;
         }
-        
         return true;
     }
 }

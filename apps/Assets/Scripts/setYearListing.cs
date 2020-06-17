@@ -9,10 +9,10 @@ public class setYearListing : MonoBehaviour
 
     private int currentYear, startYear, endYear;
     private Dropdown thisDropDown;
-    private int i;
 
-    private void Awake()
-    {
+    private void Awake() {
+        int i;
+
         thisDropDown = gameObject.GetComponent<Dropdown>();
 
         currentYear = int.Parse(System.DateTime.Now.ToString("yyyy"));

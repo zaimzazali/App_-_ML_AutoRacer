@@ -17,8 +17,12 @@ public class Any_Inputfield : MonoBehaviour
         }
 
         // If it is the Register - Username inputfield
-        if (gameObject.name.ToString() == "InputField_Username") { //xxxxxxxxx
-            GameObject.Find("Holder_Check_Result").gameObject.transform.Find("Text").gameObject.GetComponent<Text>().text = "";
+        if (gameObject.name.ToString() == "InputField_Register_Username") {
+            try {
+                GameObject.Find("Holder_Check_Result").gameObject.transform.Find("Text").gameObject.GetComponent<Text>().text = "";
+            } catch (System.Exception) {
+                // Do Nothing
+            }
         }
     }
 }

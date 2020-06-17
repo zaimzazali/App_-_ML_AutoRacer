@@ -2,15 +2,23 @@
 // -------------------------------------------------------------------------
 // -------------------------------------------------------------------------
     if ($_POST["isAllowed"] != "true") {
-        header('Location: http://localhost:1111');
+        // header('Location: http://localhost:1111');
     }
 // ------------------------------------------------------------------------- 
 // -------------------------------------------------------------------------
     include "dbCredentials.php";
     include "extraFunctions.php";
 
+    $_POST["theName"] = "zaim name";
+    $_POST["theGender"] = "1";
+    $_POST["theYear"] = "2000";
+    $_POST["theCountry"] = "1";
+    $_POST["theUsername"] = "zaim1";
+    $_POST["theEmail"] = "zaim@gmail.com";
+    $_POST["thePassword"] = "pass";
+
     // Encrypt the password and get current time
-    $hashedPassword = hashString($_POST["isAllowed"]);
+    $hashedPassword = hashString($_POST["thePassword"]);
     $currentTime = getCurrentTime();
 
     // Parse integer
@@ -29,19 +37,27 @@
             $myPDO->beginTransaction();
 
             // Insert into list_details
+            /*
             $sql = "INSERT INTO list_details (user_name, code_gender, year_of_birth, code_country, user_email, last_update) 
                     VALUES (:theName, :theGender, :theYear, :theCountry, :theEmail, :currentTime);";
+                    */
+            $sql = "INSERT INTO list_details (user_name, code_gender, year_of_birth, code_country, user_email, last_update) 
+                    VALUES (?, ?, ?, ?, ?, ?);";
         
             $stmt = $myPDO->prepare($sql);
+            /*
             $stmt->bindValue(':theName', $theName);
             $stmt->bindValue(':theGender', $theGender);
             $stmt->bindValue(':theYear', $_POST["theYear"]);
             $stmt->bindValue(':theCountry', $theCountry);
             $stmt->bindValue(':theEmail', $theEmail);
             $stmt->bindValue(':currentTime', $currentTime);
+            */
 
-            $stmt->execute();
+            $stmt->execute($theName, $theGender, $_POST["theYear"], $theCountry, $theEmail, $currentTime);
             $id_details = $myPDO->lastInsertId();
+
+            echo $id_details;
 
             // Insert into list_password
             $sql = "INSERT INTO list_password (user_password, need_reset, last_update) 

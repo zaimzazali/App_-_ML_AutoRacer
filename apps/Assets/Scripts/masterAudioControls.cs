@@ -9,8 +9,7 @@ public class masterAudioControls : MonoBehaviour
     private void Awake() {
         if (PlayerPrefs.HasKey("setMasterVolumeValue")) {
             AudioListener.volume = PlayerPrefs.GetFloat("setMasterVolumeValue");
-        }
-        else {
+        } else {
             AudioListener.volume = initialMasterVolume;
             PlayerPrefs.SetFloat("setMasterVolumeValue", initialMasterVolume);
         }

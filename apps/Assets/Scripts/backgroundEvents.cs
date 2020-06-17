@@ -5,17 +5,13 @@ using UnityEngine.UI;
 
 public class backgroundEvents : MonoBehaviour
 {
-    private initSound initSound;  
-
-    private List<GameObject> backgroundImages = new List<GameObject>();
-
     [SerializeField]
     private Sprite[] images = null;
 
+    private initSound initSound;  
+    private List<GameObject> backgroundImages = new List<GameObject>();
     private float fromPoint = -50f, swingTiming = 24f;
-
     private int stateIndex = 0, imgIndex = 0;
-
     private float startTransitionAt = 12f, waitToTransition = 12f, fadingTiming = 2f;
 
     private void Awake() {
@@ -72,10 +68,10 @@ public class backgroundEvents : MonoBehaviour
     private int getNextImageIndex() {
         if (imgIndex == images.Length-1) {
             imgIndex = 0;
-        }
-        else {
+        } else {
             imgIndex += 1; 
         }
+        
         return imgIndex;
     }
 }
