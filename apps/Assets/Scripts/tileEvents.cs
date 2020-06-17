@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class tileEvents : MonoBehaviour
 {
-    [SerializeField]
-    private float expandSize = 0f, expandDuration = 0f;
-
     private bool isActive;
+
+    private float expandSize = 1.05f, expandDuration = 0.05f;
 
     private void Awake() {
         if (gameObject.GetComponent<Button>() != null) { 

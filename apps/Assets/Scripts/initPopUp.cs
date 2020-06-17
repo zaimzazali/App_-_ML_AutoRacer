@@ -20,63 +20,80 @@ public class initPopUp : MonoBehaviour
     }
 
     [SerializeField]
-    private GameObject targetCanvas = null, initialObj = null, newObj = null;
-
-    [SerializeField]
-    private float to_horizontal = 0, to_vertical = 0, timing = 0f;
-
-    [SerializeField]
     private type animType = type.horizontal;
 
     [SerializeField]
-    private direction animDirectionTowards = direction.right;
+    private direction directionTowards = direction.right;
+
+    [SerializeField]
+    private float to_horizontal = 0, to_vertical = 0, timing = 0.5f;
+
+    [SerializeField]
+    private GameObject initialObj = null, newObj = null;
+    private GameObject targetCanvas = null;
+
+    private void Awake() {
+        targetCanvas = newObj.transform.parent.parent.gameObject;
+    }  
 
     public void nextDiv() {
-
         if (newObj != null) {
-            newObj.SetActive(true);
-
-            // Setup Position
-            switch (animDirectionTowards) {
-                case direction.right:
-                    newObj.GetComponent<RectTransform>().localPosition = new Vector3(-1*to_horizontal, 0f, 0f);  
-                    break;
-
-                case direction.left:
-                    newObj.GetComponent<RectTransform>().localPosition = new Vector3(to_horizontal, 0f, 0f); 
-                    break;
-
-                case direction.bottom:
-                    newObj.GetComponent<RectTransform>().localPosition = new Vector3(0f, to_vertical, 0f); 
-                    break;
-
-                default:
-                    // Do Nothing
-                    break;
-            }
+            setNewObjPosition();
         }
-
         targetCanvas.SetActive(true);
+        animateDivs();
+        StartCoroutine("deactivateElement", initialObj);
+    }
 
-        // Animate
+    private void setNewObjPosition() {
+        newObj.SetActive(true);
+        switch (directionTowards) {
+            case direction.right:
+                newObj.GetComponent<RectTransform>().localPosition = new Vector3(-1*to_horizontal, 0f, 0f);  
+                break;
+
+            case direction.left:
+                newObj.GetComponent<RectTransform>().localPosition = new Vector3(to_horizontal, 0f, 0f); 
+                break;
+
+            case direction.bottom:
+                newObj.GetComponent<RectTransform>().localPosition = new Vector3(0f, to_vertical, 0f); 
+                break;
+
+            case direction.top:
+                newObj.GetComponent<RectTransform>().localPosition = new Vector3(0f, -1*to_vertical, 0f); 
+                break;
+
+            default:
+                // Do Nothing
+                break;
+        }
+    }
+
+    private void animateDivs() {
         switch (animType)
         {
             case type.horizontal: 
-                if (animDirectionTowards == direction.right) {
+                // Right
+                if (directionTowards == direction.right) {
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), to_horizontal, timing).setEaseInOutCubic();
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();     
-                } else if (animDirectionTowards == direction.left) {
+                } else {
+                // Left
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), -1*to_horizontal, timing).setEaseInOutCubic();
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();   
                 }
                 break;
 
             case type.vertical: 
-                if (animDirectionTowards == direction.bottom) {
+                // Bottom
+                if (directionTowards == direction.bottom) {
                     LeanTween.moveY(initialObj.GetComponent<RectTransform>(), -1*to_vertical, timing).setEaseInOutCubic();
                     LeanTween.moveY(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();     
-                } else if (animDirectionTowards == direction.top) {
+                } else {
+                // Top
                     if (newObj == null) {
+                        // Server Status
                         LeanTween.moveY(initialObj.GetComponent<RectTransform>(), to_vertical, timing).setEaseInOutCubic();
                         InvokeRepeating("blinkServerStatus", timing*2/3, 2f);
                     } else {
@@ -90,8 +107,6 @@ public class initPopUp : MonoBehaviour
                 // Do Nothing
                 break;
         }
-        
-        StartCoroutine("deactivateElement", initialObj);
     }
 
     public void previousDiv() {
@@ -100,20 +115,24 @@ public class initPopUp : MonoBehaviour
         switch (animType)
         {
             case type.horizontal: 
-                if (animDirectionTowards == direction.right) {
+                // Right
+                if (directionTowards == direction.right) {
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), -1*to_horizontal, timing).setEaseInOutCubic();   
-                } else if (animDirectionTowards == direction.left) {
+                } else {
+                // Left
                     LeanTween.moveX(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
                     LeanTween.moveX(initialObj.GetComponent<RectTransform>(), to_horizontal, timing).setEaseInOutCubic();  
                 }
                 break;
 
             case type.vertical: 
-                if (animDirectionTowards == direction.bottom) {
+                // Bottom
+                if (directionTowards == direction.bottom) {
                     LeanTween.moveY(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
                     LeanTween.moveY(initialObj.GetComponent<RectTransform>(), to_vertical, timing).setEaseInOutCubic();   
-                } else if (animDirectionTowards == direction.top) {
+                } else {
+                // Top
                     LeanTween.moveY(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();
                     LeanTween.moveY(initialObj.GetComponent<RectTransform>(), -1*to_vertical, timing).setEaseInOutCubic();  
                 }

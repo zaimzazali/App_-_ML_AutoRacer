@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Div_Vertical
-  - TIle_Menu
+  - input_field
+  - input_field_tmp
   layers:
   - Default
   - TransparentFX

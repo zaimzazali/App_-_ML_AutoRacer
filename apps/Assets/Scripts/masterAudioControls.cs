@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class masterAudioControls : MonoBehaviour
 {
-    [SerializeField]
-    private float initialMasterVolume = 0f;
+    private float initialMasterVolume = 0.5f;
 
     private void Awake() {
         if (PlayerPrefs.HasKey("setMasterVolumeValue")) {

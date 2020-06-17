@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class initSound : MonoBehaviour
 {
-    [SerializeField]
-    private float waitingTime = 0f;
+    private float waitingTime = 0.5f;
+
     private AudioSource thisSound;
 
-    private void Start()
+    private void Awake()
     {
         thisSound = GetComponent<AudioSource>();
         playSound();

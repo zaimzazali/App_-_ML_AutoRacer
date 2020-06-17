@@ -57,7 +57,7 @@ public class registerUser : MonoBehaviour
         if (inputValidator.isNameValid(theInput)) {
             resultArray.Add(theInput);
         } else {
-            inputObj_Name.GetComponent<Any_Inputfield>().setInputError();
+            inputObj_Name.GetComponent<Any_Inputfield>().setError();
         }
 
         // Check for Gender
@@ -65,21 +65,21 @@ public class registerUser : MonoBehaviour
         if (theInput != "") {
             resultArray.Add(inputObj_Gender.GetComponent<Dropdown>().value.ToString());
         } else {
-            inputObj_Gender.GetComponent<Any_Dropdown>().setDropError();
+            inputObj_Gender.GetComponent<Any_Dropdown>().setError();
         }
         // Check for Year
         theInput = inputObj_Year.GetComponent<Any_Dropdown>().getSelectedValueText();
         if (theInput != "") {
             resultArray.Add(theInput);
         } else {
-            inputObj_Year.GetComponent<Any_Dropdown>().setDropError();
+            inputObj_Year.GetComponent<Any_Dropdown>().setError();
         }
         // Check for Country
         theInput = inputObj_Country.GetComponent<Any_Dropdown>().getSelectedValueText();
         if (theInput != "") {
             resultArray.Add(inputObj_Country.GetComponent<Dropdown>().value.ToString());
         } else {
-            inputObj_Country.GetComponent<Any_Dropdown>().setDropError();
+            inputObj_Country.GetComponent<Any_Dropdown>().setError();
         }
 
         // Check for Username
@@ -88,7 +88,7 @@ public class registerUser : MonoBehaviour
             resultArray.Add(inputObj_Username.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim());
         }
         else {
-            inputObj_Username.GetComponent<Any_Inputfield>().setInputError();
+            inputObj_Username.GetComponent<Any_Inputfield>().setError();
         }
 
         // Check for Email
@@ -96,7 +96,7 @@ public class registerUser : MonoBehaviour
         if (inputValidator.isEmailValid(theInput)) {
             resultArray.Add(theInput);
         } else {
-            inputObj_Email.GetComponent<Any_Inputfield>().setInputError();
+            inputObj_Email.GetComponent<Any_Inputfield>().setError();
         }
 
         // Check for Password
@@ -104,7 +104,7 @@ public class registerUser : MonoBehaviour
         if (inputValidator.isPasswordValid(theInput)) {
             resultArray.Add(theInput);
         } else {
-            inputObj_Pass_00.GetComponent<Any_Inputfield>().setInputError();
+            inputObj_Pass_00.GetComponent<Any_Inputfield>().setError();
         }
 
         tmpString = theInput;
@@ -112,11 +112,11 @@ public class registerUser : MonoBehaviour
         // Check if Password Same
         theInput = inputObj_Pass_01.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
         if (theInput == "") {
-            inputObj_Pass_01.GetComponent<Any_Inputfield>().setInputError();
+            inputObj_Pass_01.GetComponent<Any_Inputfield>().setError();
         } else if (inputValidator.isPassSame(theInput, tmpString)) {
             resultArray.Add(theInput);
         } else {
-            inputObj_Pass_01.GetComponent<Any_Inputfield>().setInputError();
+            inputObj_Pass_01.GetComponent<Any_Inputfield>().setError();
         }
 
         if (resultArray.Count != 8) {

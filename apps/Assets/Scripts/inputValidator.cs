@@ -19,13 +19,15 @@ public class inputValidator : MonoBehaviour
             return false;
         }
 
-        if (input.IndexOf("@") == -1 || input.IndexOf("@") == 0 || input.IndexOf("@") == input.Length-1 || input.LastIndexOf("@") == input.Length-1) {
+        if (input.IndexOf("@") == -1 || input.IndexOf("@") == 0 || 
+            input.IndexOf("@") == input.Length-1 || input.LastIndexOf("@") == input.Length-1) {
             return false;
         }
 
         remainString = input.Substring(input.IndexOf("@")+1);
 
-        if (remainString.IndexOf(".") == -1 || remainString.IndexOf(".") == 0 || remainString.IndexOf(".") == remainString.Length-1 || remainString.LastIndexOf(".") == remainString.Length-1) {
+        if (remainString.IndexOf(".") == -1 || remainString.IndexOf(".") == 0 || 
+            remainString.IndexOf(".") == remainString.Length-1 || remainString.LastIndexOf(".") == remainString.Length-1) {
             return false;
         }
 
