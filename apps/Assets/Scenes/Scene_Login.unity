@@ -1160,6 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac7bf9bfc0009348829c2b02d30640a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas_parent: {fileID: 1232916435}
   canvas_next: {fileID: 1247817119}
 --- !u!1 &243671324 stripped
 GameObject:
@@ -4521,6 +4522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fac7bf9bfc0009348829c2b02d30640a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas_parent: {fileID: 1232916435}
   canvas_next: {fileID: 1247817119}
 --- !u!114 &2014573840
 MonoBehaviour:
@@ -6715,6 +6717,11 @@ PrefabInstance:
       propertyPath: canvas_next
       value: 
       objectReference: {fileID: 1247817119}
+    - target: {fileID: 6921235978761591299, guid: a5d179a0e13040a46990529d590a8c97,
+        type: 3}
+      propertyPath: canvas_parent
+      value: 
+      objectReference: {fileID: 1232916435}
     - target: {fileID: 6921235978763252945, guid: a5d179a0e13040a46990529d590a8c97,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6800,6 +6807,11 @@ PrefabInstance:
       propertyPath: canvas_next
       value: 
       objectReference: {fileID: 1247817119}
+    - target: {fileID: 6921235979132301070, guid: a5d179a0e13040a46990529d590a8c97,
+        type: 3}
+      propertyPath: canvas_parent
+      value: 
+      objectReference: {fileID: 1232916435}
     - target: {fileID: 6921235979208563507, guid: a5d179a0e13040a46990529d590a8c97,
         type: 3}
       propertyPath: m_AnchorMin.y

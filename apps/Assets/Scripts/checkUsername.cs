@@ -26,7 +26,7 @@ public class checkUsername : MonoBehaviour
 
         usernameField.GetComponent<Any_Inputfield>().setNormal();
 
-        theUsername = usernameField.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
+        theUsername = usernameField.GetComponent<InputField>().text.Trim();
 
         if (theUsername.Length > 0) {
             waitForServer.showWaitingText();
