@@ -62,14 +62,17 @@
      <Compile Include="Assets\Scripts\controlAudio.cs" />
      <Compile Include="Assets\Scripts\cursorEvents.cs" />
      <Compile Include="Assets\Scripts\exitGame.cs" />
+     <Compile Include="Assets\Scripts\gameMaster.cs" />
      <Compile Include="Assets\Scripts\GameObjectSearcher.cs" />
      <Compile Include="Assets\Scripts\getListDataFromDatabase.cs" />
+     <Compile Include="Assets\Scripts\initiateGame.cs" />
      <Compile Include="Assets\Scripts\initPopUp.cs" />
      <Compile Include="Assets\Scripts\initPopUp2.cs" />
      <Compile Include="Assets\Scripts\initSound.cs" />
      <Compile Include="Assets\Scripts\inputValidator.cs" />
      <Compile Include="Assets\Scripts\masterAudioControls.cs" />
      <Compile Include="Assets\Scripts\registerUser.cs" />
+     <Compile Include="Assets\Scripts\sceneFader.cs" />
      <Compile Include="Assets\Scripts\serverAPI.cs" />
      <Compile Include="Assets\Scripts\setDropdownOptions.cs" />
      <Compile Include="Assets\Scripts\setYearListing.cs" />

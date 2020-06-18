@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class initSound : MonoBehaviour
 {
-    private float waitingTime = 0.5f;
+    [SerializeField]
+    private GameObject canvasFader = null;  
+
+    private float waitingTime = 0f;
     private AudioSource thisSound;
 
     private void Awake() {
         thisSound = GetComponent<AudioSource>();
+
+        sceneFader sceneFader = canvasFader.transform.GetChild(0).gameObject.GetComponent<sceneFader>();
+        waitingTime = sceneFader.getTotalWaitingTime();
+        
         playSound();
     }
 

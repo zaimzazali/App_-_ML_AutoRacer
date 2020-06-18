@@ -169,5 +169,11 @@ public class initPopUp : MonoBehaviour
         foreach (GameObject obj in theObj) {
             obj.GetComponent<TMP_InputField>().text = "";
         }
+
+        // For Registration Div
+        if (newObj.name == "PopUp_Register") {
+            GameObject theText = newObj.transform.Find("PopUp_Window/Holder_Body/Holder_01/Holder_Username/Holder_Content/Holder_Check_Result/Text").gameObject;
+            theText.GetComponent<Text>().text = "";
+        }
     }
 }
