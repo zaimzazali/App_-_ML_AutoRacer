@@ -27,9 +27,11 @@ public class initPopUp : MonoBehaviour
     private GameObject initialObj = null, newObj = null, targetCanvas = null;
 
     private GameObjectSearcher GameObjectSearcher = null;
+    private blinkingText blinkingText = null;
 
     private void Awake() {
         GameObjectSearcher = gameObject.GetComponent<GameObjectSearcher>();
+        blinkingText = gameObject.GetComponent<blinkingText>();
     }
 
     public void nextDiv() {
@@ -92,7 +94,7 @@ public class initPopUp : MonoBehaviour
                     if (newObj == null) {
                         // Server Status
                         LeanTween.moveY(initialObj.GetComponent<RectTransform>(), to_vertical, timing).setEaseInOutCubic();
-                        InvokeRepeating("blinkServerStatus", timing*2/3, 2f);
+                        // InvokeRepeating("blinkServerStatus", timing*2/3, 2f);
                     } else {
                         LeanTween.moveY(initialObj.GetComponent<RectTransform>(), to_vertical, timing).setEaseInOutCubic();
                         LeanTween.moveY(newObj.GetComponent<RectTransform>(), 0, timing).setEaseInOutCubic();  

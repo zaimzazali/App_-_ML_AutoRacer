@@ -8,6 +8,7 @@ public class serverAPI : MonoBehaviour
     string url_checkUsername = "http://localhost:1111/routes/checkUsername.php";
     string url_registerUser = "http://localhost:1111/routes/registerUser.php";
     string url_selectAllData = "http://localhost:1111/routes/selectAllData.php";
+    string url_loginUser = "http://localhost:1111/routes/loginUser.php";
 
     public IEnumerator checkUsername(string theUsername, System.Action<string> result) {
         List<IMultipartFormSection> wwwForm = new List<IMultipartFormSection>();
@@ -55,6 +56,24 @@ public class serverAPI : MonoBehaviour
         wwwForm.Add(new MultipartFormDataSection("tableName", tableName));
 
         UnityWebRequest www = UnityWebRequest.Post(url_selectAllData, wwwForm);
+
+        yield return www.SendWebRequest();
+        
+        if (www.isNetworkError || www.isHttpError) {
+            Debug.LogError(www.error);
+            result("error");
+        }
+
+        result(www.downloadHandler.text);
+    }
+
+    public IEnumerator initLogin(string theUsername, string thePassword, System.Action<string> result) {
+        List<IMultipartFormSection> wwwForm = new List<IMultipartFormSection>();
+        wwwForm.Add(new MultipartFormDataSection("isAllowed", "true"));
+        wwwForm.Add(new MultipartFormDataSection("theUsername", theUsername));
+        wwwForm.Add(new MultipartFormDataSection("thePassword", thePassword));
+
+        UnityWebRequest www = UnityWebRequest.Post(url_loginUser, wwwForm);
 
         yield return www.SendWebRequest();
         
