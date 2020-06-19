@@ -54,9 +54,18 @@ public class controlCanvas03 : MonoBehaviour
         if (panel_front.GetComponent<Image>().color == Any_Colours.get_Color_Panel_Clear()) {
             Invoke("autoCloseDiv", closingTiming);
         }
+
+        if (!canvas_back.activeSelf) {
+            Invoke("bringBackLoginDiv", closingTiming*2/3);
+        }
+
         popObj = canvas_front.transform.GetChild(1).GetChild(1).gameObject;
         LeanTween.scale(popObj, Vector3.zero, closingTiming).setEaseInBack();
         Invoke("hideAllObjects", closingTiming);
+    }
+
+    private void bringBackLoginDiv() {
+        LeanTween.moveY(GameObject.Find("Holder_Login").GetComponent<RectTransform>(), 0f, closingTiming).setEaseInOutCubic();
     }
 
     private void autoCloseDiv() {

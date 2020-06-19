@@ -94,7 +94,7 @@ public class objectMover : MonoBehaviour
         }
     }
 
-    IEnumerator deactivateElement(GameObject objToMove, float timing) {
+    private IEnumerator deactivateElement(GameObject objToMove, float timing) {
         yield return new WaitForSeconds(timing);
         objToMove.SetActive(false);
 

@@ -17,6 +17,8 @@ public class initiateBgMusic : MonoBehaviour
         waitingTime = sceneFader.getTotalWaitingTime();
         
         playSound();
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void playSound() {

@@ -14,7 +14,11 @@ public class setupDropdown : MonoBehaviour
     private void Awake() {
         serverAPI = gameObject.GetComponent<serverAPI>();
 
-        initGetData(list_name);
+        try {
+            initGetData(list_name);
+        } catch (System.Exception) {
+            return;
+        }
     }
 
     private void initGetData(string list_name) {

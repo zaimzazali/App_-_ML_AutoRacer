@@ -21,6 +21,7 @@ public class sceneFader : MonoBehaviour
         StartCoroutine("fadeOut");
     }
 
+    // Open Scene
     public IEnumerator fadeOut() {
         Color theColor;
 
@@ -46,6 +47,7 @@ public class sceneFader : MonoBehaviour
         });
     }
 
+    // Close Scene
     public IEnumerator fadeIn() {
         Color theColor;
 

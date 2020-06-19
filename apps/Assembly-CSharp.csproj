@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\cursorEvents.cs" />
      <Compile Include="Assets\Scripts\exitGame.cs" />
      <Compile Include="Assets\Scripts\gameObjectSearcher.cs" />
+     <Compile Include="Assets\Scripts\goNextScene.cs" />
      <Compile Include="Assets\Scripts\initiateBgMusic.cs" />
      <Compile Include="Assets\Scripts\initiateGame.cs" />
      <Compile Include="Assets\Scripts\initiateSceneFading.cs" />
@@ -75,6 +76,7 @@
      <Compile Include="Assets\Scripts\objectMover.cs" />
      <Compile Include="Assets\Scripts\registerUser.cs" />
      <Compile Include="Assets\Scripts\sceneFader.cs" />
+     <Compile Include="Assets\Scripts\sceneLoader.cs" />
      <Compile Include="Assets\Scripts\serverAPI.cs" />
      <Compile Include="Assets\Scripts\setupDropdown.cs" />
      <Compile Include="Assets\Scripts\setYearListing.cs" />

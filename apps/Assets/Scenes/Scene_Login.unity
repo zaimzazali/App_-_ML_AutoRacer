@@ -1231,6 +1231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27154ef35c2133d49b6c18da5082d65f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goNextScene: {fileID: 1774814234}
 --- !u!114 &169824121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1257,6 +1258,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c677e52d27c61f438ac54f1d7a59745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &169824129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169824118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cb6742d943817749a1ab8989f342aa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas_back: {fileID: 1463061761}
+  canvas_front: {fileID: 1247817119}
 --- !u!1 &173061926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,7 +2010,7 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: e877c4d4c52dfa24e94ce9c178fd3be4, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -5406,7 +5421,7 @@ PrefabInstance:
     - target: {fileID: 5302531274261077957, guid: 58dcfb3f9f40b134080873decb596e09,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5302531274261077957, guid: 58dcfb3f9f40b134080873decb596e09,
         type: 3}
@@ -5506,7 +5521,7 @@ PrefabInstance:
     - target: {fileID: 5302531274261077959, guid: 58dcfb3f9f40b134080873decb596e09,
         type: 3}
       propertyPath: toHideAfter
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5302531274261077962, guid: 58dcfb3f9f40b134080873decb596e09,
         type: 3}
@@ -13223,6 +13238,7 @@ GameObject:
   - component: {fileID: 1774814232}
   - component: {fileID: 1774814231}
   - component: {fileID: 1774814233}
+  - component: {fileID: 1774814234}
   m_Layer: 0
   m_Name: Scene_Controller
   m_TagString: Untagged
@@ -13269,6 +13285,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas_fader: {fileID: 569032431}
+--- !u!114 &1774814234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774814230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7910ed4333b08b445b18a641e3c2e9a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneFader: {fileID: 496809605}
 --- !u!1 &1781282666
 GameObject:
   m_ObjectHideFlags: 0
