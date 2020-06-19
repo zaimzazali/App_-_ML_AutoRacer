@@ -25,7 +25,9 @@
 
             $myPDO->commit();
 
-            echo convertFetchAllIntoArrayTable($result);
+            echo json_encode($result);
+
+            // echo convertFetchAllIntoArrayTable($result);
         } catch (PDOException $e2) {
             $myPDO->rollBack();
             echo $e2->getMessage();

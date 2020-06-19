@@ -43,15 +43,20 @@ public class getListDataFromDatabase : MonoBehaviour
 
     private void setDropDown() {
         StartCoroutine(serverAPI.selectAllData(tableName, result => {
+            /*
             // Parse into Table
             List<string[]> returnTable = new List<string[]>();
             string[] rows = result.ToString().Split(';');
             foreach (string row in rows) {
                 returnTable.Add(row.Split(','));
             }
+            */
+            //List<string[]> returnTable = JsonUtility.FromJson<List<string[]>>(result);
+
+            //Debug.Log(returnTable);
 
             if (isDropdown) {
-                setDropdownOptions.setOptions(returnTable);
+                //setDropdownOptions.setOptions(result, tableName);
             }
         })); 
     }
