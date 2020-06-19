@@ -1,4 +1,5 @@
 <?php
+// $_POST["isAllowed"] = "true";
 // -------------------------------------------------------------------------
 // -------------------------------------------------------------------------
     if ($_POST["isAllowed"] != "true") {
@@ -9,6 +10,10 @@
     include "dbCredentials.php";
     include "extraFunctions.php";
 
+    // $_POST['theUsername'] = "test20";
+    // $_POST['thePassword'] = "zaimzaim";
+
+    
     try {
         $myPDO = new PDO("pgsql:host=$db_host;port=$db_port;dbname=$db_name", $db_user, $db_pass);
 
@@ -24,22 +29,28 @@
             $stmt->execute();
             $result = $stmt->fetch();
             $rowCount = $stmt->rowCount();
-            $colCount = $stmt->columnCount();
 
             $myPDO->commit();
             
             $hashedPassword = $result['account_password'];
 
+            
+
             if ($rowCount == 0) {
-                echo "not exist";
+                // $array = ["not exist", false];
+                $myObj->signal = "not exist";
             } elseif (!$result['account_active']) {
-                echo "not active";
+                // $array = ["not active", false];
+                $myObj->signal = "not active";
             } elseif (isHashedStringSimilar($_POST['thePassword'], $hashedPassword)) {
-                echo "OK".";".convertFetchIntoArray($colCount, $result);
+                // $array = ["OK", $result];
+                $myObj->signal = "OK";
             } else {
-                echo "invalid";
+                // $array = ["invalid", false];
+                $myObj->signal = "invalid";
             }
-                       
+
+            echo json_encode($myObj);
         } catch (PDOException $e2) {
             $myPDO->rollBack();
             echo $e2->getMessage();

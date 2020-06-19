@@ -9,9 +9,10 @@ public class loginUser : MonoBehaviour
     private TMP_InputField inputfield_username = null;
     private TMP_InputField inputfield_password = null;
 
+    private Any_Colours Any_Colours = new Any_Colours();
 
-    private initPopUp initPopUp = null;
-    private initPopUp2 initPopUp2 = null;
+    private controlCanvas01 controlCanvas01 = null;
+    private controlCanvas02 controlCanvas02 = null;
     private serverAPI serverAPI = null;
     private waitForServer waitForServer = null;
 
@@ -20,13 +21,13 @@ public class loginUser : MonoBehaviour
         inputfield_username = parentObj.transform.Find("Holder_Input_00/InputField_Login_Username").gameObject.GetComponent<TMP_InputField>();
         inputfield_password = parentObj.transform.Find("Holder_Input_01/InputField_Login_Password").gameObject.GetComponent<TMP_InputField>();
     
-        initPopUp = gameObject.GetComponent<initPopUp>();
-        initPopUp2 = gameObject.GetComponent<initPopUp2>();
+        controlCanvas01 = gameObject.GetComponent<controlCanvas01>();
+        controlCanvas02 = gameObject.GetComponent<controlCanvas02>();
         serverAPI = gameObject.GetComponent<serverAPI>();
         waitForServer = gameObject.GetComponent<waitForServer>();
     }
 
-    public void initLogin() {
+    public void tryLoginUser() {
         string username, password;
 
         username = inputfield_username.text.Trim();
@@ -36,12 +37,17 @@ public class loginUser : MonoBehaviour
             return;
         }
 
-        initPopUp.nextDiv();
+        controlCanvas01.initNext();
         waitForServer.showWaitingText();
+
+        Debug.Log("A");
 
         // Check credentials in Database
         StartCoroutine(serverAPI.initLogin(username, password, result => {
+            Debug.Log("B");
             StartCoroutine(waitForServer.hideWaitingText(callback => {
+                Debug.Log("C");
+                Debug.Log(result);
                 /*
                 if (result == "OK") {
                     // statusText.text = "Available";
@@ -54,7 +60,7 @@ public class loginUser : MonoBehaviour
                     // statusText.color = new Color(1f, 0f, 0f, 1f);
                 } else {
                     // Error
-                    initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
+                    controlCanvas02.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
                 }
                 */
             }));

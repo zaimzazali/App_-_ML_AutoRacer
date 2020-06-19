@@ -6,22 +6,25 @@ using UnityEngine.UI;
 public class registerUser : MonoBehaviour
 {
     private inputValidator inputValidator = null;
-    private initPopUp2 initPopUp2 = null;
+    private controlCanvas03 controlCanvas03 = null;
     private serverAPI serverAPI = null;
     private waitForServer waitForServer = null;
+    private objectMover objectMover = null;
 
     private GameObject inputObj_Name = null, inputObj_Gender = null, inputObj_Year = null, inputObj_Country = null,
-    inputObj_Username = null, inputObj_Email = null, inputObj_Pass_00 = null, inputObj_Pass_01 = null, inputObj_Status = null;
+    inputObj_Username = null, inputObj_Email = null, inputObj_Pass_00 = null, inputObj_Pass_01 = null, inputObj_Status = null,
+    parentObj = null;
 
     private ArrayList resultArray = null;
 
     private void Awake() {
         inputValidator = gameObject.GetComponent<inputValidator>();
-        initPopUp2 = gameObject.GetComponent<initPopUp2>();
+        controlCanvas03 = gameObject.GetComponent<controlCanvas03>();
         serverAPI = gameObject.GetComponent<serverAPI>();
         waitForServer = gameObject.GetComponent<waitForServer>();
+        objectMover = gameObject.GetComponent<objectMover>();
 
-        GameObject parentObj = gameObject.transform.parent.parent.parent.gameObject;
+        parentObj = gameObject.transform.parent.parent.parent.gameObject;
 
         inputObj_Name = parentObj.transform.Find("Holder_00/Holder_Name/Holder_Content/Holder_InputField/InputField_Register_Name").gameObject;
         inputObj_Gender = parentObj.transform.Find("Holder_00/Holder_Details/Holder_Gender/Holder_Content/Dropdown_Gender").gameObject;
@@ -50,10 +53,11 @@ public class registerUser : MonoBehaviour
             StartCoroutine(serverAPI.registerUser(resultArray, result => {
                 StartCoroutine(waitForServer.hideWaitingText(callback => {
                     if (result == "OK") {
-                        initPopUp2.displayPopUp_One_Button("Thank you for registering!\nYou may now login!", false);
+                        controlCanvas03.displayPopUp_One_Button("Thank you for registering!\nYou may now login!", false);
+                        objectMover.toClearInput(parentObj);
                     } else {
                         // Error
-                        initPopUp2.displayPopUp_One_Button("There was an error occurred during the registration.\nPlease try again.", true);
+                        controlCanvas03.displayPopUp_One_Button("There was an error occurred during the registration.\nPlease try again.", true);
                     }
                 }));
             })); 
