@@ -6,19 +6,18 @@ using UnityEngine.UI;
 public class initPopUp2 : MonoBehaviour
 {
     [SerializeField]
-    private GameObject canvas_next = null;
+    private GameObject canvas_parent = null, canvas_next = null;
 
     private float openingTiming = 1.3f, closingTiming = 0.5f;
 
-    private GameObject canvas_parent = null, panel_parent = null, panel_blur = null, panel_child = null, popObj = null;
+    private GameObject panel_parent = null, panel_blur = null, panel_child = null, popObj = null;
     private Color color_red = new Color32(191, 47, 56, 30);
     private Color color_normal = new Color(0f, 0f, 0f, 0f);
     private GameObjectSearcher GameObjectSearcher = null;
 
     private void Awake() {
-        canvas_parent = GameObject.Find("Canvas_02").gameObject;
-
         panel_parent = canvas_parent.transform.Find("Panel").gameObject;
+        
         panel_blur = canvas_next.transform.Find("Panel_Blur").gameObject;
         panel_child = canvas_next.transform.Find("Panel").gameObject;
 

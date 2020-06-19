@@ -65,7 +65,7 @@ public class registerUser : MonoBehaviour
         string tmpString = null;
 
         // Check for Name
-        theInput = inputObj_Name.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
+        theInput = inputObj_Name.GetComponent<InputField>().text.Trim();
         if (inputValidator.isNameValid(theInput)) {
             resultArray.Add(theInput);
         } else {
@@ -97,13 +97,13 @@ public class registerUser : MonoBehaviour
         // Check for Username
         theInput = inputObj_Status.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
         if (theInput == "Available") {
-            resultArray.Add(inputObj_Username.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim());
+            resultArray.Add(inputObj_Username.GetComponent<InputField>().text.Trim());
         } else {
             inputObj_Username.GetComponent<Any_Inputfield>().setError();
         }
 
         // Check for Email
-        theInput = inputObj_Email.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
+        theInput = inputObj_Email.GetComponent<InputField>().text.Trim();
         if (inputValidator.isEmailValid(theInput)) {
             resultArray.Add(theInput);
         } else {
@@ -111,7 +111,7 @@ public class registerUser : MonoBehaviour
         }
 
         // Check for Password
-        theInput = inputObj_Pass_00.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
+        theInput = inputObj_Pass_00.GetComponent<InputField>().text.Trim();
         if (inputValidator.isPasswordValid(theInput)) {
             resultArray.Add(theInput);
         } else {
@@ -121,7 +121,7 @@ public class registerUser : MonoBehaviour
         tmpString = theInput;
 
         // Check if Password Same
-        theInput = inputObj_Pass_01.transform.Find("Text").gameObject.GetComponent<Text>().text.Trim();
+        theInput = inputObj_Pass_01.GetComponent<InputField>().text.Trim();
         if (theInput == "") {
             inputObj_Pass_01.GetComponent<Any_Inputfield>().setError();
         } else if (inputValidator.isPassSame(theInput, tmpString)) {

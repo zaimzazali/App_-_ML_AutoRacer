@@ -25,24 +25,7 @@
 
             $myPDO->commit();
 
-            $finalResult = "";
-            foreach ($result as &$row) {
-                $len = count($row);
-                $tmpStr = "";
-                for ($i=0; $i<$len; $i++) {
-                    if ($row[$i] != "") {
-                        $col = decodeString($row[$i]).",";
-                        $tmpStr .= $col;
-                    }
-                }
-                $lastPosition = strrpos($tmpStr, ",");
-                $finalResult .= substr($tmpStr, 0, $lastPosition).";";
-            }
-
-            $lastPosition = strrpos($finalResult, ";");
-            $finalResult = substr($finalResult, 0, $lastPosition);
-
-            echo $finalResult;
+            echo convertFetchAllIntoArrayTable($result);
         } catch (PDOException $e2) {
             $myPDO->rollBack();
             echo $e2->getMessage();

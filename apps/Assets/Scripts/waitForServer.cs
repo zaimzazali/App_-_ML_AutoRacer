@@ -6,17 +6,16 @@ using UnityEngine.UI;
 public class waitForServer : MonoBehaviour
 {
     [SerializeField]
-    private GameObject canvas_next = null;
+    private GameObject canvas_parent = null, canvas_next = null;
 
-    private GameObject canvas_parent = null, panel_parent = null, panel_blur = null, panel_child = null, textObj = null;
+    private GameObject panel_parent = null, panel_blur = null, panel_child = null, textObj = null;
     private Color color_red = new Color32(191, 47, 56, 30);
     private GameObjectSearcher GameObjectSearcher = null;
     private blinkingText blinkingText = null;
 
     private void Awake() {
-        canvas_parent = GameObject.Find("Canvas_02").gameObject;
-
         panel_parent = canvas_parent.transform.Find("Panel").gameObject;
+
         panel_blur = canvas_next.transform.Find("Panel_Blur").gameObject;
         panel_child = canvas_next.transform.Find("Panel").gameObject;
 
