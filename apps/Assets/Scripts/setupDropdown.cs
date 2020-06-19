@@ -52,5 +52,7 @@ public class setupDropdown : MonoBehaviour
         for (i=0; i<count; i++) {
             thisDropdown.options.Add(new Dropdown.OptionData(jsonData[i][colName]));
         }
+
+        setterChecker.doneSet();
     }
 }

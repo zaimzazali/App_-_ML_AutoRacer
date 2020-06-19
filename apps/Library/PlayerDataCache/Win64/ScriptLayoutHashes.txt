@@ -131,6 +131,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 1f3a471cd6e711022858ae1a632a0af5 Assembly-CSharp-firstpass.dll:.Following
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.setterChecker
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.setYearListing
 afbd07f99e8722ce27f05aaf42f836bb Assembly-CSharp.dll:.controlCanvas02
 3b9deb05c33a34dcc3d1f21f340e4924 Assembly-CSharp.dll:.sceneLoader
@@ -146,7 +147,7 @@ abb74232924aeae3cb0affcdf05292df Assembly-CSharp-firstpass.dll:.Loading
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.objectMover
 b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 ae5c2f074db42129b5ef9e8bac8b1590 Assembly-CSharp-firstpass.dll:.PathSplinePerformance
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.sceneFader
+f83fbf66d5b55e5a7978a8c359e1b6a2 Assembly-CSharp.dll:.sceneFader
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Any_Inputfield
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Any_Dropdown
