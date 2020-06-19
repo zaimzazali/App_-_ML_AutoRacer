@@ -14,6 +14,8 @@ public class controlCanvas03 : MonoBehaviour
 
     private gameObjectSearcher gameObjectSearcher = null;
 
+    private objectMover objectMover = null;
+
     private Any_Colours Any_Colours = new Any_Colours();
 
     private void Awake() {
@@ -23,6 +25,7 @@ public class controlCanvas03 : MonoBehaviour
         panel_front = canvas_front.transform.Find("Panel").gameObject;
 
         gameObjectSearcher = gameObject.GetComponent<gameObjectSearcher>();
+        objectMover = gameObject.GetComponent<objectMover>();
     }
 
     public void displayPopUp_One_Button(string message, bool isError) {
@@ -65,6 +68,7 @@ public class controlCanvas03 : MonoBehaviour
     }
 
     private void bringBackLoginDiv() {
+        objectMover.toClearInput(GameObject.Find("Holder_Login").gameObject);
         LeanTween.moveY(GameObject.Find("Holder_Login").GetComponent<RectTransform>(), 0f, closingTiming).setEaseInOutCubic();
     }
 
