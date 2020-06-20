@@ -9,4 +9,8 @@ public class setterChecker : MonoBehaviour
     public static void doneSet() {
         setterDone += 1;
     }
+
+    public static void clearSet() {
+        setterDone = 0;
+    }
 }

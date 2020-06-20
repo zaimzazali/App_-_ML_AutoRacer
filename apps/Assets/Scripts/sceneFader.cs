@@ -28,6 +28,7 @@ public class sceneFader : MonoBehaviour
         if (firstRun) {
             if (setterChecker.setterDone == setDoneTarget) {
                 firstRun = false;
+                setterChecker.clearSet();
                 closeAllSetterLayers();
                 StartCoroutine("fadeOut");
             }
