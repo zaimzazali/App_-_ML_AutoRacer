@@ -11,7 +11,6 @@ public class initiateGame : MonoBehaviour
     private void Awake() {
         videoLength = GameObject.Find("Video Player").gameObject.GetComponent<VideoPlayer>().length;
         StartCoroutine("waitForVideo");
-        PlayerPrefs.SetInt("nextSceneIndex", 0);
     }
 
     private IEnumerator waitForVideo() {

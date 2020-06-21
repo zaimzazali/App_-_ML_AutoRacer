@@ -7,10 +7,8 @@ public class serverAPI : MonoBehaviour
 {
     string url_checkUsername = "http://localhost:1111/routes/checkUsername.php";
     string url_registerUser = "http://localhost:1111/routes/registerUser.php";
-    string url_get_Gender = "http://localhost:1111/routes/getGender.php";
-    string url_get_Country = "http://localhost:1111/routes/getCountry.php";
+    string url_selectAllData = "http://localhost:1111/routes/selectAllData.php";
     string url_loginUser = "http://localhost:1111/routes/loginUser.php";
-    
 
     public IEnumerator checkUsername(string theUsername, System.Action<string> result) {
         List<IMultipartFormSection> wwwForm = new List<IMultipartFormSection>();
@@ -52,27 +50,12 @@ public class serverAPI : MonoBehaviour
         result(www.downloadHandler.text);
     }
 
-    public IEnumerator getListGender(System.Action<string> result) {
+    public IEnumerator selectAllData(string tableName, System.Action<string> result) {
         List<IMultipartFormSection> wwwForm = new List<IMultipartFormSection>();
         wwwForm.Add(new MultipartFormDataSection("isAllowed", "true"));
+        wwwForm.Add(new MultipartFormDataSection("tableName", tableName));
 
-        UnityWebRequest www = UnityWebRequest.Post(url_get_Gender, wwwForm);
-
-        yield return www.SendWebRequest();
-        
-        if (www.isNetworkError || www.isHttpError) {
-            Debug.LogError(www.error);
-            result("error");
-        }
-
-        result(www.downloadHandler.text);
-    }
-
-    public IEnumerator getListCountry(System.Action<string> result) {
-        List<IMultipartFormSection> wwwForm = new List<IMultipartFormSection>();
-        wwwForm.Add(new MultipartFormDataSection("isAllowed", "true"));
-
-        UnityWebRequest www = UnityWebRequest.Post(url_get_Country, wwwForm);
+        UnityWebRequest www = UnityWebRequest.Post(url_selectAllData, wwwForm);
 
         yield return www.SendWebRequest();
         

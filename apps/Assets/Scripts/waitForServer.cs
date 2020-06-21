@@ -9,8 +9,8 @@ public class waitForServer : MonoBehaviour
     private GameObject canvas_parent = null, canvas_next = null;
 
     private GameObject panel_parent = null, panel_blur = null, panel_child = null, textObj = null;
-    private Any_Colours Any_Colours = new Any_Colours();
-    private gameObjectSearcher gameObjectSearcher = null;
+    private Color color_red = new Color32(191, 47, 56, 30);
+    private GameObjectSearcher GameObjectSearcher = null;
     private blinkingText blinkingText = null;
 
     private void Awake() {
@@ -22,11 +22,11 @@ public class waitForServer : MonoBehaviour
         textObj = panel_child.transform.Find("Wait_Server").gameObject;
         blinkingText = textObj.GetComponent<blinkingText>();
 
-        gameObjectSearcher = gameObject.GetComponent<gameObjectSearcher>();
+        GameObjectSearcher = gameObject.GetComponent<GameObjectSearcher>();
     }
 
     public void showWaitingText() {
-        panel_child.GetComponent<Image>().color = Any_Colours.get_Color_Panel_Red();
+        panel_child.GetComponent<Image>().color = color_red;
 
         if (canvas_parent.activeSelf) {
             panel_parent.GetComponent<Image>().enabled = false;

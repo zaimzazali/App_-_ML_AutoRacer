@@ -7,7 +7,7 @@ public class blinkingText : MonoBehaviour
 {
     private float timingInterval = 2f, timingFading = 1f;
 
-    private Any_Colours Any_Colours = new Any_Colours();
+    private Color color_normal = new Color32(214, 214, 214, 0);
 
     public void startBlinking() {
         InvokeRepeating("blinkServerStatus", 0f, timingInterval);
@@ -44,6 +44,6 @@ public class blinkingText : MonoBehaviour
     public void stopBlinking() {
         LeanTween.cancel(gameObject);
         CancelInvoke("blinkServerStatus");
-        gameObject.GetComponent<Text>().color = Any_Colours.get_Color_Text_Normal();
+        gameObject.GetComponent<Text>().color = color_normal;
     }
 }

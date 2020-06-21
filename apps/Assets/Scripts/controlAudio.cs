@@ -14,7 +14,7 @@ public class controlAudio : MonoBehaviour
     private Sprite[] images = null;
     
     private void Awake() {
-        masterAudioControls = GameObject.Find("Scene_Controller").GetComponent<masterAudioControls>();
+        masterAudioControls = GameObject.Find("GAME_MASTER").GetComponent<masterAudioControls>();
         theText = GameObject.Find("Slider_Text").GetComponent<Text>();
         audioImage = GameObject.Find("Image_Speaker").GetComponent<Image>();
 

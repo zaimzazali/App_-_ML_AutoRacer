@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameObjectSearcher : MonoBehaviour
+public class GameObjectSearcher : MonoBehaviour
 {
     private List<GameObject> actors = new List<GameObject>();
 

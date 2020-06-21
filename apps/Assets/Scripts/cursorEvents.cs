@@ -12,7 +12,5 @@ public class cursorEvents : MonoBehaviour
     private void Awake() {
         Vector2 cursorLocation = new Vector2(position_x, position_y);
         Cursor.SetCursor(cursorImg, cursorLocation, CursorMode.ForceSoftware);
-
-        DontDestroyOnLoad(gameObject);
     }
 }
