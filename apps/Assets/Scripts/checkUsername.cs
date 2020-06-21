@@ -7,16 +7,17 @@ public class checkUsername : MonoBehaviour
 {
     private GameObject usernameField = null;
     private Text statusText = null;
-    private initPopUp2 initPopUp2 = null;
+    private controlCanvas03 controlCanvas03 = null;
     private serverAPI serverAPI = null;
     private waitForServer waitForServer = null;
+    private Any_Colours Any_Colours = new Any_Colours();
 
     private void Awake() {
         GameObject parentObj = gameObject.transform.parent.parent.parent.gameObject;
         usernameField = parentObj.transform.GetChild(0).gameObject.transform.Find("InputField_Register_Username").gameObject;
         statusText = parentObj.transform.GetChild(2).gameObject.transform.Find("Text").gameObject.GetComponent<Text>();
 
-        initPopUp2 = gameObject.GetComponent<initPopUp2>();
+        controlCanvas03 = gameObject.GetComponent<controlCanvas03>();
         serverAPI = gameObject.GetComponent<serverAPI>();
         waitForServer = gameObject.GetComponent<waitForServer>();
     }
@@ -36,13 +37,13 @@ public class checkUsername : MonoBehaviour
                 StartCoroutine(waitForServer.hideWaitingText(callback => {
                     if (result == "available") {
                         statusText.text = "Available";
-                        statusText.color = new Color(0f, 1f, 0f, 1f);
+                        statusText.color = Any_Colours.get_Color_Text_Green();
                     } else if (result == "not available") {
                         statusText.text = "Not Available";
-                        statusText.color = new Color(1f, 0f, 0f, 1f);
+                        statusText.color = Any_Colours.get_Color_Text_Red();
                     } else {
                         // Error
-                        initPopUp2.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
+                        controlCanvas03.displayPopUp_One_Button("There was an error occurred while checking for the username.\nPlease try again.", true);
                     }
                 }));
             })); 
