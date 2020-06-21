@@ -7,13 +7,12 @@ public class cursorEvents : MonoBehaviour
     [SerializeField]
     private Texture2D cursorImg = null;
 
-    [SerializeField]
-    private float position_x = 0f, position_y = 0f;
-    private Vector2 cursorLocation;
+    private float position_x = 11f, position_y = 0f;
     
-    private void Awake()
-    {
-        cursorLocation = new Vector2(position_x, position_y);
+    private void Awake() {
+        Vector2 cursorLocation = new Vector2(position_x, position_y);
         Cursor.SetCursor(cursorImg, cursorLocation, CursorMode.ForceSoftware);
+
+        DontDestroyOnLoad(gameObject);
     }
 }

@@ -5,29 +5,25 @@ using UnityEngine.UI;
 
 public class backgroundEvents : MonoBehaviour
 {
-    private initSound initSoundScript;
-
-    [SerializeField]
-    private float fromPoint = 0f, swingTiming = 0f;
-
-    [SerializeField]
-    public GameObject[] backgroundImages = null;
-
     [SerializeField]
     private Sprite[] images = null;
 
-    private int stateIndex = 0;
-    private int imgIndex = 0;
-
     [SerializeField]
-    private float startTransitionAt = 0f, waitToTransition = 0f, fadingTiming = 0f;
+    private GameObject canvasFader = null;  
 
-    private void Start()
-    {
-        initSoundScript = GameObject.Find("Background_Music").GetComponent<initSound>();
+    private List<GameObject> backgroundImages = new List<GameObject>();
+    private float fromPoint = -50f, swingTiming = 24f;
+    private int stateIndex = 0, imgIndex = 0;
+    private float startTransitionAt = 12f, waitToTransition = 12f, fadingTiming = 2f;
+
+    private void Awake() {
+        backgroundImages.Add(gameObject.transform.GetChild(0).gameObject); // Back
+        backgroundImages.Add(gameObject.transform.GetChild(1).gameObject); // Front
 
         gameObject.GetComponent<RectTransform>().localPosition = new Vector3(fromPoint, 0f, 0f);
-        Invoke("initFunctions", initSoundScript.getWaitingTime());
+        
+        sceneFader sceneFader = canvasFader.transform.GetChild(0).gameObject.GetComponent<sceneFader>();
+        Invoke("initFunctions", sceneFader.getTotalWaitingTime());
     }
 
     private void initFunctions() {
@@ -40,32 +36,30 @@ public class backgroundEvents : MonoBehaviour
 
     private void backgroundTransition() {
         Image theImg = backgroundImages[1].GetComponent<Image>();
-        float to, from;
+        float to;
 
         if (stateIndex == 1) {
             // To hide
             stateIndex = 0;
-            from = stateIndex;
             to = 1f;
         }
         else {
             // To show
             stateIndex = 1;
-            from = stateIndex;
             to = 0f;
         }
 
-        LeanTween.value(backgroundImages[1], from, to, fadingTiming).setOnUpdate((float val) =>
+        LeanTween.value(backgroundImages[1], stateIndex, to, fadingTiming).setOnUpdate((float value) =>
         {
             Color theColor = theImg.color;
-            theColor.a = val;
+            theColor.a = value;
             theImg.color = theColor;
 
-            if (to == 0f && val == 0f) {
+            if (to == 0f && value == 0f) {
                 backgroundImages[1].GetComponent<Image>().overrideSprite = images[getNextImageIndex()];
             }
 
-            if (to == 1f && val == 1f) {
+            if (to == 1f && value == 1f) {
                 backgroundImages[0].GetComponent<Image>().overrideSprite = images[getNextImageIndex()];
             }
             
@@ -75,10 +69,10 @@ public class backgroundEvents : MonoBehaviour
     private int getNextImageIndex() {
         if (imgIndex == images.Length-1) {
             imgIndex = 0;
-        }
-        else {
+        } else {
             imgIndex += 1; 
         }
+        
         return imgIndex;
     }
 }

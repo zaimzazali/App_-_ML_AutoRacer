@@ -5,14 +5,13 @@ using UnityEngine.UI;
 
 public class blinkingText : MonoBehaviour
 {
-    [SerializeField]
-    private float timingInterval = 0f, timingFading = 0f;
+    private float timingInterval = 2f, timingFading = 1f;
 
-    void Start()
-    {
+    private Any_Colours Any_Colours = new Any_Colours();
+
+    public void startBlinking() {
         InvokeRepeating("blinkServerStatus", 0f, timingInterval);
     }
-
 
     private void blinkServerStatus() {
         Text theText;
@@ -40,5 +39,11 @@ public class blinkingText : MonoBehaviour
                 theText.color = theColor;
             });
         }
+    }
+
+    public void stopBlinking() {
+        LeanTween.cancel(gameObject);
+        CancelInvoke("blinkServerStatus");
+        gameObject.GetComponent<Text>().color = Any_Colours.get_Color_Text_Normal();
     }
 }

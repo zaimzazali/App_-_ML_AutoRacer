@@ -5,21 +5,24 @@ using UnityEngine.UI;
 
 public class Any_Inputfield : MonoBehaviour
 {
-    [SerializeField]
-    private Color colorRed = new Color(255, 158, 158, 255), colorNormal = new Color(1f, 1f, 1f, 1f);
+    private Any_Colours Any_Colours = new Any_Colours();
 
-    public void setInputError() {
-        gameObject.GetComponent<Image>().color = colorRed;
+    public void setError() {
+        gameObject.GetComponent<Image>().color = Any_Colours.get_Colour_Red();
     }
 
-    public void setInputNormal() {
-        if (gameObject.GetComponent<Image>().color != colorNormal) {
-            gameObject.GetComponent<Image>().color = colorNormal;
+    public void setNormal() {
+        if (gameObject.GetComponent<Image>().color != Any_Colours.get_Colour_Normal()) {
+            gameObject.GetComponent<Image>().color = Any_Colours.get_Colour_Normal();
         }
 
         // If it is the Register - Username inputfield
-        if (gameObject.name.ToString() == "InputField_Username") {
-            GameObject.Find("Holder_Check_Result").gameObject.transform.Find("Text").gameObject.GetComponent<Text>().text = "";
+        if (gameObject.name.ToString() == "InputField_Register_Username") {
+            try {
+                GameObject.Find("Holder_Check_Result").gameObject.transform.Find("Text").gameObject.GetComponent<Text>().text = "";
+            } catch (System.Exception) {
+                // Do Nothing
+            }
         }
     }
 }
