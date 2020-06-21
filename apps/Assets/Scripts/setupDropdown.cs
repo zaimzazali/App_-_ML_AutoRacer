@@ -13,29 +13,32 @@ public class setupDropdown : MonoBehaviour
 
     private void Awake() {
         serverAPI = gameObject.GetComponent<serverAPI>();
-
-        try {
-            initGetData(list_name);
-        } catch (System.Exception) {
-            return;
-        }
+        initGetData(list_name);
     }
 
     private void initGetData(string list_name) {
         JSONNode jsonData = null;
-
+    
         switch (list_name)
         {
             case "gender":
                 StartCoroutine(serverAPI.getListGender(result => {
-                    jsonData = JSON.Parse(result);
-                    populateData(jsonData, "name_gender");
+                    try {
+                        jsonData = JSON.Parse(result);
+                        populateData(jsonData, "name_gender");
+                    } catch (System.Exception) {
+                        // Do Nothing
+                    }
                 })); 
                 break;
             case "country":
                 StartCoroutine(serverAPI.getListCountry(result => {
-                    jsonData = JSON.Parse(result);
-                    populateData(jsonData, "name_country");
+                    try {
+                        jsonData = JSON.Parse(result);
+                        populateData(jsonData, "name_country");
+                    } catch (System.Exception) {
+                        // Do Nothing
+                    }
                 })); 
                 break;
             default:
@@ -52,7 +55,7 @@ public class setupDropdown : MonoBehaviour
         for (i=0; i<count; i++) {
             thisDropdown.options.Add(new Dropdown.OptionData(jsonData[i][colName]));
         }
-
+        
         setterChecker.doneSet();
     }
 }

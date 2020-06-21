@@ -8,6 +8,11 @@ public class sceneFader : MonoBehaviour
     [SerializeField]
     private int setDoneTarget = 0;
 
+    [SerializeField]
+    initiateBgMusic initiateBgMusic = null;
+    [SerializeField]
+    backgroundEvents backgroundEvents = null;
+
     private float waitingBeforeProceed = 0.5f;
     private float timingFading = 0.5f;
     private float buffer = 0f;
@@ -16,12 +21,10 @@ public class sceneFader : MonoBehaviour
     private Image panelImg = null;
 
     private bool firstRun = true;
-    private gameObjectSearcher gameObjectSearcher = null;
 
     private void Awake() {
         parentObj = gameObject.transform.parent.gameObject;
         panelImg = gameObject.GetComponent<Image>();
-        gameObjectSearcher = gameObject.GetComponent<gameObjectSearcher>();
     }
 
     private void Update() {
@@ -31,6 +34,8 @@ public class sceneFader : MonoBehaviour
                 setterChecker.clearSet();
                 closeAllSetterLayers();
                 StartCoroutine("fadeOut");
+                initiateBgMusic.playSound(waitingBeforeProceed + timingFading + buffer);
+                StartCoroutine(backgroundEvents.initFunctions(waitingBeforeProceed + timingFading + buffer));
             }
         }
     }

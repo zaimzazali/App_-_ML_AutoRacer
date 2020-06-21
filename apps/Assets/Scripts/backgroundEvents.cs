@@ -23,10 +23,10 @@ public class backgroundEvents : MonoBehaviour
         gameObject.GetComponent<RectTransform>().localPosition = new Vector3(fromPoint, 0f, 0f);
         
         sceneFader sceneFader = canvasFader.transform.GetChild(0).gameObject.GetComponent<sceneFader>();
-        Invoke("initFunctions", sceneFader.getTotalWaitingTime());
     }
 
-    private void initFunctions() {
+    public IEnumerator initFunctions(float timeToWait) {
+        yield return new WaitForSeconds(timeToWait);
         LeanTween.moveX(gameObject.GetComponent<RectTransform>(), -1*fromPoint, swingTiming).setEaseLinear().setLoopPingPong();
         InvokeRepeating("backgroundTransition", startTransitionAt, waitToTransition);
 

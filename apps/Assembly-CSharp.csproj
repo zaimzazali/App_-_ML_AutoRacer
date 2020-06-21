@@ -65,16 +65,11 @@
      <Compile Include="Assets\Scripts\controlCanvas03.cs" />
      <Compile Include="Assets\Scripts\cursorEvents.cs" />
      <Compile Include="Assets\Scripts\exitGame.cs" />
-     <Compile Include="Assets\Scripts\gameMaster.cs" />
-     <Compile Include="Assets\Scripts\GameObjectSearcher.cs" />
-     <Compile Include="Assets\Scripts\getListDataFromDatabase.cs" />
+     <Compile Include="Assets\Scripts\gameObjectSearcher.cs" />
      <Compile Include="Assets\Scripts\goNextScene.cs" />
      <Compile Include="Assets\Scripts\initiateBgMusic.cs" />
      <Compile Include="Assets\Scripts\initiateGame.cs" />
      <Compile Include="Assets\Scripts\initiateSceneFading.cs" />
-     <Compile Include="Assets\Scripts\initPopUp.cs" />
-     <Compile Include="Assets\Scripts\initPopUp2.cs" />
-     <Compile Include="Assets\Scripts\initSound.cs" />
      <Compile Include="Assets\Scripts\inputValidator.cs" />
      <Compile Include="Assets\Scripts\loginUser.cs" />
      <Compile Include="Assets\Scripts\masterAudioControls.cs" />
@@ -83,7 +78,6 @@
      <Compile Include="Assets\Scripts\sceneFader.cs" />
      <Compile Include="Assets\Scripts\sceneLoader.cs" />
      <Compile Include="Assets\Scripts\serverAPI.cs" />
-     <Compile Include="Assets\Scripts\setDropdownOptions.cs" />
      <Compile Include="Assets\Scripts\setterChecker.cs" />
      <Compile Include="Assets\Scripts\setupDropdown.cs" />
      <Compile Include="Assets\Scripts\setYearListing.cs" />
