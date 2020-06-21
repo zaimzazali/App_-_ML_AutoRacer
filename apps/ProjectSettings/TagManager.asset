@@ -8,6 +8,7 @@ TagManager:
   - input_field_tmp
   - drop_down
   - button_close
+  - set_first
   layers:
   - Default
   - TransparentFX

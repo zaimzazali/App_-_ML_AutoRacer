@@ -8,21 +8,22 @@ public class backgroundEvents : MonoBehaviour
     [SerializeField]
     private Sprite[] images = null;
 
-    private initSound initSound;  
+    [SerializeField]
+    private GameObject canvasFader = null;  
+
     private List<GameObject> backgroundImages = new List<GameObject>();
     private float fromPoint = -50f, swingTiming = 24f;
     private int stateIndex = 0, imgIndex = 0;
     private float startTransitionAt = 12f, waitToTransition = 12f, fadingTiming = 2f;
 
     private void Awake() {
-        initSound = GameObject.Find("Background_Music").GetComponent<initSound>();
-
         backgroundImages.Add(gameObject.transform.GetChild(0).gameObject); // Back
         backgroundImages.Add(gameObject.transform.GetChild(1).gameObject); // Front
 
         gameObject.GetComponent<RectTransform>().localPosition = new Vector3(fromPoint, 0f, 0f);
         
-        Invoke("initFunctions", initSound.getWaitingTime());
+        sceneFader sceneFader = canvasFader.transform.GetChild(0).gameObject.GetComponent<sceneFader>();
+        Invoke("initFunctions", sceneFader.getTotalWaitingTime());
     }
 
     private void initFunctions() {

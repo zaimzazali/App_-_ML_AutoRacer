@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class masterAudioControls : MonoBehaviour
-{
+{   
     private float initialMasterVolume = 0.5f;
 
     private void Awake() {
