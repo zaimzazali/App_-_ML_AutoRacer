@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class sceneFader : MonoBehaviour
 {
+    [SerializeField]
+    private int setDoneTarget = 0;
+
     private float waitingBeforeProceed = 0.5f;
     private float timingFading = 0.5f;
     private float buffer = 0f;
@@ -12,15 +15,37 @@ public class sceneFader : MonoBehaviour
     private GameObject parentObj = null;
     private Image panelImg = null;
 
+    private bool firstRun = true;
+    private gameObjectSearcher gameObjectSearcher = null;
+
     private void Awake() {
         parentObj = gameObject.transform.parent.gameObject;
         panelImg = gameObject.GetComponent<Image>();
+        gameObjectSearcher = gameObject.GetComponent<gameObjectSearcher>();
     }
 
-    private void Start() {
-        StartCoroutine("fadeOut");
+    private void Update() {
+        if (firstRun) {
+            if (setterChecker.setterDone == setDoneTarget) {
+                firstRun = false;
+                setterChecker.clearSet();
+                closeAllSetterLayers();
+                StartCoroutine("fadeOut");
+            }
+        }
     }
 
+    private void closeAllSetterLayers() {
+        GameObject[] theObjs = null;
+
+        theObjs = GameObject.FindGameObjectsWithTag("set_first");
+
+        foreach (GameObject obj in theObjs) {
+            obj.SetActive(false);
+        }
+    }
+
+    // Open Scene
     public IEnumerator fadeOut() {
         Color theColor;
 
@@ -46,6 +71,7 @@ public class sceneFader : MonoBehaviour
         });
     }
 
+    // Close Scene
     public IEnumerator fadeIn() {
         Color theColor;
 

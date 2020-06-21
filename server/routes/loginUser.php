@@ -2,14 +2,13 @@
 // -------------------------------------------------------------------------
 // -------------------------------------------------------------------------
     if ($_POST["isAllowed"] != "true") {
-        echo "ERROR";
         header('Location: http://localhost:1111');
     }
 // ------------------------------------------------------------------------- 
 // -------------------------------------------------------------------------
     include "dbCredentials.php";
     include "extraFunctions.php";
-
+    
     try {
         $myPDO = new PDO("pgsql:host=$db_host;port=$db_port;dbname=$db_name", $db_user, $db_pass);
 
@@ -25,22 +24,26 @@
             $stmt->execute();
             $result = $stmt->fetch();
             $rowCount = $stmt->rowCount();
-            $colCount = $stmt->columnCount();
 
             $myPDO->commit();
             
             $hashedPassword = $result['account_password'];
 
             if ($rowCount == 0) {
-                echo "not exist";
+                $myObj->signal = "not exist";
+                $myObj->data = null;
             } elseif (!$result['account_active']) {
-                echo "not active";
+                $myObj->signal = "not active";
+                $myObj->data = null;
             } elseif (isHashedStringSimilar($_POST['thePassword'], $hashedPassword)) {
-                echo "OK".";".convertFetchIntoArray($colCount, $result);
+                $myObj->signal = "OK";
+                $myObj->data = $result;
             } else {
-                echo "invalid";
+                $myObj->signal = "invalid";
+                $myObj->data = null;
             }
-                       
+
+            echo json_encode($myObj);
         } catch (PDOException $e2) {
             $myPDO->rollBack();
             echo $e2->getMessage();
