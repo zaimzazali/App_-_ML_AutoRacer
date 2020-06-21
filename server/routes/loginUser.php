@@ -2,7 +2,6 @@
 // -------------------------------------------------------------------------
 // -------------------------------------------------------------------------
     if ($_POST["isAllowed"] != "true") {
-        echo json_encode("ERROR");
         header('Location: http://localhost:1111');
     }
 // ------------------------------------------------------------------------- 
@@ -17,7 +16,11 @@
             
             $myPDO->beginTransaction();
 
-            $sql = "SELECT account_active, account_type, account_password, password_require_reset, code_user_details FROM view_user_account WHERE username = :theUsername;";
+            $sql = "SELECT account_active, account_type, account_password, password_require_reset,
+                    user_name, user_gender, user_year_birth, user_country, user_email
+                    FROM view_user_account 
+                    LEFT OUTER JOIN view_user_info ON view_user_account.username = view_user_info.username
+                    WHERE username = :theUsername;";
         
             $stmt = $myPDO->prepare($sql);
             $stmt->bindValue(':theUsername', encodeString($_POST['theUsername']));
