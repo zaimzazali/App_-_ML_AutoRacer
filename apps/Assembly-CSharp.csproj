@@ -84,6 +84,7 @@
      <Compile Include="Assets\Scripts\setYearListing.cs" />
      <Compile Include="Assets\Scripts\SimpleJSON.cs" />
      <Compile Include="Assets\Scripts\tileEvents.cs" />
+     <Compile Include="Assets\Scripts\underlineEvents.cs" />
      <Compile Include="Assets\Scripts\waitForServer.cs" />
      <None Include="Assets\Shaders\Blur.shader" />
  <Reference Include="Unity.TextMeshPro.Editor">

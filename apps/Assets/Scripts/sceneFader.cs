@@ -34,8 +34,10 @@ public class sceneFader : MonoBehaviour
                 setterChecker.clearSet();
                 closeAllSetterLayers();
                 StartCoroutine("fadeOut");
-                initiateBgMusic.playSound(waitingBeforeProceed + timingFading + buffer);
-                StartCoroutine(backgroundEvents.initFunctions(waitingBeforeProceed + timingFading + buffer));
+                if (initiateBgMusic != null) {
+                    initiateBgMusic.playSound(waitingBeforeProceed + timingFading + buffer);
+                    StartCoroutine(backgroundEvents.initFunctions(waitingBeforeProceed + timingFading + buffer));
+                }
             }
         }
     }
