@@ -70,8 +70,7 @@ SELECT
     list_account_type.name_account_type AS account_type,
     list_password.user_password AS account_password,
     list_password.need_reset AS password_require_reset,
-    list_password.last_update AS password_update_on,
-    list_user.code_details AS code_user_details
+    list_password.last_update AS password_update_on
 FROM
     list_user
 LEFT OUTER JOIN list_account_type ON list_user.code_account_type = list_account_type.num

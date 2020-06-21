@@ -20,6 +20,9 @@ public class loginUser : MonoBehaviour
     [SerializeField]
     private goNextScene goNextScene = null;
 
+    [SerializeField]
+    playerData playerData = null;
+
     private void Awake() {
         parentObj = gameObject.transform.parent.parent.gameObject;
         inputfield_username = parentObj.transform.Find("Holder_Input_00/InputField_Login_Username").gameObject.GetComponent<TMP_InputField>();
@@ -58,6 +61,8 @@ public class loginUser : MonoBehaviour
 
             if (signal == "OK") {
                 PlayerPrefs.SetInt("nextSceneIndex", 3);
+                // Set player info
+                playerData.setPlayerInfo(jsonData);
                 StartCoroutine(prepareToChangeScene());
             } else {
                 StartCoroutine(waitForServer.hideWaitingText(callback => {

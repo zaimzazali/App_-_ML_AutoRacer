@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\loginUser.cs" />
      <Compile Include="Assets\Scripts\masterAudioControls.cs" />
      <Compile Include="Assets\Scripts\objectMover.cs" />
+     <Compile Include="Assets\Scripts\playerData.cs" />
      <Compile Include="Assets\Scripts\registerUser.cs" />
      <Compile Include="Assets\Scripts\sceneFader.cs" />
      <Compile Include="Assets\Scripts\sceneLoader.cs" />
