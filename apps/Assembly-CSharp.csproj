@@ -79,6 +79,7 @@
      <Compile Include="Assets\Scripts\sceneFader.cs" />
      <Compile Include="Assets\Scripts\sceneLoader.cs" />
      <Compile Include="Assets\Scripts\serverAPI.cs" />
+     <Compile Include="Assets\Scripts\setPopUpContent.cs" />
      <Compile Include="Assets\Scripts\setterChecker.cs" />
      <Compile Include="Assets\Scripts\setupDropdown.cs" />
      <Compile Include="Assets\Scripts\setYearListing.cs" />
