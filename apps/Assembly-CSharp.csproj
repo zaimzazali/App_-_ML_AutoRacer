@@ -82,6 +82,7 @@
      <Compile Include="Assets\Scripts\setPopUpContent.cs" />
      <Compile Include="Assets\Scripts\setterChecker.cs" />
      <Compile Include="Assets\Scripts\setupDropdown.cs" />
+     <Compile Include="Assets\Scripts\setupPlayerData.cs" />
      <Compile Include="Assets\Scripts\setYearListing.cs" />
      <Compile Include="Assets\Scripts\SimpleJSON.cs" />
      <Compile Include="Assets\Scripts\tileEvents.cs" />
