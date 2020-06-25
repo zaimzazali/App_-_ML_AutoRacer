@@ -62,7 +62,7 @@ public class loginUser : MonoBehaviour
             if (signal == "OK") {
                 PlayerPrefs.SetInt("nextSceneIndex", 3);
                 // Set player info
-                playerData.setPlayerInfo(jsonData);
+                playerData.setPlayerInfo(jsonData, username);
                 StartCoroutine(prepareToChangeScene());
             } else {
                 StartCoroutine(waitForServer.hideWaitingText(callback => {

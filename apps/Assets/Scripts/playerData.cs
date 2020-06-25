@@ -5,6 +5,7 @@ using SimpleJSON;
 
 public class playerData : MonoBehaviour
 {
+    private string username = null;
     private bool account_active = false;
     private string account_type = null;
     private string account_password = null;
@@ -19,7 +20,8 @@ public class playerData : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void setPlayerInfo(JSONNode jsonData) {
+    public void setPlayerInfo(JSONNode jsonData, string theUsername) {
+        username = theUsername;
         account_active = bool.Parse((string)jsonData["account_active"]);
         account_type = (string)jsonData["account_type"];
         account_password = (string)jsonData["account_password"];
@@ -29,5 +31,9 @@ public class playerData : MonoBehaviour
         user_year_birth = (string)jsonData["user_year_birth"];
         user_country = (string)jsonData["user_country"];
         user_email = (string)jsonData["user_email"];
+    }
+
+    public string getPlayer_Username() {
+        return username;
     }
 }
