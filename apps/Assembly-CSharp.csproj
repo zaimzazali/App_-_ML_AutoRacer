@@ -250,6 +250,13 @@
      <Compile Include="Assets\Asset Store\loadingBar\scripts\rotatetotate.cs" />
      <Compile Include="Assets\Asset Store\loadingBar\scripts\SimpleLoading.cs" />
      <Compile Include="Assets\Asset Store\loadingBar\scripts\simplerotate.cs" />
+     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\ExampleSceneFree.cs" />
+     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\JoystickFree.cs" />
+     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSButtonFree.cs" />
+     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSFPSControllerFree.cs" />
+     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSOpenURL.cs" />
+     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSSceneControllerFree.cs" />
+     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSVehicleControllerFree.cs" />
      <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Scripts\Utility\BankedPlatform.cs" />
      <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Scripts\Utility\CaptureScreenshot.cs" />
      <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Scripts\Utility\EndlessMovingSurface.cs" />
@@ -278,11 +285,15 @@
      <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\ShowValueFromSlider.cs" />
      <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\TelemetryChartToolbar.cs" />
      <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\VehicleSetupDialog.cs" />
+     <Compile Include="Assets\Scripts\agentData.cs" />
+     <Compile Include="Assets\Scripts\agentInput.cs" />
      <Compile Include="Assets\Scripts\Any_Colours.cs" />
      <Compile Include="Assets\Scripts\Any_Dropdown.cs" />
      <Compile Include="Assets\Scripts\Any_Inputfield.cs" />
      <Compile Include="Assets\Scripts\backgroundEvents.cs" />
      <Compile Include="Assets\Scripts\blinkingText.cs" />
+     <Compile Include="Assets\Scripts\cameraController.cs" />
+     <Compile Include="Assets\Scripts\checkPoint.cs" />
      <Compile Include="Assets\Scripts\checkUsername.cs" />
      <Compile Include="Assets\Scripts\controlAudio.cs" />
      <Compile Include="Assets\Scripts\controlCanvas01.cs" />
@@ -301,6 +312,7 @@
      <Compile Include="Assets\Scripts\objectMover.cs" />
      <Compile Include="Assets\Scripts\playerData.cs" />
      <Compile Include="Assets\Scripts\registerUser.cs" />
+     <Compile Include="Assets\Scripts\resetCar.cs" />
      <Compile Include="Assets\Scripts\sceneFader.cs" />
      <Compile Include="Assets\Scripts\sceneLoader.cs" />
      <Compile Include="Assets\Scripts\serverAPI.cs" />
@@ -342,6 +354,7 @@
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Materials\GridPatternShader.shader" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\ConvOld.compute" />
+     <None Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Update Notes.txt" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Tensor.cginc" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Art\Models\Playground Lite\Shaders\World UV Map.shader" />
@@ -364,6 +377,7 @@
      <None Include="Assets\Asset Store\LeanTween\License.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+     <None Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\Shaders\SkidMarks.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

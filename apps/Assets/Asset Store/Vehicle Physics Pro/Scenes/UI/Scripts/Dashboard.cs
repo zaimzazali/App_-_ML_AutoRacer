@@ -68,6 +68,26 @@ public class Dashboard : MonoBehaviour
 	InterpolatedFloat m_engineRpm = new InterpolatedFloat();
 
 
+	// Custom Edit 
+	[Header("Custom Edit")]
+	//[SerializeField]
+	private float currentKMH = 0f;
+	//[SerializeField]
+	private float currentRPM = 0f;
+	//[SerializeField]
+	private int currentGear = 0;
+
+	public float getCurrentKMH() {
+		return currentKMH;
+	}
+	public float getCurrentRPM() {
+		return currentRPM;
+	}
+	public int getCurrentGear() {
+		return currentGear;
+	}
+
+
 	void OnEnable ()
 		{
 		m_lastVehicleTime = -1.0f;
@@ -117,10 +137,12 @@ public class Dashboard : MonoBehaviour
 
 		float speedMs = m_speedMs.GetInterpolated(frameRatio);
 		float engineRpm = m_engineRpm.GetInterpolated(frameRatio);
+		currentRPM = engineRpm;
 		if (speedMs < 0) speedMs = 0.0f;
 		if (engineRpm < 0) engineRpm = 0.0f;
 
-		speedNeedle.SetValue(speedMs * 3.6f);
+		currentKMH = speedMs * 3.6f;
+		speedNeedle.SetValue(currentKMH);	
 		rpmNeedle.SetValue(engineRpm);
 
 		// Warning signal also at update rate because of its timing
@@ -193,17 +215,25 @@ public class Dashboard : MonoBehaviour
 				switch (gearMode)
 					{
 					case 0:		// M
-						if (gearId == 0)
+						if (gearId == 0) {
 							gearLabel.text = switchingGear? " " : "N";
+							currentGear = switchingGear? currentGear : 0;
+						}
 						else
-						if (gearId > 0)
+						if (gearId > 0) {
 							gearLabel.text = gearId.ToString();
+							currentGear = gearId;
+						}
 						else
 							{
-							if (gearId == -1)
+							if (gearId == -1) {
 								gearLabel.text = "R";
-							else
+								currentGear = -1;
+							}
+							else {
 								gearLabel.text = "R" + (-gearId).ToString();
+								currentGear = -1;
+							}
 							}
 						break;
 
@@ -212,14 +242,19 @@ public class Dashboard : MonoBehaviour
 						break;
 
 					case 2:		// R
-						if (gearId < -1)
+						if (gearId < -1) {
 							gearLabel.text = "R" + (-gearId).ToString();
-						else
+							currentGear = -1;
+						}
+						else {
 							gearLabel.text = "R";
+							currentGear = -1;
+						}
 						break;
 
 					case 3:		// N
 						gearLabel.text = "N";
+						currentGear = 0;
 						break;
 
 					case 4:		// D

@@ -33,6 +33,33 @@ public class InputMonitor : MonoBehaviour
 	public Image aidedSteerRightBar;
 
 
+	// Custom Edit 
+	[Header("Custom Edit")]
+	[SerializeField]
+	private GameObject agent = null;
+	//[SerializeField]
+	private float currentThrottleInput = 0f;
+	//[SerializeField]
+	private float currentBrakeInput = 0f;
+	//[SerializeField]
+	private float currentSteerInput = 0f;
+	//[SerializeField]
+	private float currentSteerInputDegree = 0f;
+
+	public float getCurrentThrottleInput() {
+		return currentThrottleInput;
+	}
+	public float getCurrentBrakeInput() {
+		return currentBrakeInput;
+	}
+	public float getCurrentSteerInput() {
+		return currentSteerInput;
+	}
+	public float getCurrentSteerInputDegree() {
+		return currentSteerInputDegree;
+	}
+
+
 	void OnEnable ()
 		{
 		if (vehicle != null)
@@ -65,6 +92,11 @@ public class InputMonitor : MonoBehaviour
 		float engineLoad = vehicleData[VehicleData.EngineLoad] / 1000.0f;
 		float clutchLock = vehicleData[VehicleData.ClutchLock] / 1000.0f;
 		float aidedSteer = vehicleData[VehicleData.AidedSteer] / 10000.0f;
+
+		currentThrottleInput = throttleInput;
+		currentBrakeInput = brakeInput;
+		currentSteerInput = steerInput;
+		currentSteerInputDegree = agent.GetComponent<VPVisualEffects>().degreesOfRotation/2 * currentSteerInput;
 
 		SetBar(throttleBar, throttleInput);
 		SetBar(brakeBar, brakeInput);
