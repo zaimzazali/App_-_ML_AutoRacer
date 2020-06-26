@@ -10,20 +10,33 @@ public class resetCar : MonoBehaviour
     [SerializeField]
     private VPCameraController VPCameraController = null;
 
+    [SerializeField]
+    private agentData agentData = null;
+
+    private bool toTrigger = false;
+    
+    
+    private void Awake() {
+        toTrigger = true;
+    }
+
     private void OnTriggerEnter (Collider collider) {
-        if (collider.gameObject.layer == 10) {
-            resetTheCar();
+        if (collider.gameObject.layer == 10 && toTrigger) {
+            toTrigger = false;
+            StartCoroutine("resetTheCar");
         }
     }
 
-    private void resetTheCar() {
+    private IEnumerator resetTheCar() {
+        agentData.resetProgression();
+
+        VPVehicleController.Reposition(new Vector3(10f, 0.5f, 0f), Quaternion.Euler(0f, 0f, 0f));
         VPVehicleController.enabled = false;
-
-        GameObject theAgent = gameObject.transform.parent.gameObject;
-        theAgent.transform.position = new Vector3(10f, 0.3f, 0f);
-        theAgent.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
-
-        VPVehicleController.enabled = true;
         VPCameraController.ResetCamera();
+
+        yield return new WaitForEndOfFrame();
+        
+        VPVehicleController.enabled = true;
+        toTrigger = true;
     }
 }
