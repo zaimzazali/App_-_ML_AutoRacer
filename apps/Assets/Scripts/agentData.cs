@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using VehiclePhysics;
 using VehiclePhysics.UI;
 
 public class agentData : MonoBehaviour
@@ -35,23 +36,52 @@ public class agentData : MonoBehaviour
     [Header("Checkpoints")]
     [SerializeField]
     private GameObject[] checkpoints = null;
+    [SerializeField]
     private int checkpointIndex = 0;
+    [SerializeField]
     private GameObject nextCheckpoint = null;
+    [SerializeField]
+    private GameObject previousCheckpoint = null;
+    [SerializeField]
     private float distanceToNextCheckpoint = 0f;
-    private float lastDistance = 0f, maxLastDistance = 0f;
-    private bool isIdle = false, isRightDirection = false;
+    [SerializeField]
+    private float lastDistance = 0f;
+    [SerializeField]
+    private float maxLastDistance = 0f;
+    [SerializeField]
+    private bool isIdle = false;
+    [SerializeField]
+    private bool isRightDirection = false;
 
-
-
+    [Header("Raycasts")]
+    [SerializeField]
+    private float rayWall_00 = 0f;
+    [SerializeField]
+    private float rayWall_01 = 0f;
+    [SerializeField]
+    private float rayWall_02 = 0f;
+    [SerializeField]
+    private float rayWall_03 = 0f;
+    [SerializeField]
+    private float rayWall_04 = 0f;
 
 
     private void Awake() {
+        resetProgression();
+    }
+
+    public void resetProgression() {
+        checkpointIndex = 0;
         nextCheckpoint = checkpoints[checkpointIndex];
+        previousCheckpoint = checkpoints[checkpoints.Length-1];
 
         distanceToNextCheckpoint = calculateDistanceToNextCheckpoint();
 
         lastDistance = distanceToNextCheckpoint;
         maxLastDistance = distanceToNextCheckpoint;
+
+        isIdle = false;
+        isRightDirection = false;
     }
     
     private void Update() {
@@ -66,8 +96,12 @@ public class agentData : MonoBehaviour
 
         distanceToNextCheckpoint = calculateDistanceToNextCheckpoint();
 
-        isIdle = checkIsIdle();
+        shootRays_Wall();
+    }
 
+    private void FixedUpdate() {
+        isIdle = checkIsIdle();
+        
         if (!isIdle) {
             isRightDirection = checkIsRightDirection();
         }
@@ -86,21 +120,50 @@ public class agentData : MonoBehaviour
         bool flag = false;
         if (distanceToNextCheckpoint < maxLastDistance || Mathf.Approximately(distanceToNextCheckpoint, maxLastDistance)) {
             maxLastDistance = distanceToNextCheckpoint;
-            //Debug.Log("Right Direction - Pure");
+            // Debug.Log("Right Direction - Pure");
             flag = true;
         } else if (distanceToNextCheckpoint > lastDistance) {
-            //Debug.Log("Wrong Direction");
+            // Debug.Log("Wrong Direction");
             flag = false;
         } else {
-            //Debug.Log("Right Direction - Recovery");
+            // Debug.Log("Right Direction - Recovery");
             flag = true;
         }
         lastDistance = distanceToNextCheckpoint;
         return flag;
     }
 
+    private void shootRays_Wall() {
+        RaycastHit hit;
+        int layerMask = ~( (1 << 11) | (1 << 12) );
+
+        Physics.Raycast(gameObject.transform.position, -gameObject.transform.right, out hit, Mathf.Infinity, layerMask);
+        Debug.DrawLine (gameObject.transform.position, hit.point,Color.red);
+        rayWall_00 = hit.distance;
+
+        Physics.Raycast(gameObject.transform.position, (transform.forward - transform.right).normalized, out hit, Mathf.Infinity, layerMask);
+        Debug.DrawLine (gameObject.transform.position, hit.point,Color.red);
+        rayWall_01 = hit.distance;
+
+        Physics.Raycast(gameObject.transform.position, transform.forward, out hit, Mathf.Infinity, layerMask);
+        Debug.DrawLine (gameObject.transform.position, hit.point,Color.red);
+        rayWall_02 = hit.distance;
+
+        Physics.Raycast(gameObject.transform.position, (transform.forward + transform.right).normalized, out hit, Mathf.Infinity, layerMask);
+        Debug.DrawLine (gameObject.transform.position, hit.point,Color.red);
+        rayWall_03 = hit.distance;
+
+        Physics.Raycast(gameObject.transform.position, gameObject.transform.right, out hit, Mathf.Infinity, layerMask);
+        Debug.DrawLine (gameObject.transform.position, hit.point,Color.red);
+        rayWall_04 = hit.distance;
+    }
+
     public GameObject getTargetCheckpoint() {
         return nextCheckpoint;
+    }
+
+    public GameObject getPreviousCheckpoint() {
+        return previousCheckpoint;
     }
 
     public bool isWithinCheckpointIndexLength() {
@@ -113,12 +176,14 @@ public class agentData : MonoBehaviour
     public void increaseCheckpointIndex() {
         checkpointIndex += 1;
         nextCheckpoint = checkpoints[checkpointIndex];
+        previousCheckpoint = checkpoints[checkpointIndex-1];
         maxLastDistance = calculateDistanceToNextCheckpoint();
     }
 
     public void resetCheckpointIndex() {
         checkpointIndex = 0;
         nextCheckpoint = checkpoints[checkpointIndex];
+        previousCheckpoint = checkpoints[checkpoints.Length-1];
         maxLastDistance = calculateDistanceToNextCheckpoint();
     }
 

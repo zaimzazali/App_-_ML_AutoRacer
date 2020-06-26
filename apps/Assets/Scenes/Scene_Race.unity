@@ -124,7 +124,6 @@ GameObject:
   - component: {fileID: 14377010}
   - component: {fileID: 14377009}
   - component: {fileID: 14377008}
-  - component: {fileID: 14377007}
   m_Layer: 10
   m_Name: ModularTrackStraight (22)
   m_TagString: Untagged
@@ -147,19 +146,6 @@ Transform:
   m_Father: {fileID: 7400769661013006475}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &14377007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14377005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &14377008
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -231,7 +217,7 @@ GameObject:
   - component: {fileID: 25332024}
   - component: {fileID: 25332023}
   - component: {fileID: 25332025}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 145810259}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +547,7 @@ GameObject:
   - component: {fileID: 243579768}
   - component: {fileID: 243579767}
   - component: {fileID: 243579769}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 257484402}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,7 +800,7 @@ GameObject:
   - component: {fileID: 342904483}
   - component: {fileID: 342904482}
   - component: {fileID: 342904484}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,7 +1022,7 @@ GameObject:
   - component: {fileID: 425371980}
   - component: {fileID: 425371979}
   - component: {fileID: 425371981}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,8 +1164,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 454588337}
-  m_Layer: 0
-  m_Name: Checkpoint (17)
+  m_Layer: 11
+  m_Name: Checkpoint (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1198,7 @@ GameObject:
   - component: {fileID: 458488820}
   - component: {fileID: 458488819}
   - component: {fileID: 458488821}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,7 +1266,6 @@ GameObject:
   - component: {fileID: 511985247}
   - component: {fileID: 511985246}
   - component: {fileID: 511985245}
-  - component: {fileID: 511985244}
   m_Layer: 10
   m_Name: ModularTrackStraight (28)
   m_TagString: Untagged
@@ -1303,19 +1288,6 @@ Transform:
   m_Father: {fileID: 7400769661013006475}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &511985244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 511985242}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &511985245
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1387,7 +1359,7 @@ GameObject:
   - component: {fileID: 522829740}
   - component: {fileID: 522829739}
   - component: {fileID: 522829741}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1452,7 +1424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 533745848}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1486,7 +1458,7 @@ GameObject:
   - component: {fileID: 536604407}
   - component: {fileID: 536604406}
   - component: {fileID: 536604408}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1554,7 +1526,6 @@ GameObject:
   - component: {fileID: 538707577}
   - component: {fileID: 538707576}
   - component: {fileID: 538707575}
-  - component: {fileID: 538707574}
   m_Layer: 10
   m_Name: ModularTrackStraight (29)
   m_TagString: Untagged
@@ -1577,19 +1548,6 @@ Transform:
   m_Father: {fileID: 7400769661013006475}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &538707574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 538707572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &538707575
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1658,8 +1616,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 547463449}
-  m_Layer: 0
-  m_Name: Checkpoint (21)
+  m_Layer: 11
+  m_Name: Checkpoint (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1692,7 +1650,6 @@ GameObject:
   - component: {fileID: 559264083}
   - component: {fileID: 559264082}
   - component: {fileID: 559264081}
-  - component: {fileID: 559264080}
   m_Layer: 10
   m_Name: ModularTrackStraight (26)
   m_TagString: Untagged
@@ -1715,19 +1672,6 @@ Transform:
   m_Father: {fileID: 7400769661013006475}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &559264080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559264078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &559264081
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1799,7 +1743,6 @@ GameObject:
   - component: {fileID: 568878511}
   - component: {fileID: 568878510}
   - component: {fileID: 568878509}
-  - component: {fileID: 568878508}
   m_Layer: 10
   m_Name: ModularTrackStraight (24)
   m_TagString: Untagged
@@ -1822,19 +1765,6 @@ Transform:
   m_Father: {fileID: 7400769661013006475}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &568878508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568878506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &568878509
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1906,7 +1836,7 @@ GameObject:
   - component: {fileID: 595375910}
   - component: {fileID: 595375909}
   - component: {fileID: 595375911}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2048,7 +1978,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 625354327}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2159,7 +2089,7 @@ GameObject:
   - component: {fileID: 708576065}
   - component: {fileID: 708576064}
   - component: {fileID: 708576066}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2227,7 +2157,7 @@ GameObject:
   - component: {fileID: 722322684}
   - component: {fileID: 722322683}
   - component: {fileID: 722322685}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2292,7 +2222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 732163627}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2323,7 +2253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 769313086}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2397,7 +2327,7 @@ Transform:
   - {fileID: 1840464387}
   - {fileID: 547463449}
   m_Father: {fileID: 7400769660933857396}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &813917805
 GameObject:
@@ -2411,7 +2341,7 @@ GameObject:
   - component: {fileID: 813917808}
   - component: {fileID: 813917807}
   - component: {fileID: 813917809}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2556,7 +2486,7 @@ GameObject:
   - component: {fileID: 881533875}
   - component: {fileID: 881533874}
   - component: {fileID: 881533876}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2701,7 +2631,7 @@ GameObject:
   - component: {fileID: 943163776}
   - component: {fileID: 943163775}
   - component: {fileID: 943163777}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2769,7 +2699,7 @@ GameObject:
   - component: {fileID: 965524084}
   - component: {fileID: 965524083}
   - component: {fileID: 965524085}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2837,7 +2767,6 @@ GameObject:
   - component: {fileID: 968261514}
   - component: {fileID: 968261513}
   - component: {fileID: 968261512}
-  - component: {fileID: 968261511}
   m_Layer: 10
   m_Name: ModularTrackStraight (27)
   m_TagString: Untagged
@@ -2860,19 +2789,6 @@ Transform:
   m_Father: {fileID: 7400769661013006475}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &968261511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968261509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &968261512
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3018,7 +2934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1026616714}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3052,7 +2968,7 @@ GameObject:
   - component: {fileID: 1027122607}
   - component: {fileID: 1027122606}
   - component: {fileID: 1027122608}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3117,7 +3033,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1048563545}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3228,7 +3144,6 @@ GameObject:
   - component: {fileID: 1085898863}
   - component: {fileID: 1085898862}
   - component: {fileID: 1085898861}
-  - component: {fileID: 1085898860}
   m_Layer: 10
   m_Name: ModularTrackStraight (21)
   m_TagString: Untagged
@@ -3249,21 +3164,8 @@ Transform:
   m_Children:
   - {fileID: 358922199}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1085898860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085898858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &1085898861
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3332,7 +3234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1089765908}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3443,7 +3345,6 @@ GameObject:
   - component: {fileID: 1137469350}
   - component: {fileID: 1137469349}
   - component: {fileID: 1137469348}
-  - component: {fileID: 1137469347}
   m_Layer: 10
   m_Name: ModularTrackStraight (11)
   m_TagString: Untagged
@@ -3464,21 +3365,8 @@ Transform:
   m_Children:
   - {fileID: 1091251943}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 26
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1137469347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1137469345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &1137469348
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3550,7 +3438,6 @@ GameObject:
   - component: {fileID: 1163442516}
   - component: {fileID: 1163442515}
   - component: {fileID: 1163442514}
-  - component: {fileID: 1163442513}
   m_Layer: 10
   m_Name: ModularTrackStraight (25)
   m_TagString: Untagged
@@ -3573,19 +3460,6 @@ Transform:
   m_Father: {fileID: 7400769661013006475}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1163442513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163442511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &1163442514
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3657,7 +3531,7 @@ GameObject:
   - component: {fileID: 1226445647}
   - component: {fileID: 1226445646}
   - component: {fileID: 1226445648}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3793,7 +3667,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!1 &1272772320
 GameObject:
@@ -3804,8 +3678,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1272772321}
-  m_Layer: 0
-  m_Name: Checkpoint (18)
+  m_Layer: 11
+  m_Name: Checkpoint (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3989,7 +3863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307986372}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4100,7 +3974,7 @@ GameObject:
   - component: {fileID: 1422238864}
   - component: {fileID: 1422238863}
   - component: {fileID: 1422238865}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4245,7 +4119,6 @@ GameObject:
   - component: {fileID: 1469519275}
   - component: {fileID: 1469519274}
   - component: {fileID: 1469519273}
-  - component: {fileID: 1469519272}
   m_Layer: 10
   m_Name: ModularTrackStraight (20)
   m_TagString: Untagged
@@ -4266,21 +4139,8 @@ Transform:
   m_Children:
   - {fileID: 2071780597}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &1469519272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469519270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &1469519273
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4349,8 +4209,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1495579435}
-  m_Layer: 0
-  m_Name: Checkpoint (22)
+  m_Layer: 11
+  m_Name: Checkpoint (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4537,7 +4397,6 @@ GameObject:
   - component: {fileID: 1618385700}
   - component: {fileID: 1618385699}
   - component: {fileID: 1618385698}
-  - component: {fileID: 1618385697}
   m_Layer: 10
   m_Name: ModularTrackStraight (23)
   m_TagString: Untagged
@@ -4560,19 +4419,6 @@ Transform:
   m_Father: {fileID: 7400769661013006475}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1618385697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1618385695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &1618385698
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4641,7 +4487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1659854230}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4908,7 +4754,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1791274526}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4939,7 +4785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1810647512}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4973,7 +4819,7 @@ GameObject:
   - component: {fileID: 1812459677}
   - component: {fileID: 1812459676}
   - component: {fileID: 1812459678}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5038,7 +4884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1813286709}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5081,7 +4927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1836948108}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5112,8 +4958,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1840464387}
-  m_Layer: 0
-  m_Name: Checkpoint (23)
+  m_Layer: 11
+  m_Name: Checkpoint (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5297,8 +5143,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1869360333}
-  m_Layer: 0
-  m_Name: Checkpoint (19)
+  m_Layer: 11
+  m_Name: Checkpoint (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5331,7 +5177,7 @@ GameObject:
   - component: {fileID: 1891898420}
   - component: {fileID: 1891898419}
   - component: {fileID: 1891898421}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5396,7 +5242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1922252709}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5577,6 +5423,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1930274357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1930274358}
+  m_Layer: 0
+  m_Name: Center_Lines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1930274358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930274357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7400769660933857396}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1971179931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5589,7 +5465,7 @@ GameObject:
   - component: {fileID: 1971179934}
   - component: {fileID: 1971179933}
   - component: {fileID: 1971179935}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5645,6 +5521,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentData: {fileID: 3647497971307030828}
+--- !u!1 &1984469555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984469557}
+  m_Layer: 0
+  m_Name: Scene_Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1984469557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984469555}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.2890625, y: -0.8339844, z: 4.7617188}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032584642
 GameObject:
   m_ObjectHideFlags: 0
@@ -5657,7 +5563,6 @@ GameObject:
   - component: {fileID: 2032584647}
   - component: {fileID: 2032584646}
   - component: {fileID: 2032584645}
-  - component: {fileID: 2032584644}
   m_Layer: 10
   m_Name: ModularTrackStraight (30)
   m_TagString: Untagged
@@ -5680,19 +5585,6 @@ Transform:
   m_Father: {fileID: 7400769661013006475}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2032584644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032584642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!64 &2032584645
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5841,7 +5733,7 @@ GameObject:
   - component: {fileID: 2059282027}
   - component: {fileID: 2059282026}
   - component: {fileID: 2059282028}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5986,7 +5878,7 @@ GameObject:
   - component: {fileID: 2082914699}
   - component: {fileID: 2082914698}
   - component: {fileID: 2082914700}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6054,7 +5946,7 @@ GameObject:
   - component: {fileID: 2094061359}
   - component: {fileID: 2094061358}
   - component: {fileID: 2094061360}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6119,7 +6011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2104276741}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Checkpoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6470,145 +6362,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &2058293464070149825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058293464076150319}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -226696006, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hideAtEditor: 0
-  sideBySide: 0
-  showText: 1
-  text:
-  - <i><b><size=22>Vehicle Physics Pro</size></b></i>
-  - https://vehiclephysics.com
-  style:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 1, g: 1, b: 1, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_ScaledBackgrounds: []
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 0}
-    m_FontSize: 18
-    m_FontStyle: 0
-    m_Alignment: 6
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 16, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
-  showBug: 1
-  bug: {fileID: 2800000, guid: 6db6e2b0da99c0643b6dea5775d61598, type: 3}
-  bugSize: 128
-  marginX: 16
-  marginY: 0
---- !u!4 &2058293464075897031
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058293464076150319}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2058293464076150319
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2058293464075897031}
-  - component: {fileID: 2058293464070149825}
-  - component: {fileID: 2091653736089661847}
-  - component: {fileID: 2091303189807944783}
-  - component: {fileID: 2058293464076302541}
-  m_Layer: 0
-  m_Name: Scene_Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2058293464076302541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058293464076150319}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9ab87a66d8e1c941a8cbdfbaf2c850b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  key: 293
-  fileName: Screenshot{0}.png
-  sizeMultiplier: 1
 --- !u!224 &2071866499393431855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6628,34 +6381,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2091303189807944783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058293464076150319}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -79557395, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeScaleEnabled: 0
-  timeScale: 0.3
-  hotkey: 116
---- !u!114 &2091653736089661847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058293464076150319}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -201018527, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hotkey: 27
 --- !u!222 &2144612904937623370
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6755,7 +6480,12 @@ PrefabInstance:
     - target: {fileID: 2321400963757034160, guid: 2ff4788972257a147b0809d2f61721b8,
         type: 3}
       propertyPath: m_Name
-      value: Checkpoint
+      value: Checkpoint_Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321400963757034160, guid: 2ff4788972257a147b0809d2f61721b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2321400963757034167, guid: 2ff4788972257a147b0809d2f61721b8,
         type: 3}
@@ -6811,6 +6541,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2321400965021308739, guid: 2ff4788972257a147b0809d2f61721b8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2321400965021308743, guid: 2ff4788972257a147b0809d2f61721b8,
         type: 3}
@@ -8918,6 +8653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VPVehicleController: {fileID: 3647497971307030825}
   VPCameraController: {fileID: 2335832793182463163}
+  agentData: {fileID: 3647497971307030828}
 --- !u!23 &3647497969927557532
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10233,20 +9969,6 @@ MonoBehaviour:
   stalledLightsOff: {fileID: 0}
   handbrakeLightsOn: {fileID: 0}
   handbrakeLightsOff: {fileID: 0}
---- !u!114 &3647497971307030822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3647497971307030823}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1334591726, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resetVehicleKey: 13
-  heightIncrement: 0
 --- !u!1 &3647497971307030823
 GameObject:
   m_ObjectHideFlags: 0
@@ -10261,7 +9983,7 @@ GameObject:
   - component: {fileID: 3647497971307030826}
   - component: {fileID: 3647497971307030827}
   - component: {fileID: 3647497971307030821}
-  - component: {fileID: 3647497971307030822}
+  - component: {fileID: 3647497971307030829}
   - component: {fileID: 3647497971307030828}
   m_Layer: 9
   m_Name: Agent
@@ -10630,6 +10352,33 @@ MonoBehaviour:
   - {fileID: 1495579434}
   - {fileID: 1840464386}
   - {fileID: 547463448}
+  checkpointIndex: 0
+  nextCheckpoint: {fileID: 0}
+  previousCheckpoint: {fileID: 0}
+  distanceToNextCheckpoint: 0
+  lastDistance: 0
+  maxLastDistance: 0
+  isIdle: 0
+  isRightDirection: 0
+  rayWall_00: 0
+  rayWall_01: 0
+  rayWall_02: 0
+  rayWall_03: 0
+  rayWall_04: 0
+--- !u!114 &3647497971307030829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3647497971307030823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1334591726, guid: b8873f7cd5fec6f49a4b37228b9b23ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetVehicleKey: 13
+  heightIncrement: 0.5
 --- !u!4 &3647497971307030831
 Transform:
   m_ObjectHideFlags: 0
@@ -13144,7 +12893,7 @@ Transform:
   m_Children:
   - {fileID: 4401894802404245356}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4401894802404245356
 Transform:
@@ -13172,7 +12921,6 @@ GameObject:
   - component: {fileID: 4401894802401345348}
   - component: {fileID: 4401894802402344324}
   - component: {fileID: 4401894802398301670}
-  - component: {fileID: 6382046833604470600}
   m_Layer: 10
   m_Name: ModularTrackCurveLarge (1)
   m_TagString: Untagged
@@ -13315,7 +13063,7 @@ Transform:
   m_Children:
   - {fileID: 4401894802512172335}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4401894802512172335
 Transform:
@@ -13343,7 +13091,6 @@ GameObject:
   - component: {fileID: 4401894802511369479}
   - component: {fileID: 4401894802510403527}
   - component: {fileID: 4401894802506377125}
-  - component: {fileID: 6382046833479748875}
   m_Layer: 10
   m_Name: ModularTrackCurveLarge (3)
   m_TagString: Untagged
@@ -13410,7 +13157,7 @@ Transform:
   m_Children:
   - {fileID: 4401894803299211271}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4401894803299501095
 GameObject:
@@ -13442,7 +13189,6 @@ GameObject:
   - component: {fileID: 4401894803302635567}
   - component: {fileID: 4401894803301505775}
   - component: {fileID: 4401894803297413773}
-  - component: {fileID: 6382046834837045283}
   m_Layer: 10
   m_Name: ModularTrackCurveLarge
   m_TagString: Untagged
@@ -13671,7 +13417,7 @@ Transform:
   m_Children:
   - {fileID: 4401894803738572999}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &4401894803738862823
 GameObject:
@@ -13703,7 +13449,6 @@ GameObject:
   - component: {fileID: 4401894803735705839}
   - component: {fileID: 4401894803736672815}
   - component: {fileID: 4401894803732564557}
-  - component: {fileID: 6382046834401894627}
   m_Layer: 10
   m_Name: ModularTrackCurveLarge (2)
   m_TagString: Untagged
@@ -14391,58 +14136,6 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &6382046833479748875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4401894802512660743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &6382046833604470600
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4401894802404598596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &6382046834401894627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4401894803738862831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &6382046834837045283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4401894803299501103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!222 &6403965994824214769
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17494,6 +17187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7400769661013006475}
+  - {fileID: 1930274358}
   - {fileID: 7400769661595041662}
   - {fileID: 802372925}
   m_Father: {fileID: 7400769660294418192}
@@ -17916,6 +17610,7 @@ Transform:
   - {fileID: 8313202124559362060}
   - {fileID: 8313202123159922475}
   - {fileID: 8313202124130312510}
+  - {fileID: 1137469346}
   - {fileID: 4401894803299211279}
   - {fileID: 8313202124551653573}
   - {fileID: 4401894802404245348}
@@ -17937,7 +17632,6 @@ Transform:
   - {fileID: 8313202122831099059}
   - {fileID: 1469519271}
   - {fileID: 1085898859}
-  - {fileID: 1137469346}
   - {fileID: 14377006}
   - {fileID: 1618385696}
   - {fileID: 568878507}
@@ -18288,7 +17982,8 @@ GameObject:
   - component: {fileID: 7400769661388035801}
   - component: {fileID: 7400769661388035620}
   - component: {fileID: 7400769661388035803}
-  m_Layer: 0
+  - component: {fileID: 7400769661388035802}
+  m_Layer: 11
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18304,11 +17999,25 @@ Transform:
   m_GameObject: {fileID: 7400769661388035800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.27, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.05}
+  m_LocalScale: {x: 1, y: 10, z: 0.05}
   m_Children: []
   m_Father: {fileID: 7400769661595041662}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &7400769661388035802
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7400769661388035800}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &7400769661388035803
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18683,7 +18392,7 @@ Transform:
   m_Children:
   - {fileID: 7400769661388035801}
   m_Father: {fileID: 7400769660933857396}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7400769661605817888
 Transform:
@@ -25493,7 +25202,7 @@ RectTransform:
   - {fileID: 7383054395087420191}
   - {fileID: 4857544917982211903}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -28712,266 +28421,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8023537852131152536}
   m_CullTransparentMesh: 0
---- !u!114 &8097700023137897936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202124559594540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023161872077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202124596406065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023216870752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202124505263260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023231975079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202124532037467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023237121799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202124520664827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023246007577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202124551558373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023554612325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202124167980441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023634216162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202124129893662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023808616550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202123888382362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023814426953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202123907705013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023898844395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202123856844055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700023983796123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202123807577703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700024029274091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202123701806615}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700024220551326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202123512590690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700024539202295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202123160419083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700024600109303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202123200076043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700024809685598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202122889837474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700024901849455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202122830735507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700024969350935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202122763237099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
---- !u!114 &8097700025071590184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8313202122619052756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca4c92f9d8625e04b85d2ad57bf3ecbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounciness: 0.1
 --- !u!114 &8251511305848410072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29119,7 +28568,6 @@ GameObject:
   - component: {fileID: 8313202122615733972}
   - component: {fileID: 8313202122616863764}
   - component: {fileID: 8313202122621144182}
-  - component: {fileID: 8097700025071590184}
   m_Layer: 10
   m_Name: ModularTrackStraight (17)
   m_TagString: Untagged
@@ -29154,7 +28602,7 @@ Transform:
   m_Children:
   - {fileID: 8313202122619158256}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &8313202122621144182
 MeshCollider:
@@ -29196,7 +28644,6 @@ GameObject:
   - component: {fileID: 8313202122764102379}
   - component: {fileID: 8313202122765232171}
   - component: {fileID: 8313202122761132105}
-  - component: {fileID: 8097700024969350935}
   m_Layer: 10
   m_Name: ModularTrackStraight (6)
   m_TagString: Untagged
@@ -29235,7 +28682,7 @@ Transform:
   m_Children:
   - {fileID: 8313202122763332303}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8313202122763332303
 Transform:
@@ -29367,7 +28814,6 @@ GameObject:
   - component: {fileID: 8313202122831869075}
   - component: {fileID: 8313202122833000019}
   - component: {fileID: 8313202122828629553}
-  - component: {fileID: 8097700024901849455}
   m_Layer: 10
   m_Name: ModularTrackStraight (19)
   m_TagString: Untagged
@@ -29406,7 +28852,7 @@ Transform:
   m_Children:
   - {fileID: 8313202122831099063}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8313202122831099063
 Transform:
@@ -29539,7 +28985,7 @@ Transform:
   m_Children:
   - {fileID: 8313202122889406342}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8313202122889406342
 Transform:
@@ -29567,7 +29013,6 @@ GameObject:
   - component: {fileID: 8313202122890733474}
   - component: {fileID: 8313202122891830626}
   - component: {fileID: 8313202122887730432}
-  - component: {fileID: 8097700024809685598}
   m_Layer: 10
   m_Name: ModularTrackStraight (16)
   m_TagString: Untagged
@@ -29828,7 +29273,6 @@ GameObject:
   - component: {fileID: 8313202123157022475}
   - component: {fileID: 8313202123158152651}
   - component: {fileID: 8313202123154118057}
-  - component: {fileID: 8097700024539202295}
   m_Layer: 10
   m_Name: ModularTrackStraight (3)
   m_TagString: Untagged
@@ -29881,7 +29325,7 @@ Transform:
   m_Children:
   - {fileID: 8313202123199907119}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8313202123199907119
 Transform:
@@ -29909,7 +29353,6 @@ GameObject:
   - component: {fileID: 8313202123201234187}
   - component: {fileID: 8313202123202332619}
   - component: {fileID: 8313202123197986729}
-  - component: {fileID: 8097700024600109303}
   m_Layer: 10
   m_Name: ModularTrackStraight (9)
   m_TagString: Untagged
@@ -30142,7 +29585,7 @@ Transform:
   m_Children:
   - {fileID: 8313202123512360262}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8313202123512360262
 Transform:
@@ -30170,7 +29613,6 @@ GameObject:
   - component: {fileID: 8313202123509493090}
   - component: {fileID: 8313202123510591394}
   - component: {fileID: 8313202123506294720}
-  - component: {fileID: 8097700024220551326}
   m_Layer: 10
   m_Name: ModularTrackStraight (12)
   m_TagString: Untagged
@@ -30237,7 +29679,7 @@ Transform:
   m_Children:
   - {fileID: 8313202123701713459}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8313202123701806611
 GameObject:
@@ -30269,7 +29711,6 @@ GameObject:
   - component: {fileID: 8313202123705104919}
   - component: {fileID: 8313202123704006871}
   - component: {fileID: 8313202123699701941}
-  - component: {fileID: 8097700024029274091}
   m_Layer: 10
   m_Name: ModularTrackStraight (13)
   m_TagString: Untagged
@@ -30397,7 +29838,6 @@ GameObject:
   - component: {fileID: 8313202123808508519}
   - component: {fileID: 8313202123809507495}
   - component: {fileID: 8313202123813877957}
-  - component: {fileID: 8097700023983796123}
   m_Layer: 10
   m_Name: ModularTrackStraight_Center_01
   m_TagString: Untagged
@@ -30432,7 +29872,7 @@ Transform:
   m_Children:
   - {fileID: 8313202123807738435}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8313202123808508515
 MeshFilter:
@@ -30568,7 +30008,6 @@ GameObject:
   - component: {fileID: 8313202123859904791}
   - component: {fileID: 8313202123858774999}
   - component: {fileID: 8313202123863145397}
-  - component: {fileID: 8097700023898844395}
   m_Layer: 10
   m_Name: ModularTrackStraight (10)
   m_TagString: Untagged
@@ -30603,7 +30042,7 @@ Transform:
   m_Children:
   - {fileID: 8313202123857004851}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &8313202123858774995
 MeshRenderer:
@@ -30825,7 +30264,6 @@ GameObject:
   - component: {fileID: 8313202123887087002}
   - component: {fileID: 8313202123886120794}
   - component: {fileID: 8313202123882102584}
-  - component: {fileID: 8097700023808616550}
   m_Layer: 10
   m_Name: ModularTrackStraight (7)
   m_TagString: Untagged
@@ -30864,7 +30302,7 @@ Transform:
   m_Children:
   - {fileID: 8313202123888414142}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8313202123888414142
 Transform:
@@ -30910,7 +30348,6 @@ GameObject:
   - component: {fileID: 8313202123910771893}
   - component: {fileID: 8313202123909641845}
   - component: {fileID: 8313202123913987607}
-  - component: {fileID: 8097700023814426953}
   m_Layer: 10
   m_Name: ModularTrackStraight (15)
   m_TagString: Untagged
@@ -30945,7 +30382,7 @@ Transform:
   m_Children:
   - {fileID: 8313202123907871889}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &8313202123909641841
 MeshRenderer:
@@ -31095,7 +30532,6 @@ GameObject:
   - component: {fileID: 8313202124133179678}
   - component: {fileID: 8313202124132082654}
   - component: {fileID: 8313202124127785916}
-  - component: {fileID: 8097700023634216162}
   m_Layer: 10
   m_Name: ModularTrackStraight (4)
   m_TagString: Untagged
@@ -31235,7 +30671,7 @@ Transform:
   m_Children:
   - {fileID: 8313202124167690685}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8313202124167690685
 Transform:
@@ -31263,7 +30699,6 @@ GameObject:
   - component: {fileID: 8313202124171114905}
   - component: {fileID: 8313202124169984857}
   - component: {fileID: 8313202124174265147}
-  - component: {fileID: 8097700023554612325}
   m_Layer: 10
   m_Name: ModularTrackStraight (14)
   m_TagString: Untagged
@@ -31513,7 +30948,6 @@ GameObject:
   - component: {fileID: 8313202124504395932}
   - component: {fileID: 8313202124503265884}
   - component: {fileID: 8313202124507349566}
-  - component: {fileID: 8097700023216870752}
   m_Layer: 10
   m_Name: ModularTrackStraight (18)
   m_TagString: Untagged
@@ -31548,7 +30982,7 @@ Transform:
   m_Children:
   - {fileID: 8313202124505690296}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &8313202124507349566
 MeshCollider:
@@ -31576,7 +31010,6 @@ GameObject:
   - component: {fileID: 8313202124521501435}
   - component: {fileID: 8313202124522598459}
   - component: {fileID: 8313202124526944345}
-  - component: {fileID: 8097700023237121799}
   m_Layer: 10
   m_Name: ModularTrackStraight_Center_00
   m_TagString: Untagged
@@ -31761,7 +31194,6 @@ GameObject:
   - component: {fileID: 8313202124535294811}
   - component: {fileID: 8313202124534294939}
   - component: {fileID: 8313202124529932793}
-  - component: {fileID: 8097700023231975079}
   m_Layer: 10
   m_Name: ModularTrackStraight (1)
   m_TagString: Untagged
@@ -32040,7 +31472,6 @@ GameObject:
   - component: {fileID: 8313202124550359269}
   - component: {fileID: 8313202124549360165}
   - component: {fileID: 8313202124545276487}
-  - component: {fileID: 8097700023246007577}
   m_Layer: 10
   m_Name: ModularTrackStraight (5)
   m_TagString: Untagged
@@ -32075,7 +31506,7 @@ Transform:
   m_Children:
   - {fileID: 8313202124551653569}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!64 &8313202124553296526
 MeshCollider:
@@ -32240,7 +31671,6 @@ GameObject:
   - component: {fileID: 8313202124558592044}
   - component: {fileID: 8313202124557593324}
   - component: {fileID: 8313202124553296526}
-  - component: {fileID: 8097700023137897936}
   m_Layer: 10
   m_Name: ModularTrackStraight (2)
   m_TagString: Untagged
@@ -32261,7 +31691,7 @@ Transform:
   m_Children:
   - {fileID: 8313202124595985173}
   m_Father: {fileID: 7400769661013006475}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8313202124595985173
 Transform:
@@ -32289,7 +31719,6 @@ GameObject:
   - component: {fileID: 8313202124597279537}
   - component: {fileID: 8313202124598409713}
   - component: {fileID: 8313202124602689939}
-  - component: {fileID: 8097700023161872077}
   m_Layer: 10
   m_Name: ModularTrackStraight (8)
   m_TagString: Untagged
