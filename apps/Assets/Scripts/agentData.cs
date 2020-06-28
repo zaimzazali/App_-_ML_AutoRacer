@@ -17,53 +17,53 @@ public class agentData : MonoBehaviour
     // For display only
     [Header("Input Monitor")]
 	[SerializeField]
-	private float currentThrottleInput = 0f;
+	public float currentThrottleInput = 0f;
 	[SerializeField]
-	private float currentBrakeInput = 0f;
+	public float currentBrakeInput = 0f;
 	[SerializeField]
-	private float currentSteerInput = 0f;
+	public float currentSteerInput = 0f;
 	[SerializeField]
-	private float currentSteerInputDegree = 0f;
+	public float currentSteerInputDegree = 0f;
 
     [Header("Dashboard")]
 	[SerializeField]
-	private float currentKMH = 0f;
+	public float currentKMH = 0f;
 	[SerializeField]
-	private float currentRPM = 0f;
+	public float currentRPM = 0f;
 	[SerializeField]
-	private int currentGear = 0;
+	public int currentGear = 0;
 
     [Header("Checkpoints")]
     [SerializeField]
-    private GameObject[] checkpoints = null;
+    public GameObject[] checkpoints = null;
     [SerializeField]
-    private int checkpointIndex = 0;
+    public int checkpointIndex = 0;
     [SerializeField]
-    private GameObject nextCheckpoint = null;
+    public GameObject nextCheckpoint = null;
     [SerializeField]
-    private GameObject previousCheckpoint = null;
+    public GameObject previousCheckpoint = null;
     [SerializeField]
-    private float distanceToNextCheckpoint = 0f;
+    public float distanceToNextCheckpoint = 0f;
     [SerializeField]
-    private float lastDistance = 0f;
+    public float lastDistance = 0f;
     [SerializeField]
-    private float maxLastDistance = 0f;
+    public float maxLastDistance = 0f;
     [SerializeField]
-    private bool isIdle = false;
+    public bool isIdle = false;
     [SerializeField]
-    private bool isRightDirection = false;
+    public bool isRightDirection = false;
 
     [Header("Raycasts")]
     [SerializeField]
-    private float rayWall_00 = 0f;
+    public float rayWall_00 = 0f;
     [SerializeField]
-    private float rayWall_01 = 0f;
+    public float rayWall_01 = 0f;
     [SerializeField]
-    private float rayWall_02 = 0f;
+    public float rayWall_02 = 0f;
     [SerializeField]
-    private float rayWall_03 = 0f;
+    public float rayWall_03 = 0f;
     [SerializeField]
-    private float rayWall_04 = 0f;
+    public float rayWall_04 = 0f;
 
 
     private void Awake() {

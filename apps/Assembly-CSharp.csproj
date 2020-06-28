@@ -53,119 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\KartAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\KartAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\3DBall\Scripts\Ball3DAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\3DBall\Scripts\Ball3DAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\3DBall\Scripts\Ball3DDecision.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\3DBall\Scripts\Ball3DHardAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Basic\Scripts\BasicAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Basic\Scripts\BasicAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Basic\Scripts\BasicDecision.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Bouncer\Scripts\BouncerAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Bouncer\Scripts\BouncerAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Bouncer\Scripts\BouncerTarget.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Crawler\Scripts\CrawlerAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Crawler\Scripts\CrawlerAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\FoodCollector\Scripts\FoodCollectorAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\FoodCollector\Scripts\FoodCollectorAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\FoodCollector\Scripts\FoodCollectorArea.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\FoodCollector\Scripts\FoodLogic.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\GridWorld\Scripts\GridAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\GridWorld\Scripts\GridAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Hallway\Scripts\HallwayAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Hallway\Scripts\HallwayAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\PushBlock\Scripts\GoalDetect.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\PushBlock\Scripts\PushAgentBasic.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\PushBlock\Scripts\PushBlockAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Pyramids\Scripts\PyramidAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Pyramids\Scripts\PyramidAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Pyramids\Scripts\PyramidArea.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Pyramids\Scripts\PyramidSwitch.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Reacher\Scripts\ReacherAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Reacher\Scripts\ReacherAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Reacher\Scripts\ReacherDecision.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Reacher\Scripts\ReacherGoal.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\AdjustTrainingTimescale.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\Area.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\FlyCamera.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\GroundContact.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\JointDriveController.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\RandomDecision.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\RayPerception.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\RayPerception2D.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\RayPerception3D.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Scripts\TargetContact.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Soccer\Scripts\AgentSoccer.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Soccer\Scripts\SoccerAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Soccer\Scripts\SoccerBallController.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Soccer\Scripts\SoccerFieldArea.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Template\Scripts\TemplateAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Template\Scripts\TemplateAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Template\Scripts\TemplateDecision.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Tennis\Scripts\HitWall.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Tennis\Scripts\TennisAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Tennis\Scripts\TennisAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Tennis\Scripts\TennisArea.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Walker\Scripts\WalkerAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\Walker\Scripts\WalkerAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\WallJump\Scripts\WallJumpAcademy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\WallJump\Scripts\WallJumpAgent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\Academy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\ActionMasker.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\Agent.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\Batcher.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\BCTeacherHelper.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\Brain.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\BrainParameters.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\BroadcastHub.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\AgentActionProto.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\AgentInfoProto.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\BrainParametersProto.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\CommandProto.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\CustomAction.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\CustomObservation.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\CustomResetParameters.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\DemonstrationMetaProto.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\EngineConfigurationProto.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\EnvironmentParametersProto.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\Header.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\ResolutionProto.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\SpaceTypeProto.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\UnityInput.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\UnityMessage.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\UnityOutput.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\UnityRlInitializationInput.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\UnityRlInitializationOutput.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\UnityRlInput.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\UnityRlOutput.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\UnityToExternal.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\CommunicatorObjects\UnityToExternalGrpc.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\Decision.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\Demonstration.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\DemonstrationRecorder.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\DemonstrationStore.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\HeuristicBrain.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\ICommunicator.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\InferenceBrain\ApplierImpl.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\InferenceBrain\BarracudaModelParamLoader.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\InferenceBrain\GeneratorImpl.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\InferenceBrain\TensorApplier.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\InferenceBrain\TensorGenerator.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\InferenceBrain\TensorNames.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\InferenceBrain\TensorProxy.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\InferenceBrain\Utils\Multinomial.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\InferenceBrain\Utils\RandomNormal.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\LearningBrain.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\Monitor.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\PlayerBrain.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\ResetParameters.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\RpcCommunicator.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\SocketCommunicator.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\Startup.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\UnityAgentsException.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Scripts\Utilities.cs" />
      <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\Inputs\GamepadInput.cs" />
      <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\Inputs\IInput.cs" />
      <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\Inputs\KeyboardInput.cs" />
@@ -290,6 +177,7 @@
      <Compile Include="Assets\Scripts\backgroundEvents.cs" />
      <Compile Include="Assets\Scripts\blinkingText.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
+     <Compile Include="Assets\Scripts\carAgent.cs" />
      <Compile Include="Assets\Scripts\checkPoint.cs" />
      <Compile Include="Assets\Scripts\checkUsername.cs" />
      <Compile Include="Assets\Scripts\controlAudio.cs" />
@@ -326,36 +214,24 @@
      <Compile Include="Assets\Scripts\underlineEvents.cs" />
      <Compile Include="Assets\Scripts\waitForServer.cs" />
      <None Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Locations\! Locations.txt" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Experimental.compute" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\Asset Store\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Conv.compute" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Random.cginc" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Materials\ShaderRadialGrid.shader" />
      <None Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Art\Fonts\OFL.txt" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\BarracudaReferenceImpl.compute" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Activation.compute" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Asset Store\LeanTween\ReadMe.txt" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Broadcast.compute" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\DenseFP16.compute" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\TexConv.compute" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Materials\GridPatternShader.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\ConvOld.compute" />
      <None Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Update Notes.txt" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Tensor.cginc" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Art\Models\Playground Lite\Shaders\World UV Map.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -363,17 +239,13 @@
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Shaders\Blur.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Examples\SharedAssets\Materials\ShaderOutline.shader" />
      <None Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Art\Fonts\_Readme.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\FastNV.compute" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Dense.compute" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Plugins\Barracuda.Core\Barracuda\Resources\Generic.compute" />
      <None Include="Assets\Asset Store\LeanTween\License.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -401,6 +273,42 @@
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.MacBLAS">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.iOSBLAS">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ML-Agents.CommunicatorObjects">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.BurstBLAS">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ML-Agents.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ML-Agents">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -603,29 +511,29 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
- <Reference Include="System.IO.Abstractions">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/System.IO.Abstractions.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Abstractions.TestingHelpers">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
- </Reference>
- <Reference Include="Barracuda">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/Barracuda.Core/Barracuda/Barracuda.dll</HintPath>
- </Reference>
- <Reference Include="Google.Protobuf">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
- </Reference>
- <Reference Include="Grpc.Core">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
- </Reference>
- <Reference Include="System.Interactive.Async">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
- </Reference>
  <Reference Include="VehiclePhysics">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Vehicle Physics Pro/Sdk/VehiclePhysics.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Unsafe">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Abstractions.TestingHelpers">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.Protobuf">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.barracuda@1.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Abstractions">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Interactive.Async">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ </Reference>
+ <Reference Include="Grpc.Core">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -972,14 +880,6 @@
  <Reference Include="System.Xml.Serialization">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="MacBLAS.csproj">
-      <Project>{668F22AE-CC78-B62B-64F3-0FCE916E082C}</Project>      <Name>MacBLAS</Name>    </ProjectReference>
-    <ProjectReference Include="Barracuda-editor.csproj">
-      <Project>{CD8CA5EF-8EF6-7B2C-399C-107BEF6438EE}</Project>      <Name>Barracuda-editor</Name>    </ProjectReference>
-    <ProjectReference Include="iOSBLAS.csproj">
-      <Project>{899C1D5E-B0BF-9CC2-8217-4D9CCFCB7B79}</Project>      <Name>iOSBLAS</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
