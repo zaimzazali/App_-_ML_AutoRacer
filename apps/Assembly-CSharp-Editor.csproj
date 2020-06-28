@@ -53,29 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\AgentEditor.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\BrainEditor.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\BrainParametersDrawer.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\BroadcastHubDrawer.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Builder.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\BuilderUtils.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\DemonstrationDrawer.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\DemonstrationImporter.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\HeuristicBrainEditor.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\LearningBrainEditor.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\PlayerBrainEditor.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\ResetParameterDrawer.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\DemonstrationTests.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\DiscreteActionOutputApplierTest.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\EditModeTestActionMasker.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\EditModeTestInternalBrainTensorApplier.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\EditModeTestInternalBrainTensorGenerator.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\MLAgentsEditModeTest.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\MultinomialTest.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\RandomNormalTest.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\RayPerceptionTests.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\TensorUtilsTest.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\ML-Agents\Editor\Tests\UtilitiesTests.cs" />
      <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Editor\AutoLockUILayer.cs" />
      <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartMovement\Editor\KartMovementEditor.cs" />
      <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Utilities\Editor\RequireInterfaceAttributeDrawer.cs" />
@@ -95,6 +72,42 @@
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.MacBLAS">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.iOSBLAS">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ML-Agents.CommunicatorObjects">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Barracuda.BurstBLAS">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Mathematics.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ML-Agents.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ML-Agents">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -336,24 +349,6 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="System.IO.Abstractions">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/System.IO.Abstractions.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Abstractions.TestingHelpers">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
- </Reference>
- <Reference Include="Barracuda">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/Barracuda.Core/Barracuda/Barracuda.dll</HintPath>
- </Reference>
- <Reference Include="Google.Protobuf">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
- </Reference>
- <Reference Include="Grpc.Core">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
- </Reference>
- <Reference Include="System.Interactive.Async">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting-MLAgents/Assets/ML-Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
- </Reference>
  <Reference Include="VehiclePhysics">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Vehicle Physics Pro/Sdk/VehiclePhysics.dll</HintPath>
  </Reference>
@@ -374,6 +369,24 @@
  </Reference>
  <Reference Include="UnityEditor.Purchasing">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Unsafe">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Abstractions.TestingHelpers">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.Protobuf">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.barracuda@1.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Abstractions">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Interactive.Async">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ </Reference>
+ <Reference Include="Grpc.Core">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -733,12 +746,6 @@
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{7F4662DA-AE5A-7878-D94A-23E011777776}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
-    <ProjectReference Include="MacBLAS.csproj">
-      <Project>{668F22AE-CC78-B62B-64F3-0FCE916E082C}</Project>      <Name>MacBLAS</Name>    </ProjectReference>
-    <ProjectReference Include="Barracuda-editor.csproj">
-      <Project>{CD8CA5EF-8EF6-7B2C-399C-107BEF6438EE}</Project>      <Name>Barracuda-editor</Name>    </ProjectReference>
-    <ProjectReference Include="iOSBLAS.csproj">
-      <Project>{899C1D5E-B0BF-9CC2-8217-4D9CCFCB7B79}</Project>      <Name>iOSBLAS</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

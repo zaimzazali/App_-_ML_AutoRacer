@@ -12,6 +12,8 @@ public class resetCar : MonoBehaviour
 
     [SerializeField]
     private agentData agentData = null;
+    [SerializeField]
+    private bool allowReset = true;
 
     private bool toTrigger = false;
     
@@ -21,13 +23,15 @@ public class resetCar : MonoBehaviour
     }
 
     private void OnTriggerEnter (Collider collider) {
-        if (collider.gameObject.layer == 10 && toTrigger) {
-            toTrigger = false;
-            StartCoroutine("resetTheCar");
+        if (allowReset) {
+            if (collider.gameObject.layer == 10 && toTrigger) {
+                toTrigger = false;
+                // StartCoroutine("resetTheCar");
+            }
         }
     }
 
-    private IEnumerator resetTheCar() {
+    public IEnumerator resetTheCar() {
         agentData.resetProgression();
 
         VPVehicleController.Reposition(new Vector3(10f, 0.5f, 0f), Quaternion.Euler(0f, 0f, 0f));
