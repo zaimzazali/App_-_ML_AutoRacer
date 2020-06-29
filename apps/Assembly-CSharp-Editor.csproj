@@ -58,21 +58,6 @@
      <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Utilities\Editor\RequireInterfaceAttributeDrawer.cs" />
      <Compile Include="Assets\Asset Store\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
      <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Editor\GaugeInspector.cs" />
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
- </Reference>
  <Reference Include="Unity.Barracuda.MacBLAS">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
  </Reference>
@@ -85,8 +70,17 @@
  <Reference Include="Unity.Burst.Editor">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.PackageManagerUI.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.Barracuda">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.CollabProxy.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Barracuda.iOSBLAS">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
@@ -102,6 +96,12 @@
  </Reference>
  <Reference Include="Unity.Mathematics.Editor">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.DataPrivacy">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="Unity.ML-Agents.Editor">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
@@ -367,26 +367,26 @@
  <Reference Include="Unity.Analytics.Tracker">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.analytics@3.2.3/Editor/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Purchasing">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
+ <Reference Include="Google.Protobuf">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.barracuda@1.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Burst.Unsafe">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
  </Reference>
+ <Reference Include="System.IO.Abstractions">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.dll</HintPath>
+ </Reference>
  <Reference Include="System.IO.Abstractions.TestingHelpers">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
  </Reference>
- <Reference Include="Google.Protobuf">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.barracuda@1.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Abstractions">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.dll</HintPath>
+ <Reference Include="Grpc.Core">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
  </Reference>
  <Reference Include="System.Interactive.Async">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
  </Reference>
- <Reference Include="Grpc.Core">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.purchasing@2.0.3/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
