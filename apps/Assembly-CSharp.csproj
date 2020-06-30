@@ -53,50 +53,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\Inputs\GamepadInput.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\Inputs\IInput.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\Inputs\KeyboardInput.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartAnimation\KartAnimation.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartAudio\EngineAudio.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartAudio\EngineAudio.Stroke.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartColliders\IKartCollider.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartColliders\WallCollider.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartModifiers\AddativeKartModifier.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartModifiers\AddativeKartModifierAsset.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartModifiers\DefaultKartModifier.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartModifiers\IKartModifier.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartModifiers\MultiplicativeKartModifier.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartModifiers\MultiplicativeKartModifierAsset.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartMovement\GroundInfo.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartMovement\IControllable.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartMovement\IKartInfo.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartMovement\IMovable.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartMovement\KartMovement.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartMovement\KartStats.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Timeline\DirectorTrigger.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Track\Checkpoint.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Track\InstantKartRepositioner.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Track\IRacer.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Track\KartRepositioner.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Track\KartRepositionTrigger.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Track\Racer.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Track\TimeDisplay.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Track\TrackManager.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Track\TrackRecord.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\UI\MainUIController.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\UI\MetaGameController.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Utilities\DictionaryExtensions.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Utilities\LayerMaskExtensions.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Utilities\ListExtensions.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Utilities\QuaternionExtensions.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Utilities\RequireInterfaceAttribute.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\ModAssets\ModResources\Scripts\Backend\TemplateEditorDetection.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\ModAssets\ModResources\Scripts\BallGame\EmitParticlesOnBallBounce.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\ModAssets\ModResources\Scripts\Kart\EmitParticlesOnKartBounce.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\ModAssets\ModResources\Scripts\Kart\Jiggler.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\ModAssets\ModResources\Scripts\Kart\KartSpeedPad.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\ModAssets\ModResources\Scripts\Kart\SimpleTrigger.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\ModAssets\ModResources\Scripts\Platformer\EmitParticlesOnLand.cs" />
      <Compile Include="Assets\Asset Store\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
      <Compile Include="Assets\Asset Store\LeanTween\Examples\Archived\TestingPunch.cs" />
      <Compile Include="Assets\Asset Store\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
@@ -137,38 +93,6 @@
      <Compile Include="Assets\Asset Store\loadingBar\scripts\rotatetotate.cs" />
      <Compile Include="Assets\Asset Store\loadingBar\scripts\SimpleLoading.cs" />
      <Compile Include="Assets\Asset Store\loadingBar\scripts\simplerotate.cs" />
-     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\ExampleSceneFree.cs" />
-     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\JoystickFree.cs" />
-     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSButtonFree.cs" />
-     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSFPSControllerFree.cs" />
-     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSOpenURL.cs" />
-     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSSceneControllerFree.cs" />
-     <Compile Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\MSVehicleControllerFree.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Scripts\Utility\BankedPlatform.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Scripts\Utility\CaptureScreenshot.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Scripts\Utility\EndlessMovingSurface.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Scripts\Utility\FollowHeading.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Scripts\Utility\MovableObject.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Scripts\Utility\PauseVehicle.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\AidsPanel.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\CloseOnKeyOrClick.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\CloseOnStart.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\ConfigDialog.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\DeviceDebugInfo.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\EscapeDialog.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\ForceFeedbackMonitor.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\GearModeSelector.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\GenericMenu.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\HideOnStart.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\HoverHandler.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\IgnitionKey.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\InputConfigDialog.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\MenuOverlay.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\MultiToggle.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\ShiftIndicator.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\ShowValueFromSlider.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\TelemetryChartToolbar.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Scripts\VehicleSetupDialog.cs" />
      <Compile Include="Assets\Scripts\agentData.cs" />
      <Compile Include="Assets\Scripts\agentInput.cs" />
      <Compile Include="Assets\Scripts\Any_Colours.cs" />
@@ -213,52 +137,28 @@
      <Compile Include="Assets\Scripts\tileEvents.cs" />
      <Compile Include="Assets\Scripts\underlineEvents.cs" />
      <Compile Include="Assets\Scripts\waitForServer.cs" />
-     <None Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Locations\! Locations.txt" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\Asset Store\LeanTween\Examples\Archived\2dUnlitWithFade.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-     <None Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Art\Fonts\OFL.txt" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
      <None Include="Assets\Asset Store\LeanTween\ReadMe.txt" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-     <None Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Update Notes.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-     <None Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Art\Models\Playground Lite\Shaders\World UV Map.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Shaders\Blur.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-     <None Include="Assets\Asset Store\Vehicle Physics Pro\Sample Assets\Art\Fonts\_Readme.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Asset Store\LeanTween\License.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-     <None Include="Assets\Asset Store\MSVehicleSystem(FreeVersion)\Scripts\Shaders\SkidMarks.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\ProjectSettings\ProjectVersion.txt" />
-     <None Include="Assets\Asset Store\Vehicle Physics Pro\VPP Project Settings\!Readme - Project Settings.txt" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-     <None Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
  <Reference Include="Unity.Barracuda.MacBLAS">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
  </Reference>
@@ -510,9 +410,6 @@
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="VehiclePhysics">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Vehicle Physics Pro/Sdk/VehiclePhysics.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>

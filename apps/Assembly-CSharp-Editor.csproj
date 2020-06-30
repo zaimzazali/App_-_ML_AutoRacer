@@ -53,11 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Editor\AutoLockUILayer.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\KartSystems\KartMovement\Editor\KartMovementEditor.cs" />
-     <Compile Include="Assets\Asset Store\Karting-MLAgents\Assets\UTech\MG-Karting\BasicAssets\Scripts\Utilities\Editor\RequireInterfaceAttributeDrawer.cs" />
      <Compile Include="Assets\Asset Store\LeanTween\Editor\LeanTweenDocumentationEditor.cs" />
-     <Compile Include="Assets\Asset Store\Vehicle Physics Pro\Scenes\UI\Editor\GaugeInspector.cs" />
  <Reference Include="Unity.Barracuda.MacBLAS">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
  </Reference>
@@ -348,12 +344,6 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="VehiclePhysics">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Vehicle Physics Pro/Sdk/VehiclePhysics.dll</HintPath>
- </Reference>
- <Reference Include="VehiclePhysics_Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Vehicle Physics Pro/Sdk/Editor/VehiclePhysics_Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
