@@ -12,7 +12,7 @@
 | ------------- |-------------| 
 | <img src="./README_Assets/GIFs/login_exit.gif" width="500"> <br>    | <img src="./README_Assets/GIFs/login_settings.gif" width="500"> <br> | 
 
-| Login Scene - Registration Error        | Login Scene - Registration           | 
+| Login Scene - Registration (Error Handling)        | Login Scene - Registration           | 
 | ------------- |-------------| 
 | <img src="./README_Assets/GIFs/login_reg_error.gif" width="500"> <br>    | <img src="./README_Assets/GIFs/login_reg.gif" width="500"> <br> | 
 
