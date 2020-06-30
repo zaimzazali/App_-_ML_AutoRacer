@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_23;UNITY_2018_4;UNITY_2018;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;UNITY_TEMPLATE_KART;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2018_4_23;UNITY_2018_4;UNITY_2018;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE;UNITY_TEMPLATE_KART;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -93,38 +93,30 @@
      <Compile Include="Assets\Asset Store\loadingBar\scripts\rotatetotate.cs" />
      <Compile Include="Assets\Asset Store\loadingBar\scripts\SimpleLoading.cs" />
      <Compile Include="Assets\Asset Store\loadingBar\scripts\simplerotate.cs" />
-     <Compile Include="Assets\Scripts\agentData.cs" />
-     <Compile Include="Assets\Scripts\agentInput.cs" />
      <Compile Include="Assets\Scripts\Any_Colours.cs" />
      <Compile Include="Assets\Scripts\Any_Dropdown.cs" />
      <Compile Include="Assets\Scripts\Any_Inputfield.cs" />
      <Compile Include="Assets\Scripts\backgroundEvents.cs" />
      <Compile Include="Assets\Scripts\blinkingText.cs" />
      <Compile Include="Assets\Scripts\cameraController.cs" />
-     <Compile Include="Assets\Scripts\carAgent.cs" />
-     <Compile Include="Assets\Scripts\checkPoint.cs" />
      <Compile Include="Assets\Scripts\checkUsername.cs" />
      <Compile Include="Assets\Scripts\controlAudio.cs" />
      <Compile Include="Assets\Scripts\controlCanvas01.cs" />
      <Compile Include="Assets\Scripts\controlCanvas02.cs" />
      <Compile Include="Assets\Scripts\controlCanvas03.cs" />
      <Compile Include="Assets\Scripts\cursorEvents.cs" />
-     <Compile Include="Assets\Scripts\Dashboard.cs" />
      <Compile Include="Assets\Scripts\exitGame.cs" />
      <Compile Include="Assets\Scripts\gameObjectSearcher.cs" />
-     <Compile Include="Assets\Scripts\Gauge.cs" />
      <Compile Include="Assets\Scripts\goNextScene.cs" />
      <Compile Include="Assets\Scripts\initiateBgMusic.cs" />
      <Compile Include="Assets\Scripts\initiateGame.cs" />
      <Compile Include="Assets\Scripts\initiateSceneFading.cs" />
-     <Compile Include="Assets\Scripts\InputMonitor.cs" />
      <Compile Include="Assets\Scripts\inputValidator.cs" />
      <Compile Include="Assets\Scripts\loginUser.cs" />
      <Compile Include="Assets\Scripts\masterAudioControls.cs" />
      <Compile Include="Assets\Scripts\objectMover.cs" />
      <Compile Include="Assets\Scripts\playerData.cs" />
      <Compile Include="Assets\Scripts\registerUser.cs" />
-     <Compile Include="Assets\Scripts\resetCar.cs" />
      <Compile Include="Assets\Scripts\sceneFader.cs" />
      <Compile Include="Assets\Scripts\sceneLoader.cs" />
      <Compile Include="Assets\Scripts\serverAPI.cs" />
@@ -159,56 +151,20 @@
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
      <None Include="Assets\Asset Store\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
- <Reference Include="Unity.Barracuda.MacBLAS">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.MacBLAS.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Burst">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Barracuda.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Burst.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
- </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
- <Reference Include="Unity.Barracuda">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.dll</HintPath>
- </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Barracuda.iOSBLAS">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.iOSBLAS.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ML-Agents.CommunicatorObjects">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.CommunicatorObjects.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Barracuda.BurstBLAS">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Barracuda.BurstBLAS.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ML-Agents.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ML-Agents">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ML-Agents.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -413,24 +369,6 @@
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.analytics@3.2.3/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="Google.Protobuf">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.barracuda@1.0.0/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Burst.Unsafe">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Abstractions">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Abstractions.TestingHelpers">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
- </Reference>
- <Reference Include="Grpc.Core">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
- </Reference>
- <Reference Include="System.Interactive.Async">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ml-agents@1.0.2/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>D:/Program Files/Unity/2018.4.23f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

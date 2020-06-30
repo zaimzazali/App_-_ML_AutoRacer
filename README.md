@@ -1,9 +1,20 @@
 ## Status: Work In Progress
 
-# ML_AutoRacer
-MSc Computer Science - Final Project
+<p align="center">
+  <img src="./README_Assets/header.png" width="100%"> <br>
+</p>
 
 ---
+
+## Application Review
+
+| Login Scene - Exit        | Login Scene - Settings           | 
+| ------------- |-------------| 
+| <img src="./README_Assets/GIFs/login_exit.gif" width="500"> <br>    | <img src="./README_Assets/GIFs/login_settings.gif" width="500"> <br> | 
+
+| Login Scene - Registration Error        | Login Scene - Registration           | 
+| ------------- |-------------| 
+| <img src="./README_Assets/GIFs/login_reg_error.gif" width="500"> <br>    | <img src="./README_Assets/GIFs/login_reg.gif" width="500"> <br> | 
 
 ## System Design and Architecture
 
