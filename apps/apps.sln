@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{7F4662DA-AE5A-7878-D94A-23E011777776}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KartGame", "KartGame.csproj", "{9AB2511A-6DD7-4D46-9379-D5546E7AABFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLAgentsToolKit", "MLAgentsToolKit.csproj", "{040BA046-DEC3-CE26-9852-F162FFBEE66B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KartGame.AI", "KartGame.AI.csproj", "{0B9BB84F-3DB0-4B28-022A-E9362BFD69D0}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{CAFAD9DB-FF96-8033-EBDF-A70FADB05C20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLAgentsToolKit.Editor", "MLAgentsToolKit.Editor.csproj", "{49D999C0-30AF-24DA-D952-0B33BD6A5119}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KartGame.Editor", "KartGame.Editor.csproj", "{A976F619-CF7C-6DD6-53E3-6DDFF093AE0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KartGame.AI.Editor", "KartGame.AI.Editor.csproj", "{935E5D9D-F587-6BA2-D815-952538DDA9DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,15 +27,36 @@ Global
 		{7F4662DA-AE5A-7878-D94A-23E011777776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F4662DA-AE5A-7878-D94A-23E011777776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F4662DA-AE5A-7878-D94A-23E011777776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AB2511A-6DD7-4D46-9379-D5546E7AABFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AB2511A-6DD7-4D46-9379-D5546E7AABFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AB2511A-6DD7-4D46-9379-D5546E7AABFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AB2511A-6DD7-4D46-9379-D5546E7AABFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{040BA046-DEC3-CE26-9852-F162FFBEE66B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040BA046-DEC3-CE26-9852-F162FFBEE66B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040BA046-DEC3-CE26-9852-F162FFBEE66B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040BA046-DEC3-CE26-9852-F162FFBEE66B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B9BB84F-3DB0-4B28-022A-E9362BFD69D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B9BB84F-3DB0-4B28-022A-E9362BFD69D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B9BB84F-3DB0-4B28-022A-E9362BFD69D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B9BB84F-3DB0-4B28-022A-E9362BFD69D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CAFAD9DB-FF96-8033-EBDF-A70FADB05C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CAFAD9DB-FF96-8033-EBDF-A70FADB05C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAFAD9DB-FF96-8033-EBDF-A70FADB05C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAFAD9DB-FF96-8033-EBDF-A70FADB05C20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D999C0-30AF-24DA-D952-0B33BD6A5119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D999C0-30AF-24DA-D952-0B33BD6A5119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D999C0-30AF-24DA-D952-0B33BD6A5119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D999C0-30AF-24DA-D952-0B33BD6A5119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A976F619-CF7C-6DD6-53E3-6DDFF093AE0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A976F619-CF7C-6DD6-53E3-6DDFF093AE0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A976F619-CF7C-6DD6-53E3-6DDFF093AE0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A976F619-CF7C-6DD6-53E3-6DDFF093AE0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{935E5D9D-F587-6BA2-D815-952538DDA9DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{935E5D9D-F587-6BA2-D815-952538DDA9DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{935E5D9D-F587-6BA2-D815-952538DDA9DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{935E5D9D-F587-6BA2-D815-952538DDA9DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal

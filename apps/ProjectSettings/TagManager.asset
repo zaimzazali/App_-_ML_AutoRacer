@@ -3,35 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - input_field
-  - input_field_tmp
-  - drop_down
-  - button_close
-  - set_first
-  - target
-  - ground
-  - goal
-  - agent
-  - block
-  - wall
-  - switchOff
-  - symbol_O_Goal
-  - symbol_X_Goal
-  - symbol_X
-  - symbol_O
-  - badFood
-  - stone
-  - pyramid
-  - walkableSurface
-  - purpleAgent
-  - purpleGoal
-  - blueAgent
-  - blueGoal
-  - ball
-  - iWall
-  - food
-  - pit
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -42,12 +14,12 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - Agent
+  - Ground
+  - Environment
   - Track
-  - Checkpoint
-  - 
-  - 
-  - 
+  - CrashObject
+  - Kart
+  - TrainingCheckpoints
   - 
   - 
   - 
