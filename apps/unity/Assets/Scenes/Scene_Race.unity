@@ -12336,7 +12336,7 @@ MonoBehaviour:
   TrackMask:
     serializedVersion: 2
     m_Bits: 2560
-  GroundCastDistance: 0
+  GroundCastDistance: 1
   ShowRaycasts: 1
 --- !u!114 &9030611186598394434
 MonoBehaviour:
@@ -12359,7 +12359,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: ArcadeDriver
+  m_BehaviorName: default
   m_TeamID: 0
   m_useChildSensors: 1
 --- !u!1 &9030611186600547365

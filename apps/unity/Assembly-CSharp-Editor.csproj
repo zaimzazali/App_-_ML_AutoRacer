@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{CAFAD9DB-FF96-8033-EBDF-A70FADB05C20}</ProjectGuid>
+    <ProjectGuid>{33C3DCDC-76CB-1FCD-751B-4E7E18D0E2DF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -257,44 +257,44 @@
  <Reference Include="UnityEditor.UWP.Extensions">
  <HintPath>D:/Program Files/Unity/2019.4.1f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Advertisements">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ads@3.4.5/Editor/UnityEditor.Advertisements.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.Tracker">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Purchasing">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Burst.Unsafe">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.burst@1.1.1/Unity.Burst.Unsafe.dll</HintPath>
- </Reference>
- <Reference Include="Google.Protobuf">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.barracuda@0.5.0-preview/Barracuda/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Compression.FileSystem">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.connect.share@1.2.0-preview.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
+ <Reference Include="System.IO.Abstractions">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Assets/Asset Store/Karting/ML_Agents/Plugins/System.IO.Abstractions.dll</HintPath>
  </Reference>
  <Reference Include="System.IO.Abstractions.TestingHelpers">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting/ML_Agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
- </Reference>
- <Reference Include="System.IO.Abstractions">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting/ML_Agents/Plugins/System.IO.Abstractions.dll</HintPath>
- </Reference>
- <Reference Include="System.Interactive.Async">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting/ML_Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Assets/Asset Store/Karting/ML_Agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
  </Reference>
  <Reference Include="Grpc.Core">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Assets/Asset Store/Karting/ML_Agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Assets/Asset Store/Karting/ML_Agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Interactive.Async">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Assets/Asset Store/Karting/ML_Agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.ads@3.4.5/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.Tracker">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Analytics.StandardEvents">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.Protobuf">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.barracuda@0.5.0-preview/Barracuda/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Burst.Unsafe">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.burst@1.1.1/Unity.Burst.Unsafe.dll</HintPath>
+ </Reference>
+ <Reference Include="System.IO.Compression.FileSystem">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.connect.share@1.2.0-preview.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Purchasing">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>D:/Program Files/Unity/2019.4.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -650,173 +650,219 @@
  <Reference Include="Boo.Lang">
  <HintPath>D:/Program Files/Unity/2019.4.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.TestRunner">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.TestRunner">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Monetization">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEngine.Monetization.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.multiplayer-hlapi.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.multiplayer-weaver.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.XR.LegacyInputHelpers">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Sprite.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.2D.Tilemap.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.SpatialTracking">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.XR.LegacyInputHelpers">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.multiplayer-hlapi.Runtime">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="Cinemachine">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
- </Reference>
- <Reference Include="MacBLAS">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/MacBLAS.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Burst">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ProBuilder">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Connect.Share.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Connect.Share.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Barracuda-editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Barracuda-editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Burst.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InteractiveTutorials.Core">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.InteractiveTutorials.Core.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InternalAPIEditorBridgeDev.001">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.InternalAPIEditorBridgeDev.001.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ProBuilder.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
- </Reference>
- <Reference Include="Unity.EditorCoroutines.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Barracuda">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Barracuda.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
- </Reference>
- <Reference Include="iOSBLAS">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/iOSBLAS.dll</HintPath>
- </Reference>
- <Reference Include="Unity.InteractiveTutorials.Core.Scripts">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.InteractiveTutorials.Core.Scripts.dll</HintPath>
- </Reference>
- <Reference Include="BurstBLAS">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/BurstBLAS.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Postprocessing.Runtime">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
- </Reference>
- <Reference Include="com.unity.cinemachine.editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.InteractiveTutorialsFramework">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/UnityEditor.InteractiveTutorialsFramework.dll</HintPath>
- </Reference>
- <Reference Include="Unity.ProBuilder.AddOns.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Mathematics.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{7F4662DA-AE5A-7878-D94A-23E011777776}</Project>
+      <Project>{C3DA89E1-70C6-7D6C-993E-C8F831D35880}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="UnityEditor.TestRunner.csproj">
+      <Project>{00FA63EE-66F3-34A4-D434-A87722E49AF8}</Project>
+      <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{7F5633AA-FF44-497D-9629-F9A7DB2F14FB}</Project>
+      <Name>UnityEngine.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{683DBE06-29B1-F210-6DE5-04FE67ADC101}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Cinemachine.csproj">
+      <Project>{C55B17DD-8568-9069-F6CC-8CD3187BC820}</Project>
+      <Name>Cinemachine</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Monetization.csproj">
+      <Project>{054B1211-9FB5-DA59-7AF4-0B3161816AC4}</Project>
+      <Name>UnityEngine.Monetization</Name>
+    </ProjectReference>
+    <ProjectReference Include="MacBLAS.csproj">
+      <Project>{6D82A78F-476A-092D-3CFD-CF759CF7375F}</Project>
+      <Name>MacBLAS</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{4D984241-FC5A-A428-ACCE-8F85B68BF8AA}</Project>
+      <Name>Unity.Burst</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.multiplayer-hlapi.Editor.csproj">
+      <Project>{135E931F-1AE5-1E3A-F615-8CB3129276E3}</Project>
+      <Name>com.unity.multiplayer-hlapi.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{C1B9863B-B2A8-6A84-855C-CB82904FAD06}</Project>
+      <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.csproj">
+      <Project>{FCE63383-58C6-B4C6-8B06-B6C6E2F95907}</Project>
+      <Name>Unity.ProBuilder</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Connect.Share.Editor.csproj">
+      <Project>{A5739B21-F538-131B-AB5D-FA4B9441E1CF}</Project>
+      <Name>Unity.Connect.Share.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Barracuda-editor.csproj">
+      <Project>{D963D88E-AA79-DCC1-4735-AB997FA128B7}</Project>
+      <Name>Barracuda-editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.Editor.csproj">
+      <Project>{A173DBD0-D761-6CA1-4B5F-85C28DE73AF5}</Project>
+      <Name>Unity.Burst.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.Advertisements.csproj">
+      <Project>{E96FF233-14D2-3D64-E8BA-B69DEB00B957}</Project>
+      <Name>UnityEngine.Advertisements</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InteractiveTutorials.Core.csproj">
+      <Project>{B58B3046-4FAC-76E6-4022-1E192664C4B8}</Project>
+      <Name>Unity.InteractiveTutorials.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEditorBridgeDev.001.csproj">
+      <Project>{8E9CC5D6-B460-4312-DF50-9B728074EF29}</Project>
+      <Name>Unity.InternalAPIEditorBridgeDev.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.Editor.csproj">
+      <Project>{7F4EF5B2-5BFE-73E0-CA77-89336E2ED515}</Project>
+      <Name>Unity.ProBuilder.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AssetIdRemapUtility.csproj">
+      <Project>{160F36AF-7E5A-9C3D-4DDA-D4C76EB991F6}</Project>
+      <Name>Unity.ProBuilder.AssetIdRemapUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="KartGame.csproj">
-      <Project>{9AB2511A-6DD7-4D46-9379-D5546E7AABFB}</Project>
+      <Project>{00E56C61-330C-3DFB-1F25-48D937CC64A2}</Project>
       <Name>KartGame</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
+      <Project>{92E88714-228E-A768-FFBA-96E0A1E94272}</Project>
+      <Name>Unity.TextMeshPro.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="MLAgentsToolKit.csproj">
-      <Project>{040BA046-DEC3-CE26-9852-F162FFBEE66B}</Project>
+      <Project>{CC17C02A-DBE0-00EE-4240-4DCD0F7A94BA}</Project>
       <Name>MLAgentsToolKit</Name>
     </ProjectReference>
     <ProjectReference Include="MLAgentsToolKit.Editor.csproj">
-      <Project>{49D999C0-30AF-24DA-D952-0B33BD6A5119}</Project>
+      <Project>{FC83043E-470A-D240-A039-87336B58B2C4}</Project>
       <Name>MLAgentsToolKit.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.EditorCoroutines.Editor.csproj">
+      <Project>{5D31BF01-80FE-F654-112F-AA4594C17265}</Project>
+      <Name>Unity.EditorCoroutines.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{D12785FF-8A00-9AD4-39FF-8369ADE6A345}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.csproj">
+      <Project>{861CC0B2-AF28-0EC1-C899-D2E54499BD64}</Project>
+      <Name>Unity.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Barracuda.csproj">
+      <Project>{BC31DA57-27A7-23C1-FB12-34260030C49B}</Project>
+      <Name>Barracuda</Name>
+    </ProjectReference>
     <ProjectReference Include="KartGame.AI.csproj">
-      <Project>{0B9BB84F-3DB0-4B28-022A-E9362BFD69D0}</Project>
+      <Project>{8EB73282-65E4-4223-1A54-57B4D842F8BC}</Project>
       <Name>KartGame.AI</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
+      <Project>{86635F17-2FD8-8C4F-AFCF-65A2EF741D0E}</Project>
+      <Name>Unity.CollabProxy.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Postprocessing.Editor.csproj">
+      <Project>{6F631281-A35B-08E1-AFBA-A5C0BDDAA268}</Project>
+      <Name>Unity.Postprocessing.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="iOSBLAS.csproj">
+      <Project>{F97E1EA9-D02B-F437-BC69-D13D0865B130}</Project>
+      <Name>iOSBLAS</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.multiplayer-weaver.Editor.csproj">
+      <Project>{B3248692-BCEA-A02D-9749-1465B6198C95}</Project>
+      <Name>com.unity.multiplayer-weaver.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.csproj">
+      <Project>{B4E943BE-6057-F94A-DD37-F4057A9A97E1}</Project>
+      <Name>UnityEngine.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InteractiveTutorials.Core.Scripts.csproj">
+      <Project>{20146114-9BD0-9968-7DDB-11506AB5A487}</Project>
+      <Name>Unity.InteractiveTutorials.Core.Scripts</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Rider.Editor.csproj">
+      <Project>{016DE70D-B5E2-436B-634D-7958D0D10654}</Project>
+      <Name>Unity.Rider.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="BurstBLAS.csproj">
+      <Project>{E61EF84E-F7C8-0FEB-8816-CD659A27761D}</Project>
+      <Name>BurstBLAS</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{951B003F-B01E-6E30-EF3D-689334507645}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{BC542F9C-B16F-CA78-4F17-6404F842D8E3}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Postprocessing.Runtime.csproj">
+      <Project>{486F470A-DF08-F37E-EB46-FC5073DA7D90}</Project>
+      <Name>Unity.Postprocessing.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
+      <Project>{AEAB26C2-951F-2447-989A-874BAA5557C3}</Project>
+      <Name>Unity.2D.Tilemap.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.SpatialTracking.csproj">
+      <Project>{1DB9D5CB-DA5C-CCEB-5DB5-4B39E30AAA1C}</Project>
+      <Name>UnityEditor.SpatialTracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
+      <Project>{5EA91654-6BE7-01D2-2D40-4D58C485F11C}</Project>
+      <Name>com.unity.cinemachine.editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.InteractiveTutorialsFramework.csproj">
+      <Project>{4400401F-BD4B-39FC-40E3-311337C0FE99}</Project>
+      <Name>UnityEditor.InteractiveTutorialsFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.SpatialTracking.csproj">
+      <Project>{FC22DB3E-839E-EED1-129D-56182736B8BF}</Project>
+      <Name>UnityEngine.SpatialTracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
+      <Project>{4E98ACEC-72A5-6666-AA4C-CF2364E4FB7D}</Project>
+      <Name>Unity.ProBuilder.AddOns.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
+      <Project>{60BDDB41-60EF-7B5B-2808-8CDCEF8865CD}</Project>
+      <Name>Unity.Mathematics.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="KartGame.Editor.csproj">
-      <Project>{A976F619-CF7C-6DD6-53E3-6DDFF093AE0E}</Project>
+      <Project>{2AD72057-A047-CE10-4F03-B7738DFADE00}</Project>
       <Name>KartGame.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.TextMeshPro.csproj">
+      <Project>{0EC6B5F2-0218-AE7B-3C70-1901B4B53FF9}</Project>
+      <Name>Unity.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Analytics.DataPrivacy.csproj">
+      <Project>{64C14566-7421-D174-F543-B562D1E34B13}</Project>
+      <Name>Unity.Analytics.DataPrivacy</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
+      <Project>{34E639A3-5F77-3CD9-9364-AB10089FD80D}</Project>
+      <Name>UnityEditor.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
     <ProjectReference Include="KartGame.AI.Editor.csproj">
-      <Project>{935E5D9D-F587-6BA2-D815-952538DDA9DE}</Project>
+      <Project>{C42A7444-F403-FF38-F234-10BDFF26ED7B}</Project>
       <Name>KartGame.AI.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{B4DF9CC6-34E2-9228-09E0-F3BD60E5C932}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.multiplayer-hlapi.Runtime.csproj">
+      <Project>{3182EC3B-A9BD-6ED3-D7C4-066D935EFF04}</Project>
+      <Name>com.unity.multiplayer-hlapi.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
