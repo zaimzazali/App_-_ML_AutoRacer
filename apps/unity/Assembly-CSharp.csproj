@@ -36,6 +36,15 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Asset Store\Arcade_Car_Physics\Scripts\DemoScripts\CameraFollow.cs" />
+     <Compile Include="Assets\Asset Store\Arcade_Car_Physics\Scripts\DemoScripts\CheckPointEvent.cs" />
+     <Compile Include="Assets\Asset Store\Arcade_Car_Physics\Scripts\DemoScripts\RaceTrackCheckpointsManager.cs" />
+     <Compile Include="Assets\Asset Store\Arcade_Car_Physics\Scripts\EngineSoundManager.cs" />
+     <Compile Include="Assets\Asset Store\Arcade_Car_Physics\Scripts\Ghost.cs" />
+     <Compile Include="Assets\Asset Store\Arcade_Car_Physics\Scripts\Suspension.cs" />
+     <Compile Include="Assets\Asset Store\Arcade_Car_Physics\Scripts\Trails\Trail.cs" />
+     <Compile Include="Assets\Asset Store\Arcade_Car_Physics\Scripts\Trails\TrailEmitter.cs" />
+     <Compile Include="Assets\Asset Store\Arcade_Car_Physics\Scripts\WheelVehicle.cs" />
      <Compile Include="Assets\Asset Store\LeanTween\Examples\Archived\OldGUIExamplesCS.cs" />
      <Compile Include="Assets\Asset Store\LeanTween\Examples\Archived\TestingPunch.cs" />
      <Compile Include="Assets\Asset Store\LeanTween\Examples\Archived\TestingRigidbodyCS.cs" />
