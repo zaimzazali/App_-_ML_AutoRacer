@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Asset Store/Arcade_Car_Physics/ACP_Demo.unity
+- path: Assets/Scenes/Scene_Race.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
