@@ -99,6 +99,11 @@ namespace KartGame.AI
         float[] localActions;
         int checkpointIndex;
 
+        [SerializeField]
+        private bool isOutBound = false;
+        [SerializeField]
+        private bool isCarReversed = false;
+
         void Awake()
         {
             kart = GetComponent<ArcadeKart>();
@@ -158,6 +163,10 @@ namespace KartGame.AI
                 AddReward(PassCheckpointReward);
                 checkpointIndex = index;
             }
+
+            if (other.gameObject.layer == LayerMask.NameToLayer("Track")) {
+                isOutBound = true;
+            }
         }
 
         void FindCheckpointIndex(Collider checkPoint, out int index)
@@ -198,6 +207,9 @@ namespace KartGame.AI
         public override void CollectObservations()
         {
             AddVectorObs(kart.LocalSpeed());
+            if (kart.LocalSpeed() < 0f) {
+                isCarReversed = true;
+            }
 
             // Add an observation for direction of the agent to the next checkpoint.
             var next          = (checkpointIndex + 1) % Colliders.Length;
@@ -229,9 +241,13 @@ namespace KartGame.AI
 
                 if (hitDistance < current.HitThreshold) {
                     AddReward(HitPenalty);
-                    Done();
-                    AgentReset();
+                    // Done
                 }
+            }
+
+            if (isOutBound) {
+                AddReward(HitPenalty);
+                AgentReset();
             }
         }
 
@@ -267,6 +283,8 @@ namespace KartGame.AI
                     kart.Rigidbody.velocity = default;
                     acceleration            = 0f;
                     steering                = 0f;
+                    isOutBound              = false;
+                    isCarReversed           = false;
                     break;
                 default:
                     break;
