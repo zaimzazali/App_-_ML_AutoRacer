@@ -188,16 +188,16 @@ namespace KartGame.AI
         void InterpretDiscreteActions(float[] actions)
         {
             steering     = actions[0] - 1f;
-            acceleration = actions[1] - 1f;
-            // acceleration = Mathf.FloorToInt(actions[1]) == 1 ? 1 : 0;
+            //acceleration = actions[1] - 1f;
+            acceleration = actions[1];
+
+            AddVectorObs(steering);
+            AddVectorObs(acceleration);
         }
 
         public override void CollectObservations()
         {
             AddVectorObs(kart.LocalSpeed());
-            
-            AddVectorObs(gameObject.transform.localPosition);
-            AddVectorObs(gameObject.transform.localRotation);
 
             // Add an observation for direction of the agent to the next checkpoint.
             var next          = (checkpointIndex + 1) % Colliders.Length;
@@ -229,6 +229,7 @@ namespace KartGame.AI
 
                 if (hitDistance < current.HitThreshold) {
                     AddReward(HitPenalty);
+                    Done();
                     AgentReset();
                 }
             }
@@ -252,9 +253,6 @@ namespace KartGame.AI
             // Add rewards if the agent is heading in the right direction
             AddReward(reward * TowardsCheckpointReward);
             AddReward(kart.LocalSpeed() * SpeedReward);
-            if (kart.LocalSpeed() < 0f) {
-                AddReward(-1f);
-            }
         }
 
         public override void AgentReset()

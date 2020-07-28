@@ -252,17 +252,29 @@
     <Reference Include="Unity.Analytics.StandardEvents">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
+    <Reference Include="Google.Protobuf">
+        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.barracuda@1.0.1/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression.FileSystem">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.connect.share@1.2.0-preview.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Abstractions">
+        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Abstractions.TestingHelpers">
+        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core">
+        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async">
+        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Purchasing">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Protobuf">
-        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.barracuda@1.0.1/Barracuda/Runtime/Plugins/ProtoBuffer/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>

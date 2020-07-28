@@ -31,16 +31,16 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.barracuda": {
-      "version": "1.0.1",
+      "version": "0.5.0-preview",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.burst": "1.2.3"
+        "com.unity.burst": "1.1.1"
       },
       "url": "https://packages.unity.com"
     },
     "com.unity.burst": {
-      "version": "1.2.3",
+      "version": "1.1.1",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -117,23 +117,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-    "com.unity.ml-agents": {
-      "version": "file:D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {
-        "com.unity.barracuda": "1.0.1"
-      }
-    },
-    "com.unity.multiplayer-hlapi": {
-      "version": "1.0.6",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "nuget.mono-cecil": "0.1.6-preview"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.postprocessing": {
       "version": "2.3.0",
       "depth": 0,
@@ -202,13 +185,6 @@
     "com.unity.xr.legacyinputhelpers": {
       "version": "2.1.4",
       "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "nuget.mono-cecil": {
-      "version": "0.1.6-preview",
-      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

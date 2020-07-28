@@ -262,20 +262,20 @@
     <Reference Include="System.IO.Compression.FileSystem">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.connect.share@1.2.0-preview.1/Plugins/System.IO.Compression.FileSystem.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.Purchasing">
-        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+    <Reference Include="System.IO.Abstractions">
+        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.IO.Abstractions">
-        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
+    <Reference Include="Grpc.Core">
+        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="System.Interactive.Async">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
     </Reference>
-    <Reference Include="Grpc.Core">
-        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+    <Reference Include="UnityEditor.Purchasing">
+        <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
