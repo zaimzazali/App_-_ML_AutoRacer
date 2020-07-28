@@ -9242,7 +9242,8 @@ MonoBehaviour:
     m_Bits: 2560
   GroundCastDistance: 1
   ShowRaycasts: 1
-  outBoundCollider: {fileID: 0}
+  isOutBound: 0
+  isCarReversed: 0
 --- !u!114 &1231152883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16096,7 +16097,8 @@ MonoBehaviour:
     m_Bits: 2560
   GroundCastDistance: 1
   ShowRaycasts: 1
-  outBoundCollider: {fileID: 0}
+  isOutBound: 0
+  isCarReversed: 0
 --- !u!4 &6823034782080354311
 Transform:
   m_ObjectHideFlags: 0
@@ -19744,7 +19746,8 @@ MonoBehaviour:
     m_Bits: 2560
   GroundCastDistance: 1
   ShowRaycasts: 1
-  outBoundCollider: {fileID: 48149809}
+  isOutBound: 0
+  isCarReversed: 0
 --- !u!114 &9030611186598394432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19782,7 +19785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStats:
-    TopSpeed: 100
+    TopSpeed: 50
     Acceleration: 5
     ReverseSpeed: 5
     ReverseAcceleration: 5
