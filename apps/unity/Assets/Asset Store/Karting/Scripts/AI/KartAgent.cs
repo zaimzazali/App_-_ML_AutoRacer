@@ -1,6 +1,8 @@
-﻿using MLAgents;
+﻿using System.Collections.Generic;
+using MLAgents;
 using KartGame.KartSystems;
 using UnityEngine;
+
 
 namespace KartGame.AI
 {
@@ -93,6 +95,8 @@ namespace KartGame.AI
         public bool ShowRaycasts;
 #endregion
 
+
+#region Variables
         ArcadeKart kart;
         float acceleration;
         float steering;
@@ -103,6 +107,17 @@ namespace KartGame.AI
         private bool isOutBound = false;
         [SerializeField]
         private bool isCarReversed = false;
+        [SerializeField]
+        private int checkpointPassed = 0;
+        [SerializeField]
+        private int cumCheckpointPassed = 0;
+        [SerializeField]
+        private bool finishedLap = false;
+        [SerializeField]
+        private int totalCheckpoints = 0;
+        [SerializeField]
+        private List<float> distanceToWall;
+#endregion
 
         void Awake()
         {
@@ -124,6 +139,8 @@ namespace KartGame.AI
             {
                 checkpointIndex = InitCheckpointIndex;
             }
+
+            totalCheckpoints = Colliders.Length;
         }
 
         void LateUpdate()
@@ -162,6 +179,14 @@ namespace KartGame.AI
             {
                 AddReward(PassCheckpointReward);
                 checkpointIndex = index;
+                checkpointPassed += 1;
+                cumCheckpointPassed += 1;
+                finishedLap = false;
+
+                if (checkpointPassed == Colliders.Length) {
+                    checkpointPassed = 0;
+                    finishedLap = true;
+                }
             }
 
             if (other.gameObject.layer == LayerMask.NameToLayer("Track")) {
@@ -222,6 +247,7 @@ namespace KartGame.AI
                 Debug.DrawLine(AgentSensorTransform.position, nextCollider.transform.position, Color.magenta);
             }
 
+            distanceToWall = new List<float>();
             for (int i = 0; i < Sensors.Length; i++)
             {
                 var current = Sensors[i];
@@ -239,10 +265,7 @@ namespace KartGame.AI
                 var hitDistance = (hit ? hitInfo.distance : RaycastDistance) / RaycastDistance;
                 AddVectorObs(hitDistance);
 
-                if (hitDistance < current.HitThreshold) {
-                    AddReward(HitPenalty);
-                    // Done
-                }
+                distanceToWall.Add(hitDistance);
             }
 
             if (isOutBound) {
@@ -283,8 +306,13 @@ namespace KartGame.AI
                     kart.Rigidbody.velocity = default;
                     acceleration            = 0f;
                     steering                = 0f;
+                    
                     isOutBound              = false;
                     isCarReversed           = false;
+                    checkpointPassed        = 0;
+                    cumCheckpointPassed     = 0;
+                    finishedLap             = false;
+                    distanceToWall          = new List<float>();
                     break;
                 default:
                     break;

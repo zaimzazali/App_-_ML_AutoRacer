@@ -67,6 +67,9 @@
  <Reference Include="Unity.Burst">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.ProBuilder">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
  </Reference>
@@ -171,9 +174,6 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity/2019.4.4f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
