@@ -9,10 +9,10 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace MLAgents.CommunicatorObjects {
+namespace Unity.MLAgents.CommunicatorObjects {
 
   /// <summary>Holder for reflection information generated from mlagents_envs/communicator_objects/agent_info.proto</summary>
-  public static partial class AgentInfoReflection {
+  internal static partial class AgentInfoReflection {
 
     #region Descriptor
     /// <summary>File descriptor for mlagents_envs/communicator_objects/agent_info.proto</summary>
@@ -31,19 +31,19 @@ namespace MLAgents.CommunicatorObjects {
             "ChBtYXhfc3RlcF9yZWFjaGVkGAkgASgIEgoKAmlkGAogASgFEhMKC2FjdGlv",
             "bl9tYXNrGAsgAygIEjwKDG9ic2VydmF0aW9ucxgNIAMoCzImLmNvbW11bmlj",
             "YXRvcl9vYmplY3RzLk9ic2VydmF0aW9uUHJvdG9KBAgBEAJKBAgCEANKBAgD",
-            "EARKBAgEEAVKBAgFEAZKBAgGEAdKBAgMEA1CH6oCHE1MQWdlbnRzLkNvbW11",
-            "bmljYXRvck9iamVjdHNiBnByb3RvMw=="));
+            "EARKBAgEEAVKBAgFEAZKBAgGEAdKBAgMEA1CJaoCIlVuaXR5Lk1MQWdlbnRz",
+            "LkNvbW11bmljYXRvck9iamVjdHNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::MLAgents.CommunicatorObjects.ObservationReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Unity.MLAgents.CommunicatorObjects.ObservationReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MLAgents.CommunicatorObjects.AgentInfoProto), global::MLAgents.CommunicatorObjects.AgentInfoProto.Parser, new[]{ "Reward", "Done", "MaxStepReached", "Id", "ActionMask", "Observations" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Unity.MLAgents.CommunicatorObjects.AgentInfoProto), global::Unity.MLAgents.CommunicatorObjects.AgentInfoProto.Parser, new[]{ "Reward", "Done", "MaxStepReached", "Id", "ActionMask", "Observations" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class AgentInfoProto : pb::IMessage<AgentInfoProto> {
+  internal sealed partial class AgentInfoProto : pb::IMessage<AgentInfoProto> {
     private static readonly pb::MessageParser<AgentInfoProto> _parser = new pb::MessageParser<AgentInfoProto>(() => new AgentInfoProto());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -51,7 +51,7 @@ namespace MLAgents.CommunicatorObjects {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MLAgents.CommunicatorObjects.AgentInfoReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Unity.MLAgents.CommunicatorObjects.AgentInfoReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -138,11 +138,11 @@ namespace MLAgents.CommunicatorObjects {
 
     /// <summary>Field number for the "observations" field.</summary>
     public const int ObservationsFieldNumber = 13;
-    private static readonly pb::FieldCodec<global::MLAgents.CommunicatorObjects.ObservationProto> _repeated_observations_codec
-        = pb::FieldCodec.ForMessage(106, global::MLAgents.CommunicatorObjects.ObservationProto.Parser);
-    private readonly pbc::RepeatedField<global::MLAgents.CommunicatorObjects.ObservationProto> observations_ = new pbc::RepeatedField<global::MLAgents.CommunicatorObjects.ObservationProto>();
+    private static readonly pb::FieldCodec<global::Unity.MLAgents.CommunicatorObjects.ObservationProto> _repeated_observations_codec
+        = pb::FieldCodec.ForMessage(106, global::Unity.MLAgents.CommunicatorObjects.ObservationProto.Parser);
+    private readonly pbc::RepeatedField<global::Unity.MLAgents.CommunicatorObjects.ObservationProto> observations_ = new pbc::RepeatedField<global::Unity.MLAgents.CommunicatorObjects.ObservationProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MLAgents.CommunicatorObjects.ObservationProto> Observations {
+    public pbc::RepeatedField<global::Unity.MLAgents.CommunicatorObjects.ObservationProto> Observations {
       get { return observations_; }
     }
 

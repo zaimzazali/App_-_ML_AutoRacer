@@ -1,37 +1,67 @@
-using System.Collections.Generic;
-using System.IO;
+using System;
 using UnityEngine;
 
-namespace MLAgents
+namespace Unity.MLAgents.SideChannels
 {
-    public class EngineConfigurationChannel : SideChannel
-    {
 
-        public override int ChannelType()
+    /// <summary>
+    /// Side channel that supports modifying attributes specific to the Unity Engine.
+    /// </summary>
+    internal class EngineConfigurationChannel : SideChannel
+    {
+        enum ConfigurationType : int
         {
-            return (int)SideChannelType.EngineSettings;
+            ScreenResolution = 0,
+            QualityLevel = 1,
+            TimeScale = 2,
+            TargetFrameRate = 3,
+            CaptureFrameRate = 4
         }
 
-        public override void OnMessageReceived(byte[] data)
+        const string k_EngineConfigId = "e951342c-4f7e-11ea-b238-784f4387d1f7";
+
+        /// <summary>
+        /// Initializes the side channel. The constructor is internal because only one instance is
+        /// supported at a time, and is created by the Academy.
+        /// </summary>
+        internal EngineConfigurationChannel()
         {
-            using (var memStream = new MemoryStream(data))
+            ChannelId = new Guid(k_EngineConfigId);
+        }
+
+        /// <inheritdoc/>
+        protected override void OnMessageReceived(IncomingMessage msg)
+        {
+            var messageType = (ConfigurationType)msg.ReadInt32();
+            switch (messageType)
             {
-                using (var binaryReader = new BinaryReader(memStream))
-                {
-                    var width = binaryReader.ReadInt32();
-                    var height = binaryReader.ReadInt32();
-                    var qualityLevel = binaryReader.ReadInt32();
-                    var timeScale = binaryReader.ReadSingle();
-                    var targetFrameRate = binaryReader.ReadInt32();
-
-                    timeScale = Mathf.Clamp(timeScale, 1, 100);
-
+                case ConfigurationType.ScreenResolution:
+                    var width = msg.ReadInt32();
+                    var height = msg.ReadInt32();
                     Screen.SetResolution(width, height, false);
+                    break;
+                case ConfigurationType.QualityLevel:
+                    var qualityLevel = msg.ReadInt32();
                     QualitySettings.SetQualityLevel(qualityLevel, true);
+                    break;
+                case ConfigurationType.TimeScale:
+                    var timeScale = msg.ReadFloat32();
+                    timeScale = Mathf.Clamp(timeScale, 1, 100);
                     Time.timeScale = timeScale;
-                    Time.captureFramerate = 60;
+                    break;
+                case ConfigurationType.TargetFrameRate:
+                    var targetFrameRate = msg.ReadInt32();
                     Application.targetFrameRate = targetFrameRate;
-                }
+                    break;
+                case ConfigurationType.CaptureFrameRate:
+                    var captureFrameRate = msg.ReadInt32();
+                    Time.captureFramerate = captureFrameRate;
+                    break;
+                default:
+                    Debug.LogWarning(
+                        "Unknown engine configuration received from Python. Make sure" +
+                        " your Unity and Python versions are compatible.");
+                    break;
             }
         }
     }

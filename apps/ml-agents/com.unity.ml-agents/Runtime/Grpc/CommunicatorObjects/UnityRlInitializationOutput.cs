@@ -9,10 +9,10 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace MLAgents.CommunicatorObjects {
+namespace Unity.MLAgents.CommunicatorObjects {
 
   /// <summary>Holder for reflection information generated from mlagents_envs/communicator_objects/unity_rl_initialization_output.proto</summary>
-  public static partial class UnityRlInitializationOutputReflection {
+  internal static partial class UnityRlInitializationOutputReflection {
 
     #region Descriptor
     /// <summary>File descriptor for mlagents_envs/communicator_objects/unity_rl_initialization_output.proto</summary>
@@ -26,16 +26,20 @@ namespace MLAgents.CommunicatorObjects {
           string.Concat(
             "CkdtbGFnZW50c19lbnZzL2NvbW11bmljYXRvcl9vYmplY3RzL3VuaXR5X3Js",
             "X2luaXRpYWxpemF0aW9uX291dHB1dC5wcm90bxIUY29tbXVuaWNhdG9yX29i",
-            "amVjdHMaOW1sYWdlbnRzX2VudnMvY29tbXVuaWNhdG9yX29iamVjdHMvYnJh",
-            "aW5fcGFyYW1ldGVycy5wcm90byKfAQogVW5pdHlSTEluaXRpYWxpemF0aW9u",
-            "T3V0cHV0UHJvdG8SDAoEbmFtZRgBIAEoCRIPCgd2ZXJzaW9uGAIgASgJEhAK",
-            "CGxvZ19wYXRoGAMgASgJEkQKEGJyYWluX3BhcmFtZXRlcnMYBSADKAsyKi5j",
-            "b21tdW5pY2F0b3Jfb2JqZWN0cy5CcmFpblBhcmFtZXRlcnNQcm90b0oECAYQ",
-            "B0IfqgIcTUxBZ2VudHMuQ29tbXVuaWNhdG9yT2JqZWN0c2IGcHJvdG8z"));
+            "amVjdHMaNW1sYWdlbnRzX2VudnMvY29tbXVuaWNhdG9yX29iamVjdHMvY2Fw",
+            "YWJpbGl0aWVzLnByb3RvGjltbGFnZW50c19lbnZzL2NvbW11bmljYXRvcl9v",
+            "YmplY3RzL2JyYWluX3BhcmFtZXRlcnMucHJvdG8ijAIKIFVuaXR5UkxJbml0",
+            "aWFsaXphdGlvbk91dHB1dFByb3RvEgwKBG5hbWUYASABKAkSHQoVY29tbXVu",
+            "aWNhdGlvbl92ZXJzaW9uGAIgASgJEhAKCGxvZ19wYXRoGAMgASgJEkQKEGJy",
+            "YWluX3BhcmFtZXRlcnMYBSADKAsyKi5jb21tdW5pY2F0b3Jfb2JqZWN0cy5C",
+            "cmFpblBhcmFtZXRlcnNQcm90bxIXCg9wYWNrYWdlX3ZlcnNpb24YByABKAkS",
+            "RAoMY2FwYWJpbGl0aWVzGAggASgLMi4uY29tbXVuaWNhdG9yX29iamVjdHMu",
+            "VW5pdHlSTENhcGFiaWxpdGllc1Byb3RvSgQIBhAHQiWqAiJVbml0eS5NTEFn",
+            "ZW50cy5Db21tdW5pY2F0b3JPYmplY3RzYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::MLAgents.CommunicatorObjects.BrainParametersReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Unity.MLAgents.CommunicatorObjects.CapabilitiesReflection.Descriptor, global::Unity.MLAgents.CommunicatorObjects.BrainParametersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MLAgents.CommunicatorObjects.UnityRLInitializationOutputProto), global::MLAgents.CommunicatorObjects.UnityRLInitializationOutputProto.Parser, new[]{ "Name", "Version", "LogPath", "BrainParameters" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Unity.MLAgents.CommunicatorObjects.UnityRLInitializationOutputProto), global::Unity.MLAgents.CommunicatorObjects.UnityRLInitializationOutputProto.Parser, new[]{ "Name", "CommunicationVersion", "LogPath", "BrainParameters", "PackageVersion", "Capabilities" }, null, null, null)
           }));
     }
     #endregion
@@ -45,7 +49,7 @@ namespace MLAgents.CommunicatorObjects {
   /// <summary>
   /// The request message containing the academy's parameters.
   /// </summary>
-  public sealed partial class UnityRLInitializationOutputProto : pb::IMessage<UnityRLInitializationOutputProto> {
+  internal sealed partial class UnityRLInitializationOutputProto : pb::IMessage<UnityRLInitializationOutputProto> {
     private static readonly pb::MessageParser<UnityRLInitializationOutputProto> _parser = new pb::MessageParser<UnityRLInitializationOutputProto>(() => new UnityRLInitializationOutputProto());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -53,7 +57,7 @@ namespace MLAgents.CommunicatorObjects {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MLAgents.CommunicatorObjects.UnityRlInitializationOutputReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Unity.MLAgents.CommunicatorObjects.UnityRlInitializationOutputReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -71,9 +75,11 @@ namespace MLAgents.CommunicatorObjects {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public UnityRLInitializationOutputProto(UnityRLInitializationOutputProto other) : this() {
       name_ = other.name_;
-      version_ = other.version_;
+      communicationVersion_ = other.communicationVersion_;
       logPath_ = other.logPath_;
       brainParameters_ = other.brainParameters_.Clone();
+      packageVersion_ = other.packageVersion_;
+      Capabilities = other.capabilities_ != null ? other.Capabilities.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -93,14 +99,17 @@ namespace MLAgents.CommunicatorObjects {
       }
     }
 
-    /// <summary>Field number for the "version" field.</summary>
-    public const int VersionFieldNumber = 2;
-    private string version_ = "";
+    /// <summary>Field number for the "communication_version" field.</summary>
+    public const int CommunicationVersionFieldNumber = 2;
+    private string communicationVersion_ = "";
+    /// <summary>
+    /// Communication protocol version that the responding side (typically the C# environment) is using.
+    /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Version {
-      get { return version_; }
+    public string CommunicationVersion {
+      get { return communicationVersion_; }
       set {
-        version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        communicationVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
@@ -117,12 +126,40 @@ namespace MLAgents.CommunicatorObjects {
 
     /// <summary>Field number for the "brain_parameters" field.</summary>
     public const int BrainParametersFieldNumber = 5;
-    private static readonly pb::FieldCodec<global::MLAgents.CommunicatorObjects.BrainParametersProto> _repeated_brainParameters_codec
-        = pb::FieldCodec.ForMessage(42, global::MLAgents.CommunicatorObjects.BrainParametersProto.Parser);
-    private readonly pbc::RepeatedField<global::MLAgents.CommunicatorObjects.BrainParametersProto> brainParameters_ = new pbc::RepeatedField<global::MLAgents.CommunicatorObjects.BrainParametersProto>();
+    private static readonly pb::FieldCodec<global::Unity.MLAgents.CommunicatorObjects.BrainParametersProto> _repeated_brainParameters_codec
+        = pb::FieldCodec.ForMessage(42, global::Unity.MLAgents.CommunicatorObjects.BrainParametersProto.Parser);
+    private readonly pbc::RepeatedField<global::Unity.MLAgents.CommunicatorObjects.BrainParametersProto> brainParameters_ = new pbc::RepeatedField<global::Unity.MLAgents.CommunicatorObjects.BrainParametersProto>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public pbc::RepeatedField<global::MLAgents.CommunicatorObjects.BrainParametersProto> BrainParameters {
+    public pbc::RepeatedField<global::Unity.MLAgents.CommunicatorObjects.BrainParametersProto> BrainParameters {
       get { return brainParameters_; }
+    }
+
+    /// <summary>Field number for the "package_version" field.</summary>
+    public const int PackageVersionFieldNumber = 7;
+    private string packageVersion_ = "";
+    /// <summary>
+    /// Package/library version that the responding side (typically the C# environment) is using.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string PackageVersion {
+      get { return packageVersion_; }
+      set {
+        packageVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "capabilities" field.</summary>
+    public const int CapabilitiesFieldNumber = 8;
+    private global::Unity.MLAgents.CommunicatorObjects.UnityRLCapabilitiesProto capabilities_;
+    /// <summary>
+    /// The RL Capabilities of the C# package.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public global::Unity.MLAgents.CommunicatorObjects.UnityRLCapabilitiesProto Capabilities {
+      get { return capabilities_; }
+      set {
+        capabilities_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -139,9 +176,11 @@ namespace MLAgents.CommunicatorObjects {
         return true;
       }
       if (Name != other.Name) return false;
-      if (Version != other.Version) return false;
+      if (CommunicationVersion != other.CommunicationVersion) return false;
       if (LogPath != other.LogPath) return false;
       if(!brainParameters_.Equals(other.brainParameters_)) return false;
+      if (PackageVersion != other.PackageVersion) return false;
+      if (!object.Equals(Capabilities, other.Capabilities)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -149,9 +188,11 @@ namespace MLAgents.CommunicatorObjects {
     public override int GetHashCode() {
       int hash = 1;
       if (Name.Length != 0) hash ^= Name.GetHashCode();
-      if (Version.Length != 0) hash ^= Version.GetHashCode();
+      if (CommunicationVersion.Length != 0) hash ^= CommunicationVersion.GetHashCode();
       if (LogPath.Length != 0) hash ^= LogPath.GetHashCode();
       hash ^= brainParameters_.GetHashCode();
+      if (PackageVersion.Length != 0) hash ^= PackageVersion.GetHashCode();
+      if (capabilities_ != null) hash ^= Capabilities.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -169,15 +210,23 @@ namespace MLAgents.CommunicatorObjects {
         output.WriteRawTag(10);
         output.WriteString(Name);
       }
-      if (Version.Length != 0) {
+      if (CommunicationVersion.Length != 0) {
         output.WriteRawTag(18);
-        output.WriteString(Version);
+        output.WriteString(CommunicationVersion);
       }
       if (LogPath.Length != 0) {
         output.WriteRawTag(26);
         output.WriteString(LogPath);
       }
       brainParameters_.WriteTo(output, _repeated_brainParameters_codec);
+      if (PackageVersion.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(PackageVersion);
+      }
+      if (capabilities_ != null) {
+        output.WriteRawTag(66);
+        output.WriteMessage(Capabilities);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -189,13 +238,19 @@ namespace MLAgents.CommunicatorObjects {
       if (Name.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
       }
-      if (Version.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
+      if (CommunicationVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(CommunicationVersion);
       }
       if (LogPath.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(LogPath);
       }
       size += brainParameters_.CalculateSize(_repeated_brainParameters_codec);
+      if (PackageVersion.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PackageVersion);
+      }
+      if (capabilities_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Capabilities);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -210,13 +265,22 @@ namespace MLAgents.CommunicatorObjects {
       if (other.Name.Length != 0) {
         Name = other.Name;
       }
-      if (other.Version.Length != 0) {
-        Version = other.Version;
+      if (other.CommunicationVersion.Length != 0) {
+        CommunicationVersion = other.CommunicationVersion;
       }
       if (other.LogPath.Length != 0) {
         LogPath = other.LogPath;
       }
       brainParameters_.Add(other.brainParameters_);
+      if (other.PackageVersion.Length != 0) {
+        PackageVersion = other.PackageVersion;
+      }
+      if (other.capabilities_ != null) {
+        if (capabilities_ == null) {
+          capabilities_ = new global::Unity.MLAgents.CommunicatorObjects.UnityRLCapabilitiesProto();
+        }
+        Capabilities.MergeFrom(other.Capabilities);
+      }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
 
@@ -233,7 +297,7 @@ namespace MLAgents.CommunicatorObjects {
             break;
           }
           case 18: {
-            Version = input.ReadString();
+            CommunicationVersion = input.ReadString();
             break;
           }
           case 26: {
@@ -242,6 +306,17 @@ namespace MLAgents.CommunicatorObjects {
           }
           case 42: {
             brainParameters_.AddEntriesFrom(input, _repeated_brainParameters_codec);
+            break;
+          }
+          case 58: {
+            PackageVersion = input.ReadString();
+            break;
+          }
+          case 66: {
+            if (capabilities_ == null) {
+              capabilities_ = new global::Unity.MLAgents.CommunicatorObjects.UnityRLCapabilitiesProto();
+            }
+            input.ReadMessage(capabilities_);
             break;
           }
         }

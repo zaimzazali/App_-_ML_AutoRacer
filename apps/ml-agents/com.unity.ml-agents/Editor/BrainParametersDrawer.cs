@@ -1,36 +1,35 @@
 using UnityEngine;
 using UnityEditor;
+using Unity.MLAgents.Policies;
 
-namespace MLAgents
+namespace Unity.MLAgents.Editor
 {
     /// <summary>
     /// PropertyDrawer for BrainParameters. Defines how BrainParameters are displayed in the
     /// Inspector.
     /// </summary>
     [CustomPropertyDrawer(typeof(BrainParameters))]
-    public class BrainParametersDrawer : PropertyDrawer
+    internal class BrainParametersDrawer : PropertyDrawer
     {
         // The height of a line in the Unity Inspectors
         const float k_LineHeight = 17f;
         const int k_VecObsNumLine = 3;
-        const string k_ActionSizePropName = "vectorActionSize";
-        const string k_ActionTypePropName = "vectorActionSpaceType";
-        const string k_ActionDescriptionPropName = "vectorActionDescriptions";
-        const string k_VecObsPropName = "vectorObservationSize";
-        const string k_NumVecObsPropName = "numStackedVectorObservations";
+        const string k_ActionSizePropName = "VectorActionSize";
+        const string k_ActionTypePropName = "VectorActionSpaceType";
+        const string k_ActionDescriptionPropName = "VectorActionDescriptions";
+        const string k_VecObsPropName = "VectorObservationSize";
+        const string k_NumVecObsPropName = "NumStackedVectorObservations";
 
         /// <inheritdoc />
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             return GetHeightDrawVectorObservation() +
                 GetHeightDrawVectorAction(property);
-
         }
 
         /// <inheritdoc />
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-
             var indent = EditorGUI.indentLevel;
             EditorGUI.indentLevel = 0;
             position.height = k_LineHeight;
@@ -125,7 +124,14 @@ namespace MLAgents
         static void DrawContinuousVectorAction(Rect position, SerializedProperty property)
         {
             var vecActionSize = property.FindPropertyRelative(k_ActionSizePropName);
-            vecActionSize.arraySize = 1;
+
+            // This check is here due to:
+            // https://fogbugz.unity3d.com/f/cases/1246524/
+            // If this case has been resolved, please remove this if condition.
+            if (vecActionSize.arraySize != 1)
+            {
+                vecActionSize.arraySize = 1;
+            }
             var continuousActionSize =
                 vecActionSize.GetArrayElementAtIndex(0);
             EditorGUI.PropertyField(
@@ -143,8 +149,17 @@ namespace MLAgents
         static void DrawDiscreteVectorAction(Rect position, SerializedProperty property)
         {
             var vecActionSize = property.FindPropertyRelative(k_ActionSizePropName);
-            vecActionSize.arraySize = EditorGUI.IntField(
+            var newSize = EditorGUI.IntField(
                 position, "Branches Size", vecActionSize.arraySize);
+
+            // This check is here due to:
+            // https://fogbugz.unity3d.com/f/cases/1246524/
+            // If this case has been resolved, please remove this if condition.
+            if (newSize != vecActionSize.arraySize)
+            {
+                vecActionSize.arraySize = newSize;
+            }
+
             position.y += k_LineHeight;
             position.x += 20;
             position.width -= 20;
@@ -165,9 +180,9 @@ namespace MLAgents
         }
 
         /// <summary>
-        /// The Height required to draw the Vector Action parameters
+        /// The Height required to draw the Vector Action parameters.
         /// </summary>
-        /// <returns>The height of the drawer of the Vector Action </returns>
+        /// <returns>The height of the drawer of the Vector Action.</returns>
         static float GetHeightDrawVectorAction(SerializedProperty property)
         {
             var actionSize = 2 + property.FindPropertyRelative(k_ActionSizePropName).arraySize;

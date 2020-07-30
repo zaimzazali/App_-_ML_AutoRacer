@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-using Barracuda;
+using Unity.Barracuda;
+using Unity.MLAgents.Sensors;
 
-namespace MLAgents.InferenceBrain
+namespace Unity.MLAgents.Inference
 {
     /// <summary>
     /// Mapping between Tensor names and generators.
@@ -15,7 +16,7 @@ namespace MLAgents.InferenceBrain
     /// When the TensorProxy is an Output of the model, only the shape of the Tensor will be
     /// modified using the current batch size. The data will be pre-filled with zeros.
     /// </summary>
-    public class TensorGenerator
+    internal class TensorGenerator
     {
         public interface IGenerator
         {
@@ -23,12 +24,14 @@ namespace MLAgents.InferenceBrain
             /// Modifies the data inside a Tensor according to the information contained in the
             /// AgentInfos contained in the current batch.
             /// </summary>
-            /// <param name="tensorProxy"> The tensor the data and shape will be modified</param>
-            /// <param name="batchSize"> The number of agents present in the current batch</param>
-            /// <param name="agents"> List of Agents containing the
-            /// information that will be used to populate the tensor's data</param>
+            /// <param name="tensorProxy"> The tensor the data and shape will be modified.</param>
+            /// <param name="batchSize"> The number of agents present in the current batch.</param>
+            /// <param name="infos">
+            /// List of AgentInfos containing the information that will be used to populate
+            /// the tensor's data.
+            /// </param>
             void Generate(
-                TensorProxy tensorProxy, int batchSize, IEnumerable<Agent> agents);
+                TensorProxy tensorProxy, int batchSize, IEnumerable<AgentInfoSensorsPair> infos);
         }
 
         readonly Dictionary<string, IGenerator> m_Dict = new Dictionary<string, IGenerator>();
@@ -37,7 +40,7 @@ namespace MLAgents.InferenceBrain
         /// Returns a new TensorGenerators object.
         /// </summary>
         /// <param name="seed"> The seed the Generators will be initialized with.</param>
-        /// <param name="allocator"> Tensor allocator</param>
+        /// <param name="allocator"> Tensor allocator.</param>
         /// <param name="memories">Dictionary of AgentInfo.id to memory for use in the inference model.</param>
         /// <param name="barracudaModel"></param>
         public TensorGenerator(
@@ -78,17 +81,17 @@ namespace MLAgents.InferenceBrain
             m_Dict[TensorNames.ValueEstimateOutput] = new BiDimensionalOutputGenerator(allocator);
         }
 
-        public void InitializeObservations(Agent agent, ITensorAllocator allocator)
+        public void InitializeObservations(List<ISensor> sensors, ITensorAllocator allocator)
         {
             // Loop through the sensors on a representative agent.
             // For vector observations, add the index to the (single) VectorObservationGenerator
             // For visual observations, make a VisualObservationInputGenerator
             var visIndex = 0;
             VectorObservationGenerator vecObsGen = null;
-            for (var sensorIndex = 0; sensorIndex < agent.sensors.Count; sensorIndex++)
+            for (var sensorIndex = 0; sensorIndex < sensors.Count; sensorIndex++)
             {
-                var sensor = agent.sensors[sensorIndex];
-                var shape = sensor.GetFloatObservationShape();
+                var sensor = sensors[sensorIndex];
+                var shape = sensor.GetObservationShape();
                 // TODO generalize - we currently only have vector or visual, but can't handle "2D" observations
                 var isVectorSensor = (shape.Length == 1);
                 if (isVectorSensor)
@@ -110,7 +113,7 @@ namespace MLAgents.InferenceBrain
 
             if (vecObsGen != null)
             {
-                m_Dict[TensorNames.VectorObservationPlacholder] = vecObsGen;
+                m_Dict[TensorNames.VectorObservationPlaceholder] = vecObsGen;
             }
         }
 
@@ -121,12 +124,12 @@ namespace MLAgents.InferenceBrain
         /// <param name="tensors"> Enumerable of tensors that will be modified.</param>
         /// <param name="currentBatchSize"> The number of agents present in the current batch
         /// </param>
-        /// <param name="agents"> List of Agents that contains the
+        /// <param name="infos"> List of AgentsInfos and Sensors that contains the
         /// data that will be used to modify the tensors</param>
         /// <exception cref="UnityAgentsException"> One of the tensor does not have an
         /// associated generator.</exception>
         public void GenerateTensors(
-            IEnumerable<TensorProxy> tensors, int currentBatchSize, IEnumerable<Agent> agents)
+            IEnumerable<TensorProxy> tensors, int currentBatchSize, IEnumerable<AgentInfoSensorsPair> infos)
         {
             foreach (var tensor in tensors)
             {
@@ -135,7 +138,7 @@ namespace MLAgents.InferenceBrain
                     throw new UnityAgentsException(
                         $"Unknown tensorProxy expected as input : {tensor.name}");
                 }
-                m_Dict[tensor.name].Generate(tensor, currentBatchSize, agents);
+                m_Dict[tensor.name].Generate(tensor, currentBatchSize, infos);
             }
         }
     }

@@ -1,13 +1,13 @@
-namespace MLAgents.InferenceBrain
+namespace Unity.MLAgents.Inference
 {
     /// <summary>
     /// Contains the names of the input and output tensors for the Inference Brain.
     /// </summary>
-    public static class TensorNames
+    internal static class TensorNames
     {
         public const string BatchSizePlaceholder = "batch_size";
         public const string SequenceLengthPlaceholder = "sequence_length";
-        public const string VectorObservationPlacholder = "vector_observation";
+        public const string VectorObservationPlaceholder = "vector_observation";
         public const string RecurrentInPlaceholder = "recurrent_in";
         public const string recurrentInPlaceholderH = "recurrent_in_h";
         public const string recurrentInPlaceholderC = "recurrent_in_c";
@@ -25,5 +25,10 @@ namespace MLAgents.InferenceBrain
         public const string IsContinuousControl = "is_continuous_control";
         public const string ActionOutputShape = "action_output_shape";
         public const string ActionOutput = "action";
+
+        public static readonly string[] RequiredConstants =
+        {
+            VersionNumber, MemorySize, IsContinuousControl, ActionOutputShape
+        };
     }
 }

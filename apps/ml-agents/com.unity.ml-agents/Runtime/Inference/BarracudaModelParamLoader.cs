@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Barracuda;
-using MLAgents.Sensor;
-using UnityEngine;
+using Unity.Barracuda;
+using Unity.MLAgents.Sensors;
+using Unity.MLAgents.Policies;
 
-namespace MLAgents.InferenceBrain
+namespace Unity.MLAgents.Inference
 {
     /// <summary>
     /// Prepares the Tensors for the Learning Brain and exposes a list of failed checks if Model
     /// and BrainParameters are incompatible.
     /// </summary>
-    public class BarracudaModelParamLoader
+    internal class BarracudaModelParamLoader
     {
         enum ModelActionType
         {
@@ -26,9 +26,9 @@ namespace MLAgents.InferenceBrain
         /// Generates the Tensor inputs that are expected to be present in the Model.
         /// </summary>
         /// <param name="model">
-        /// The Barracuda engine model for loading static parameters
+        /// The Barracuda engine model for loading static parameters.
         /// </param>
-        /// <returns>TensorProxy IEnumerable with the expected Tensor inputs</returns>
+        /// <returns>TensorProxy IEnumerable with the expected Tensor inputs.</returns>
         public static IReadOnlyList<TensorProxy> GetInputTensors(Model model)
         {
             var tensors = new List<TensorProxy>();
@@ -126,16 +126,37 @@ namespace MLAgents.InferenceBrain
         /// The BrainParameters that are used verify the compatibility with the InferenceEngine
         /// </param>
         /// <param name="sensorComponents">Attached sensor components</param>
+        /// <param name="observableAttributeTotalSize">Sum of the sizes of all ObservableAttributes.</param>
+        /// <param name="behaviorType">BehaviorType or the Agent to check.</param>
         /// <returns>The list the error messages of the checks that failed</returns>
-        public static IEnumerable<string> CheckModel(Model model, BrainParameters brainParameters, SensorComponent[] sensorComponents)
+        public static IEnumerable<string> CheckModel(Model model, BrainParameters brainParameters,
+            SensorComponent[] sensorComponents, int observableAttributeTotalSize = 0,
+            BehaviorType behaviorType = BehaviorType.Default)
         {
             List<string> failedModelChecks = new List<string>();
             if (model == null)
             {
-                failedModelChecks.Add(
-                    "There is no model for this Brain, cannot run inference. " +
-                    "(But can still train)");
+                var errorMsg = "There is no model for this Brain; cannot run inference. ";
+                if (behaviorType == BehaviorType.InferenceOnly)
+                {
+                    errorMsg += "Either assign a model, or change to a different Behavior Type.";
+                }
+                else
+                {
+                    errorMsg += "(But can still train)";
+                }
+                failedModelChecks.Add(errorMsg);
                 return failedModelChecks;
+            }
+
+            foreach (var constantName in TensorNames.RequiredConstants)
+            {
+                var tensor = model.GetTensorByName(constantName);
+                if (tensor == null)
+                {
+                    failedModelChecks.Add($"Required constant \"{constantName}\" was not found in the model file.");
+                    return failedModelChecks;
+                }
             }
 
             var modelApiVersion = (int)model.GetTensorByName(TensorNames.VersionNumber)[0];
@@ -173,7 +194,7 @@ namespace MLAgents.InferenceBrain
                 CheckOutputTensorPresence(model, memorySize))
             ;
             failedModelChecks.AddRange(
-                CheckInputTensorShape(model, brainParameters, sensorComponents)
+                CheckInputTensorShape(model, brainParameters, sensorComponents, observableAttributeTotalSize)
             );
             failedModelChecks.AddRange(
                 CheckOutputTensorShape(model, brainParameters, isContinuous, actionSize)
@@ -244,6 +265,7 @@ namespace MLAgents.InferenceBrain
         /// Whether the model is expecting continuous or discrete control.
         /// </param>
         /// <param name="sensorComponents">Array of attached sensor components</param>
+        /// <param name="observableAttributeTotalSize">Total size of ObservableAttributes</param>
         /// <returns>
         /// A IEnumerable of string corresponding to the failed input presence checks.
         /// </returns>
@@ -253,14 +275,14 @@ namespace MLAgents.InferenceBrain
             int memory,
             ModelActionType isContinuous,
             SensorComponent[] sensorComponents
-            )
+        )
         {
             var failedModelChecks = new List<string>();
             var tensorsNames = GetInputTensors(model).Select(x => x.name).ToList();
 
             // If there is no Vector Observation Input but the Brain Parameters expect one.
-            if ((brainParameters.vectorObservationSize != 0) &&
-                (!tensorsNames.Contains(TensorNames.VectorObservationPlacholder)))
+            if ((brainParameters.VectorObservationSize != 0) &&
+                (!tensorsNames.Contains(TensorNames.VectorObservationPlaceholder)))
             {
                 failedModelChecks.Add(
                     "The model does not contain a Vector Observation  Placeholder Input. " +
@@ -395,25 +417,27 @@ namespace MLAgents.InferenceBrain
         /// The BrainParameters that are used verify the compatibility with the InferenceEngine
         /// </param>
         /// <param name="sensorComponents">Attached sensors</param>
+        /// <param name="observableAttributeTotalSize">Sum of the sizes of all ObservableAttributes.</param>
         /// <returns>The list the error messages of the checks that failed</returns>
         static IEnumerable<string> CheckInputTensorShape(
-            Model model, BrainParameters brainParameters, SensorComponent[] sensorComponents)
+            Model model, BrainParameters brainParameters, SensorComponent[] sensorComponents,
+            int observableAttributeTotalSize)
         {
             var failedModelChecks = new List<string>();
             var tensorTester =
-                new Dictionary<string, Func<BrainParameters, TensorProxy, SensorComponent[], string>>()
+                new Dictionary<string, Func<BrainParameters, TensorProxy, SensorComponent[], int, string>>()
             {
-                {TensorNames.VectorObservationPlacholder, CheckVectorObsShape},
+                {TensorNames.VectorObservationPlaceholder, CheckVectorObsShape},
                 {TensorNames.PreviousActionPlaceholder, CheckPreviousActionShape},
-                {TensorNames.RandomNormalEpsilonPlaceholder, ((bp, tensor, scs) => null)},
-                {TensorNames.ActionMaskPlaceholder, ((bp, tensor, scs) => null)},
-                {TensorNames.SequenceLengthPlaceholder, ((bp, tensor, scs) => null)},
-                {TensorNames.RecurrentInPlaceholder, ((bp, tensor, scs) => null)},
+                {TensorNames.RandomNormalEpsilonPlaceholder, ((bp, tensor, scs, i) => null)},
+                {TensorNames.ActionMaskPlaceholder, ((bp, tensor, scs, i) => null)},
+                {TensorNames.SequenceLengthPlaceholder, ((bp, tensor, scs, i) => null)},
+                {TensorNames.RecurrentInPlaceholder, ((bp, tensor, scs, i) => null)},
             };
 
             foreach (var mem in model.memories)
             {
-                tensorTester[mem.input] = ((bp, tensor, scs) => null);
+                tensorTester[mem.input] = ((bp, tensor, scs, i) => null);
             }
 
             var visObsIndex = 0;
@@ -425,7 +449,7 @@ namespace MLAgents.InferenceBrain
                     continue;
                 }
                 tensorTester[TensorNames.VisualObservationPlaceholderPrefix + visObsIndex] =
-                    (bp, tensor, scs) => CheckVisualObsShape(tensor, sensorComponent);
+                    (bp, tensor, scs, i) => CheckVisualObsShape(tensor, sensorComponent);
                 visObsIndex++;
             }
 
@@ -443,7 +467,7 @@ namespace MLAgents.InferenceBrain
                 else
                 {
                     var tester = tensorTester[tensor.name];
-                    var error = tester.Invoke(brainParameters, tensor, sensorComponents);
+                    var error = tester.Invoke(brainParameters, tensor, sensorComponents, observableAttributeTotalSize);
                     if (error != null)
                     {
                         failedModelChecks.Add(error);
@@ -462,15 +486,17 @@ namespace MLAgents.InferenceBrain
         /// </param>
         /// <param name="tensorProxy">The tensor that is expected by the model</param>
         /// <param name="sensorComponents">Array of attached sensor components</param>
+        /// <param name="observableAttributeTotalSize">Sum of the sizes of all ObservableAttributes.</param>
         /// <returns>
         /// If the Check failed, returns a string containing information about why the
         /// check failed. If the check passed, returns null.
         /// </returns>
         static string CheckVectorObsShape(
-            BrainParameters brainParameters, TensorProxy tensorProxy, SensorComponent[] sensorComponents)
+            BrainParameters brainParameters, TensorProxy tensorProxy, SensorComponent[] sensorComponents,
+            int observableAttributeTotalSize)
         {
-            var vecObsSizeBp = brainParameters.vectorObservationSize;
-            var numStackedVector = brainParameters.numStackedVectorObservations;
+            var vecObsSizeBp = brainParameters.VectorObservationSize;
+            var numStackedVector = brainParameters.NumStackedVectorObservations;
             var totalVecObsSizeT = tensorProxy.shape[tensorProxy.shape.Length - 1];
 
             var totalVectorSensorSize = 0;
@@ -481,6 +507,8 @@ namespace MLAgents.InferenceBrain
                     totalVectorSensorSize += sensorComp.GetObservationShape()[0];
                 }
             }
+
+            totalVectorSensorSize += observableAttributeTotalSize;
 
             if (vecObsSizeBp * numStackedVector + totalVectorSensorSize != totalVecObsSizeT)
             {
@@ -503,7 +531,9 @@ namespace MLAgents.InferenceBrain
 
                 sensorSizes += "]";
                 return $"Vector Observation Size of the model does not match. Was expecting {totalVecObsSizeT} " +
-                    $"but received {vecObsSizeBp} x {numStackedVector} vector observations and " +
+                    $"but received: \n" +
+                    $"Vector observations: {vecObsSizeBp} x {numStackedVector}\n" +
+                    $"Total [Observable] attributes: {observableAttributeTotalSize}\n" +
                     $"SensorComponent sizes: {sensorSizes}.";
             }
             return null;
@@ -517,13 +547,15 @@ namespace MLAgents.InferenceBrain
         /// The BrainParameters that are used verify the compatibility with the InferenceEngine
         /// </param>
         /// <param name="tensorProxy"> The tensor that is expected by the model</param>
-        /// <param name="sensorComponents">Array of attached sensor components</param>
+        /// <param name="sensorComponents">Array of attached sensor components (unused).</param>
+        /// <param name="observableAttributeTotalSize">Sum of the sizes of all ObservableAttributes (unused).</param>
         /// <returns>If the Check failed, returns a string containing information about why the
         /// check failed. If the check passed, returns null.</returns>
         static string CheckPreviousActionShape(
-            BrainParameters brainParameters, TensorProxy tensorProxy, SensorComponent[] sensorComponents)
+            BrainParameters brainParameters, TensorProxy tensorProxy,
+            SensorComponent[] sensorComponents, int observableAttributeTotalSize)
         {
-            var numberActionsBp = brainParameters.vectorActionSize.Length;
+            var numberActionsBp = brainParameters.VectorActionSize.Length;
             var numberActionsT = tensorProxy.shape[tensorProxy.shape.Length - 1];
             if (numberActionsBp != numberActionsT)
             {
@@ -566,7 +598,7 @@ namespace MLAgents.InferenceBrain
                 return failedModelChecks;
             }
             if (isContinuous == ModelActionType.Continuous &&
-                brainParameters.vectorActionSpaceType != SpaceType.Continuous)
+                brainParameters.VectorActionSpaceType != SpaceType.Continuous)
             {
                 failedModelChecks.Add(
                     "Model has been trained using Continuous Control but the Brain Parameters " +
@@ -574,15 +606,15 @@ namespace MLAgents.InferenceBrain
                 return failedModelChecks;
             }
             if (isContinuous == ModelActionType.Discrete &&
-                brainParameters.vectorActionSpaceType != SpaceType.Discrete)
+                brainParameters.VectorActionSpaceType != SpaceType.Discrete)
             {
                 failedModelChecks.Add(
                     "Model has been trained using Discrete Control but the Brain Parameters " +
                     "suggest Continuous Control.");
                 return failedModelChecks;
             }
-            var tensorTester = new Dictionary<string, Func<BrainParameters, TensorShape, int, string>>();
-            if (brainParameters.vectorActionSpaceType == SpaceType.Continuous)
+            var tensorTester = new Dictionary<string, Func<BrainParameters, TensorShape?, int, string>>();
+            if (brainParameters.VectorActionSpaceType == SpaceType.Continuous)
             {
                 tensorTester[TensorNames.ActionOutput] = CheckContinuousActionOutputShape;
             }
@@ -595,7 +627,7 @@ namespace MLAgents.InferenceBrain
             {
                 if (tensorTester.ContainsKey(name))
                 {
-                    var tester = tensorTester[name];
+                    Func<BrainParameters, TensorShape?, int, string> tester = tensorTester[name];
                     var error = tester.Invoke(brainParameters, model.GetShapeByName(name), modelActionSize);
                     if (error != null)
                     {
@@ -622,9 +654,9 @@ namespace MLAgents.InferenceBrain
         /// check failed. If the check passed, returns null.
         /// </returns>
         static string CheckDiscreteActionOutputShape(
-            BrainParameters brainParameters, TensorShape shape, int modelActionSize)
+            BrainParameters brainParameters, TensorShape? shape, int modelActionSize)
         {
-            var bpActionSize = brainParameters.vectorActionSize.Sum();
+            var bpActionSize = brainParameters.VectorActionSize.Sum();
             if (modelActionSize != bpActionSize)
             {
                 return "Action Size of the model does not match. The BrainParameters expect " +
@@ -647,9 +679,9 @@ namespace MLAgents.InferenceBrain
         /// <returns>If the Check failed, returns a string containing information about why the
         /// check failed. If the check passed, returns null.</returns>
         static string CheckContinuousActionOutputShape(
-            BrainParameters brainParameters, TensorShape shape, int modelActionSize)
+            BrainParameters brainParameters, TensorShape? shape, int modelActionSize)
         {
-            var bpActionSize = brainParameters.vectorActionSize[0];
+            var bpActionSize = brainParameters.VectorActionSize[0];
             if (modelActionSize != bpActionSize)
             {
                 return "Action Size of the model does not match. The BrainParameters expect " +

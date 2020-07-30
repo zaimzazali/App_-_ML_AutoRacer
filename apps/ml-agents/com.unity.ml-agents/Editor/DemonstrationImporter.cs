@@ -1,19 +1,25 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
-using MLAgents.CommunicatorObjects;
+using Unity.MLAgents.CommunicatorObjects;
 using UnityEditor;
 using UnityEngine;
+#if UNITY_2020_2_OR_NEWER
+using UnityEditor.AssetImporters;
+#else
 using UnityEditor.Experimental.AssetImporters;
+#endif
+using Unity.MLAgents.Demonstrations;
 
-namespace MLAgents
+namespace Unity.MLAgents.Editor
 {
     /// <summary>
     /// Asset Importer used to parse demonstration files.
     /// </summary>
     [ScriptedImporter(1, new[] {"demo"})]
-    public class DemonstrationImporter : ScriptedImporter
+    internal class DemonstrationImporter : ScriptedImporter
     {
-        const string k_IconPath = "Assets/ML-Agents/Resources/DemoIcon.png";
+        const string k_IconPath = "Packages/com.unity.ml-agents/Editor/Icons/DemoIcon.png";
 
         public override void OnImportAsset(AssetImportContext ctx)
         {
@@ -25,31 +31,40 @@ namespace MLAgents
 
             try
             {
-                // Read first two proto objects containing metadata and brain parameters.
+                // Read first three proto objects containing metadata, brain parameters, and observations.
                 Stream reader = File.OpenRead(ctx.assetPath);
 
                 var metaDataProto = DemonstrationMetaProto.Parser.ParseDelimitedFrom(reader);
                 var metaData = metaDataProto.ToDemonstrationMetaData();
 
-                reader.Seek(DemonstrationStore.MetaDataBytes + 1, 0);
+                reader.Seek(DemonstrationWriter.MetaDataBytes + 1, 0);
                 var brainParamsProto = BrainParametersProto.Parser.ParseDelimitedFrom(reader);
                 var brainParameters = brainParamsProto.ToBrainParameters();
 
+                // Read the first AgentInfoActionPair so that we can get the observation sizes.
+                List<ObservationSummary> observationSummaries;
+                try
+                {
+                    var agentInfoActionPairProto = AgentInfoActionPairProto.Parser.ParseDelimitedFrom(reader);
+                    observationSummaries = agentInfoActionPairProto.GetObservationSummaries();
+                }
+                catch
+                {
+                    // Just in case there weren't any AgentInfoActionPair or they couldn't be read.
+                    observationSummaries = new List<ObservationSummary>();
+                }
+
                 reader.Close();
 
-                var demonstration = ScriptableObject.CreateInstance<Demonstration>();
-                demonstration.Initialize(brainParameters, metaData);
-                userData = demonstration.ToString();
+                var demonstrationSummary = ScriptableObject.CreateInstance<DemonstrationSummary>();
+                demonstrationSummary.Initialize(brainParameters, metaData, observationSummaries);
+                userData = demonstrationSummary.ToString();
 
                 var texture = (Texture2D)
                     AssetDatabase.LoadAssetAtPath(k_IconPath, typeof(Texture2D));
 
-#if UNITY_2017_3_OR_NEWER
-                ctx.AddObjectToAsset(ctx.assetPath, demonstration, texture);
-                ctx.SetMainObject(demonstration);
-#else
-                ctx.SetMainAsset(ctx.assetPath, demonstration);
-#endif
+                ctx.AddObjectToAsset(ctx.assetPath, demonstrationSummary, texture);
+                ctx.SetMainObject(demonstrationSummary);
             }
             catch
             {

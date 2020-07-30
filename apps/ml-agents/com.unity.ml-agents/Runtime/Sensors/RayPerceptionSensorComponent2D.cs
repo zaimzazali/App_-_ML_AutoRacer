@@ -1,10 +1,26 @@
-namespace MLAgents.Sensor
+using UnityEngine;
+
+namespace Unity.MLAgents.Sensors
 {
+    /// <summary>
+    /// A component for 2D Ray Perception.
+    /// </summary>
+    [AddComponentMenu("ML Agents/Ray Perception Sensor 2D", (int)MenuGroup.Sensors)]
     public class RayPerceptionSensorComponent2D : RayPerceptionSensorComponentBase
     {
-        public override RayPerceptionSensor.CastType GetCastType()
+        /// <summary>
+        /// Initializes the raycast sensor component.
+        /// </summary>
+        public RayPerceptionSensorComponent2D()
         {
-            return RayPerceptionSensor.CastType.Cast2D;
+            // Set to the 2D defaults (just in case they ever diverge).
+            RayLayerMask = Physics2D.DefaultRaycastLayers;
+        }
+
+        /// <inheritdoc/>
+        public override RayPerceptionCastType GetCastType()
+        {
+            return RayPerceptionCastType.Cast2D;
         }
     }
 }

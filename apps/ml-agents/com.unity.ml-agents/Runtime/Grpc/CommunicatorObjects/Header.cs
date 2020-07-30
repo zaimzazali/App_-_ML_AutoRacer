@@ -9,10 +9,10 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace MLAgents.CommunicatorObjects {
+namespace Unity.MLAgents.CommunicatorObjects {
 
   /// <summary>Holder for reflection information generated from mlagents_envs/communicator_objects/header.proto</summary>
-  public static partial class HeaderReflection {
+  internal static partial class HeaderReflection {
 
     #region Descriptor
     /// <summary>File descriptor for mlagents_envs/communicator_objects/header.proto</summary>
@@ -26,19 +26,19 @@ namespace MLAgents.CommunicatorObjects {
           string.Concat(
             "Ci9tbGFnZW50c19lbnZzL2NvbW11bmljYXRvcl9vYmplY3RzL2hlYWRlci5w",
             "cm90bxIUY29tbXVuaWNhdG9yX29iamVjdHMiLgoLSGVhZGVyUHJvdG8SDgoG",
-            "c3RhdHVzGAEgASgFEg8KB21lc3NhZ2UYAiABKAlCH6oCHE1MQWdlbnRzLkNv",
-            "bW11bmljYXRvck9iamVjdHNiBnByb3RvMw=="));
+            "c3RhdHVzGAEgASgFEg8KB21lc3NhZ2UYAiABKAlCJaoCIlVuaXR5Lk1MQWdl",
+            "bnRzLkNvbW11bmljYXRvck9iamVjdHNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::MLAgents.CommunicatorObjects.HeaderProto), global::MLAgents.CommunicatorObjects.HeaderProto.Parser, new[]{ "Status", "Message" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Unity.MLAgents.CommunicatorObjects.HeaderProto), global::Unity.MLAgents.CommunicatorObjects.HeaderProto.Parser, new[]{ "Status", "Message" }, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  public sealed partial class HeaderProto : pb::IMessage<HeaderProto> {
+  internal sealed partial class HeaderProto : pb::IMessage<HeaderProto> {
     private static readonly pb::MessageParser<HeaderProto> _parser = new pb::MessageParser<HeaderProto>(() => new HeaderProto());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -46,7 +46,7 @@ namespace MLAgents.CommunicatorObjects {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::MLAgents.CommunicatorObjects.HeaderReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Unity.MLAgents.CommunicatorObjects.HeaderReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

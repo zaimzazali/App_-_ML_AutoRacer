@@ -2,16 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Google.Protobuf;
-using Google.Protobuf.Collections;
-using MLAgents.CommunicatorObjects;
-using MLAgents.Sensor;
+using Unity.MLAgents.CommunicatorObjects;
 using UnityEngine;
+using System.Runtime.CompilerServices;
+using Unity.MLAgents.Sensors;
+using Unity.MLAgents.Demonstrations;
+using Unity.MLAgents.Policies;
 
-namespace MLAgents
+
+[assembly: InternalsVisibleTo("Unity.ML-Agents.Editor")]
+[assembly: InternalsVisibleTo("Unity.ML-Agents.Editor.Tests")]
+
+namespace Unity.MLAgents
 {
-    public static class GrpcExtensions
+    internal static class GrpcExtensions
     {
-
+        #region AgentInfo
         /// <summary>
         /// Converts a AgentInfo to a protobuf generated AgentInfoActionPairProto
         /// </summary>
@@ -20,10 +26,11 @@ namespace MLAgents
         {
             var agentInfoProto = ai.ToAgentInfoProto();
 
-            var agentActionProto = new AgentActionProto
+            var agentActionProto = new AgentActionProto();
+            if(ai.storedVectorActions != null)
             {
-                VectorActions = { ai.storedVectorActions }
-            };
+                agentActionProto.VectorActions.AddRange(ai.storedVectorActions);
+            }
 
             return new AgentInfoActionPairProto
             {
@@ -43,25 +50,40 @@ namespace MLAgents
                 Reward = ai.reward,
                 MaxStepReached = ai.maxStepReached,
                 Done = ai.done,
-                Id = ai.id,
+                Id = ai.episodeId,
             };
 
-            if (ai.actionMasks != null)
+            if (ai.discreteActionMasks != null)
             {
-                agentInfoProto.ActionMask.AddRange(ai.actionMasks);
-            }
-
-            if (ai.observations != null)
-            {
-                foreach (var obs in ai.observations)
-                {
-                    agentInfoProto.Observations.Add(obs.ToProto());
-                }
+                agentInfoProto.ActionMask.AddRange(ai.discreteActionMasks);
             }
 
             return agentInfoProto;
         }
 
+        /// <summary>
+        /// Get summaries for the observations in the AgentInfo part of the AgentInfoActionPairProto.
+        /// </summary>
+        /// <param name="infoActionPair"></param>
+        /// <returns></returns>
+        public static List<ObservationSummary> GetObservationSummaries(this AgentInfoActionPairProto infoActionPair)
+        {
+            List<ObservationSummary> summariesOut = new List<ObservationSummary>();
+            var agentInfo = infoActionPair.AgentInfo;
+            foreach (var obs in agentInfo.Observations)
+            {
+                var summary = new ObservationSummary();
+                summary.shape = obs.Shape.ToArray();
+                summariesOut.Add(summary);
+            }
+
+            return summariesOut;
+        }
+
+
+        #endregion
+
+        #region BrainParameters
         /// <summary>
         /// Converts a Brain into to a Protobuf BrainInfoProto so it can be sent
         /// </summary>
@@ -73,28 +95,50 @@ namespace MLAgents
         {
             var brainParametersProto = new BrainParametersProto
             {
-                VectorActionSize = { bp.vectorActionSize },
-                VectorActionSpaceType =
-                    (SpaceTypeProto)bp.vectorActionSpaceType,
+                VectorActionSize = { bp.VectorActionSize },
+                VectorActionSpaceType = (SpaceTypeProto) bp.VectorActionSpaceType,
                 BrainName = name,
                 IsTraining = isTraining
             };
-            brainParametersProto.VectorActionDescriptions.AddRange(bp.vectorActionDescriptions);
+            if(bp.VectorActionDescriptions != null)
+            {
+                brainParametersProto.VectorActionDescriptions.AddRange(bp.VectorActionDescriptions);
+            }
             return brainParametersProto;
         }
 
+        /// <summary>
+        /// Convert a BrainParametersProto to a BrainParameters struct.
+        /// </summary>
+        /// <param name="bpp">An instance of a brain parameters protobuf object.</param>
+        /// <returns>A BrainParameters struct.</returns>
+        public static BrainParameters ToBrainParameters(this BrainParametersProto bpp)
+        {
+            var bp = new BrainParameters
+            {
+                VectorActionSize = bpp.VectorActionSize.ToArray(),
+                VectorActionDescriptions = bpp.VectorActionDescriptions.ToArray(),
+                VectorActionSpaceType = (SpaceType)bpp.VectorActionSpaceType
+            };
+            return bp;
+        }
+
+        #endregion
+
+        #region DemonstrationMetaData
         /// <summary>
         /// Convert metadata object to proto object.
         /// </summary>
         public static DemonstrationMetaProto ToProto(this DemonstrationMetaData dm)
         {
+            var demonstrationName = dm.demonstrationName ?? "";
             var demoProto = new DemonstrationMetaProto
             {
                 ApiVersion = DemonstrationMetaData.ApiVersion,
                 MeanReward = dm.meanReward,
-                NumberSteps = dm.numberExperiences,
+                NumberSteps = dm.numberSteps,
                 NumberEpisodes = dm.numberEpisodes,
-                DemonstrationName = dm.demonstrationName
+                DemonstrationName = demonstrationName
             };
             return demoProto;
         }
@@ -107,7 +151,7 @@ namespace MLAgents
             var dm = new DemonstrationMetaData
             {
                 numberEpisodes = demoProto.NumberEpisodes,
-                numberExperiences = demoProto.NumberSteps,
+                numberSteps = demoProto.NumberSteps,
                 meanReward = demoProto.MeanReward,
                 demonstrationName = demoProto.DemonstrationName
             };
@@ -117,38 +161,25 @@ namespace MLAgents
             }
             return dm;
         }
-
-        /// <summary>
-        /// Convert a BrainParametersProto to a BrainParameters struct.
-        /// </summary>
-        /// <param name="bpp">An instance of a brain parameters protobuf object.</param>
-        /// <returns>A BrainParameters struct.</returns>
-        public static BrainParameters ToBrainParameters(this BrainParametersProto bpp)
-        {
-            var bp = new BrainParameters
-            {
-                vectorActionSize = bpp.VectorActionSize.ToArray(),
-                vectorActionDescriptions = bpp.VectorActionDescriptions.ToArray(),
-                vectorActionSpaceType = (SpaceType)bpp.VectorActionSpaceType
-            };
-            return bp;
-        }
-
+        #endregion
 
         public static UnityRLInitParameters ToUnityRLInitParameters(this UnityRLInitializationInputProto inputProto)
         {
             return new UnityRLInitParameters
             {
-                seed = inputProto.Seed
+                seed = inputProto.Seed,
+                pythonLibraryVersion = inputProto.PackageVersion,
+                pythonCommunicationVersion = inputProto.CommunicationVersion,
+                TrainerCapabilities = inputProto.Capabilities.ToRLCapabilities()
             };
         }
 
+        #region AgentAction
         public static AgentAction ToAgentAction(this AgentActionProto aap)
         {
             return new AgentAction
             {
-                vectorActions = aap.VectorActions.ToArray(),
-                value = aap.Value,
+                vectorActions = aap.VectorActions.ToArray()
             };
         }
 
@@ -161,7 +192,9 @@ namespace MLAgents
             }
             return agentActions;
         }
+        #endregion
 
+        #region Observations
         public static ObservationProto ToProto(this Observation obs)
         {
             ObservationProto obsProto = null;
@@ -196,6 +229,77 @@ namespace MLAgents
 
             obsProto.Shape.AddRange(obs.Shape);
             return obsProto;
+        }
+
+        /// <summary>
+        /// Generate an ObservationProto for the sensor using the provided ObservationWriter.
+        /// This is equivalent to producing an Observation and calling Observation.ToProto(),
+        /// but avoid some intermediate memory allocations.
+        /// </summary>
+        /// <param name="sensor"></param>
+        /// <param name="observationWriter"></param>
+        /// <returns></returns>
+        public static ObservationProto GetObservationProto(this ISensor sensor, ObservationWriter observationWriter)
+        {
+            var shape = sensor.GetObservationShape();
+            ObservationProto observationProto = null;
+            if (sensor.GetCompressionType() == SensorCompressionType.None)
+            {
+                var numFloats = sensor.ObservationSize();
+                var floatDataProto = new ObservationProto.Types.FloatData();
+                // Resize the float array
+                // TODO upgrade protobuf versions so that we can set the Capacity directly - see https://github.com/protocolbuffers/protobuf/pull/6530
+                for (var i = 0; i < numFloats; i++)
+                {
+                    floatDataProto.Data.Add(0.0f);
+                }
+
+                observationWriter.SetTarget(floatDataProto.Data, sensor.GetObservationShape(), 0);
+                sensor.Write(observationWriter);
+
+                observationProto = new ObservationProto
+                {
+                    FloatData = floatDataProto,
+                    CompressionType = (CompressionTypeProto)SensorCompressionType.None,
+                };
+            }
+            else
+            {
+                var compressedObs = sensor.GetCompressedObservation();
+                if (compressedObs == null)
+                {
+                    throw new UnityAgentsException(
+                        $"GetCompressedObservation() returned null data for sensor named {sensor.GetName()}. " +
+                        "You must return a byte[]. If you don't want to use compressed observations, " +
+                        "return SensorCompressionType.None from GetCompressionType()."
+                        );
+                }
+
+                observationProto = new ObservationProto
+                {
+                    CompressedData = ByteString.CopyFrom(compressedObs),
+                    CompressionType = (CompressionTypeProto)sensor.GetCompressionType(),
+                };
+            }
+            observationProto.Shape.AddRange(shape);
+            return observationProto;
+        }
+        #endregion
+
+        public static UnityRLCapabilities ToRLCapabilities(this UnityRLCapabilitiesProto proto)
+        {
+            return new UnityRLCapabilities
+            {
+                m_BaseRLCapabilities = proto.BaseRLCapabilities
+            };
+        }
+
+        public static UnityRLCapabilitiesProto ToProto(this UnityRLCapabilities rlCaps)
+        {
+            return new UnityRLCapabilitiesProto
+            {
+                BaseRLCapabilities = rlCaps.m_BaseRLCapabilities
+            };
         }
     }
 }

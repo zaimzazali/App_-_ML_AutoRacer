@@ -1,16 +1,39 @@
-using System;
 using UnityEngine;
 
-namespace MLAgents.Sensor
+namespace Unity.MLAgents.Sensors
 {
+    /// <summary>
+    /// Sensor class that wraps a [RenderTexture](https://docs.unity3d.com/ScriptReference/RenderTexture.html) instance.
+    /// </summary>
     public class RenderTextureSensor : ISensor
     {
         RenderTexture m_RenderTexture;
         bool m_Grayscale;
         string m_Name;
         int[] m_Shape;
+        SensorCompressionType m_CompressionType;
 
-        public RenderTextureSensor(RenderTexture renderTexture, bool grayscale, string name)
+        /// <summary>
+        /// The compression type used by the sensor.
+        /// </summary>
+        public SensorCompressionType CompressionType
+        {
+            get { return m_CompressionType;  }
+            set { m_CompressionType = value; }
+        }
+
+
+        /// <summary>
+        /// Initializes the sensor.
+        /// </summary>
+        /// <param name="renderTexture">The [RenderTexture](https://docs.unity3d.com/ScriptReference/RenderTexture.html)
+        /// instance to wrap.</param>
+        /// <param name="grayscale">Whether to convert it to grayscale or not.</param>
+        /// <param name="name">Name of the sensor.</param>
+        /// <param name="compressionType">Compression method for the render texture.</param>
+        /// [GameObject]: https://docs.unity3d.com/Manual/GameObjects.html
+        public RenderTextureSensor(
+            RenderTexture renderTexture, bool grayscale, string name, SensorCompressionType compressionType)
         {
             m_RenderTexture = renderTexture;
             var width = renderTexture != null ? renderTexture.width : 0;
@@ -18,50 +41,60 @@ namespace MLAgents.Sensor
             m_Grayscale = grayscale;
             m_Name = name;
             m_Shape = new[] { height, width, grayscale ? 1 : 3 };
+            m_CompressionType = compressionType;
         }
 
+        /// <inheritdoc/>
         public string GetName()
         {
             return m_Name;
         }
 
-        public int[] GetFloatObservationShape()
+        /// <inheritdoc/>
+        public int[] GetObservationShape()
         {
             return m_Shape;
         }
 
+        /// <inheritdoc/>
         public byte[] GetCompressedObservation()
         {
-            using(TimerStack.Instance.Scoped("RenderTexSensor.GetCompressedObservation"))
+            using (TimerStack.Instance.Scoped("RenderTextureSensor.GetCompressedObservation"))
             {
                 var texture = ObservationToTexture(m_RenderTexture);
                 // TODO support more types here, e.g. JPG
                 var compressed = texture.EncodeToPNG();
-                UnityEngine.Object.Destroy(texture);
+                DestroyTexture(texture);
                 return compressed;
             }
         }
 
-        public int Write(WriteAdapter adapter)
+        /// <inheritdoc/>
+        public int Write(ObservationWriter writer)
         {
-            using (TimerStack.Instance.Scoped("RenderTexSensor.GetCompressedObservation"))
+            using (TimerStack.Instance.Scoped("RenderTextureSensor.Write"))
             {
                 var texture = ObservationToTexture(m_RenderTexture);
-                var numWritten = Utilities.TextureToTensorProxy(texture, adapter, m_Grayscale);
-                UnityEngine.Object.Destroy(texture);
+                var numWritten = Utilities.TextureToTensorProxy(texture, writer, m_Grayscale);
+                DestroyTexture(texture);
                 return numWritten;
             }
         }
 
-        public void Update() { }
+        /// <inheritdoc/>
+        public void Update() {}
 
+        /// <inheritdoc/>
+        public void Reset() {}
+
+        /// <inheritdoc/>
         public SensorCompressionType GetCompressionType()
         {
-            return SensorCompressionType.PNG;
+            return m_CompressionType;
         }
 
         /// <summary>
-        /// Converts a RenderTexture and correspinding resolution to a 2D texture.
+        /// Converts a RenderTexture to a 2D texture.
         /// </summary>
         /// <returns>The 2D texture.</returns>
         /// <param name="obsTexture">RenderTexture.</param>
@@ -79,6 +112,20 @@ namespace MLAgents.Sensor
             texture2D.Apply();
             RenderTexture.active = prevActiveRt;
             return texture2D;
+        }
+
+        static void DestroyTexture(Texture2D texture)
+        {
+            if (Application.isEditor)
+            {
+                // Edit Mode tests complain if we use Destroy()
+                // TODO move to extension methods for UnityEngine.Object?
+                Object.DestroyImmediate(texture);
+            }
+            else
+            {
+                Object.Destroy(texture);
+            }
         }
     }
 }

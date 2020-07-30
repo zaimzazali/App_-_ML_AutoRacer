@@ -1,43 +1,139 @@
-using UnityEngine;
+using System.Collections.Generic;
 using System;
+using System.Collections;
+using Unity.MLAgents.Sensors;
 
-namespace MLAgents
+namespace Unity.MLAgents.Policies
 {
-
     /// <summary>
     /// The Heuristic Policy uses a hards coded Heuristic method
     /// to take decisions each time the RequestDecision method is
     /// called.
     /// </summary>
-    public class HeuristicPolicy : IPolicy
+    internal class HeuristicPolicy : IPolicy
     {
-        Func<float[]> m_Heuristic;
-        Agent m_Agent;
+        public delegate void ActionGenerator(float[] actionsOut);
+        ActionGenerator m_Heuristic;
+        float[] m_LastDecision;
+        bool m_Done;
+        bool m_DecisionRequested;
+
+        ObservationWriter m_ObservationWriter = new ObservationWriter();
+        NullList m_NullList = new NullList();
+
 
         /// <inheritdoc />
-        public HeuristicPolicy(Func<float[]> heuristic)
+        public HeuristicPolicy(ActionGenerator heuristic, int numActions)
         {
             m_Heuristic = heuristic;
+            m_LastDecision = new float[numActions];
         }
 
         /// <inheritdoc />
-        public void RequestDecision(Agent agent)
+        public void RequestDecision(AgentInfo info, List<ISensor> sensors)
         {
-            m_Agent = agent;
+            StepSensors(sensors);
+            m_Done = info.done;
+            m_DecisionRequested = true;
+
         }
 
         /// <inheritdoc />
-        public void DecideAction()
+        public float[] DecideAction()
         {
-            if (m_Agent != null)
+            if (!m_Done && m_DecisionRequested)
             {
-                m_Agent.UpdateVectorAction(m_Heuristic.Invoke());
+                 m_Heuristic.Invoke(m_LastDecision);
             }
+            m_DecisionRequested = false;
+            return m_LastDecision;
         }
 
         public void Dispose()
         {
+        }
 
+        /// <summary>
+        /// Trivial implementation of the IList interface that does nothing.
+        /// This is only used for "writing" observations that we will discard.
+        /// </summary>
+        class NullList : IList<float>
+        {
+            public IEnumerator<float> GetEnumerator()
+            {
+                throw new NotImplementedException();
+            }
+
+            IEnumerator IEnumerable.GetEnumerator()
+            {
+                return GetEnumerator();
+            }
+
+            public void Add(float item)
+            {
+            }
+
+            public void Clear()
+            {
+            }
+
+            public bool Contains(float item)
+            {
+                return false;
+            }
+
+            public void CopyTo(float[] array, int arrayIndex)
+            {
+                throw new NotImplementedException();
+            }
+
+            public bool Remove(float item)
+            {
+                return false;
+            }
+
+            public int Count { get; }
+            public bool IsReadOnly { get; }
+            public int IndexOf(float item)
+            {
+                return -1;
+            }
+
+            public void Insert(int index, float item)
+            {
+            }
+
+            public void RemoveAt(int index)
+            {
+            }
+
+            public float this[int index]
+            {
+                get { return 0.0f; }
+                set { }
+            }
+        }
+
+        /// <summary>
+        /// Run ISensor.Write or ISensor.GetCompressedObservation for each sensor
+        /// The output is currently unused, but this makes the sensor usage consistent
+        /// between training and inference.
+        /// </summary>
+        /// <param name="sensors"></param>
+        void StepSensors(List<ISensor> sensors)
+        {
+            foreach (var sensor in sensors)
+            {
+                if (sensor.GetCompressionType() == SensorCompressionType.None)
+                {
+                    m_ObservationWriter.SetTarget(m_NullList, sensor.GetObservationShape(), 0);
+                    sensor.Write(m_ObservationWriter);
+                }
+                else
+                {
+                    sensor.GetCompressedObservation();
+                }
+            }
         }
     }
 }

@@ -1,33 +1,60 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
-using MLAgents.CommunicatorObjects;
+using Unity.MLAgents.Policies;
+using Unity.MLAgents.Sensors;
 
-namespace MLAgents
+namespace Unity.MLAgents
 {
-    public struct CommunicatorInitParameters
+    internal struct CommunicatorInitParameters
     {
         /// <summary>
         /// Port to listen for connections on.
         /// </summary>
         public int port;
+
         /// <summary>
         /// The name of the environment.
         /// </summary>
         public string name;
+
         /// <summary>
         /// The version of the Unity SDK.
         /// </summary>
-        public string version;
+        public string unityPackageVersion;
+
+        /// <summary>
+        /// The version of the communication API.
+        /// </summary>
+        public string unityCommunicationVersion;
+
+        /// <summary>
+        /// The RL capabilities of the C# codebase.
+        /// </summary>
+        public UnityRLCapabilities CSharpCapabilities;
     }
-    public struct UnityRLInitParameters
+    internal struct UnityRLInitParameters
     {
         /// <summary>
-        /// An RNG seed sent from the python process to Unity.
+        /// A random number generator (RNG) seed sent from the python process to Unity.
         /// </summary>
         public int seed;
+
+        /// <summary>
+        /// The library version of the python process.
+        /// </summary>
+        public string pythonLibraryVersion;
+
+        /// <summary>
+        /// The version of the communication API that python is using.
+        /// </summary>
+        public string pythonCommunicationVersion;
+
+        /// <summary>
+        /// The RL capabilities of the Trainer codebase.
+        /// </summary>
+        public UnityRLCapabilities TrainerCapabilities;
     }
-    public struct UnityRLInputParameters
+    internal struct UnityRLInputParameters
     {
         /// <summary>
         /// Boolean sent back from python to indicate whether or not training is happening.
@@ -36,21 +63,20 @@ namespace MLAgents
     }
 
     /// <summary>
-    /// Delegate for handling quite events sent back from the communicator.
+    /// Delegate for handling quit events sent back from the communicator.
     /// </summary>
-    public delegate void QuitCommandHandler();
+    internal delegate void QuitCommandHandler();
 
     /// <summary>
     /// Delegate for handling reset parameter updates sent from the communicator.
     /// </summary>
-    /// <param name="resetParams"></param>
-    public delegate void ResetCommandHandler();
+    internal delegate void ResetCommandHandler();
 
     /// <summary>
     /// Delegate to handle UnityRLInputParameters updates from the communicator.
     /// </summary>
     /// <param name="inputParams"></param>
-    public delegate void RLInputReceivedHandler(UnityRLInputParameters inputParams);
+    internal delegate void RLInputReceivedHandler(UnityRLInputParameters inputParams);
 
     /**
     This is the interface of the Communicators.
@@ -88,13 +114,12 @@ namespace MLAgents
     UnityOutput and UnityInput can be extended to provide functionalities beyond RL
     UnityRLOutput and UnityRLInput can be extended to provide new RL functionalities
      */
-    public interface ICommunicator
+    internal interface ICommunicator : IDisposable
     {
         /// <summary>
         /// Quit was received by the communicator.
         /// </summary>
         event QuitCommandHandler QuitCommandReceived;
-
 
         /// <summary>
         /// Reset command sent back from the communicator.
@@ -112,16 +137,17 @@ namespace MLAgents
         /// <summary>
         /// Registers a new Brain to the Communicator.
         /// </summary>
-        /// <param name="name">The name or key uniquely identifying the Brain</param>
-        /// <param name="brainParameters">The Parameters for the Brain being registered</param>
+        /// <param name="name">The name or key uniquely identifying the Brain.</param>
+        /// <param name="brainParameters">The Parameters for the Brain being registered.</param>
         void SubscribeBrain(string name, BrainParameters brainParameters);
 
         /// <summary>
-        /// Sends the observations of one Agent. 
+        /// Sends the observations of one Agent.
         /// </summary>
         /// <param name="brainKey">Batch Key.</param>
-        /// <param name="agent">Agent info.</param>
-        void PutObservations(string brainKey, Agent agent);
+        /// <param name="info">Agent info.</param>
+        /// <param name="sensors">The list of ISensors of the Agent.</param>
+        void PutObservations(string brainKey, AgentInfo info, List<ISensor> sensors);
 
         /// <summary>
         /// Signals the ICommunicator that the Agents are now ready to receive their action
@@ -133,15 +159,9 @@ namespace MLAgents
         /// <summary>
         /// Gets the AgentActions based on the batching key.
         /// </summary>
-        /// <param name="key">A key to identify which actions to get</param>
+        /// <param name="key">A key to identify which behavior actions to get.</param>
+        /// <param name="agentId">A key to identify which Agent actions to get.</param>
         /// <returns></returns>
-        Dictionary<Agent, AgentAction> GetActions(string key);
-
-        /// <summary>
-        /// Registers a side channel to the communicator. The side channel will exchange 
-        /// messages with its Python equivalent.
-        /// </summary>
-        /// <param name="sideChannel"> The side channel to be registered.</param>
-        void RegisterSideChannel(SideChannel sideChannel);
+        float[] GetActions(string key, int agentId);
     }
 }

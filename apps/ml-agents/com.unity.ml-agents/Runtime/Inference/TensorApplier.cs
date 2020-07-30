@@ -1,7 +1,8 @@
 using System.Collections.Generic;
-using Barracuda;
+using Unity.Barracuda;
+using Unity.MLAgents.Policies;
 
-namespace MLAgents.InferenceBrain
+namespace Unity.MLAgents.Inference
 {
     /// <summary>
     /// Mapping between the output tensor names and the method that will use the
@@ -11,7 +12,7 @@ namespace MLAgents.InferenceBrain
     /// This action takes as input the tensor and the Dictionary of Agent to AgentInfo for
     /// the current batch.
     /// </summary>
-    public class TensorApplier
+    internal class TensorApplier
     {
         /// <summary>
         /// A tensor Applier's Execute method takes a tensor and a Dictionary of Agent to AgentInfo.
@@ -27,10 +28,9 @@ namespace MLAgents.InferenceBrain
             /// <param name="tensorProxy">
             /// The Tensor containing the data to be applied to the Agents
             /// </param>
-            /// <param name="agents">
-            /// List of Agents that will receive the values of the Tensor.
-            /// </param>
-            void Apply(TensorProxy tensorProxy, IEnumerable<Agent> agents);
+            /// <param name="actionIds"> List of Agents Ids that will be updated using the tensor's data</param>
+            /// <param name="lastActions"> Dictionary of AgentId to Actions to be updated</param>
+            void Apply(TensorProxy tensorProxy, IEnumerable<int> actionIds, Dictionary<int, float[]> lastActions);
         }
 
         readonly Dictionary<string, IApplier> m_Dict = new Dictionary<string, IApplier>();
@@ -51,15 +51,14 @@ namespace MLAgents.InferenceBrain
             Dictionary<int, List<float>> memories,
             object barracudaModel = null)
         {
-            m_Dict[TensorNames.ValueEstimateOutput] = new ValueEstimateApplier();
-            if (bp.vectorActionSpaceType == SpaceType.Continuous)
+            if (bp.VectorActionSpaceType == SpaceType.Continuous)
             {
                 m_Dict[TensorNames.ActionOutput] = new ContinuousActionOutputApplier();
             }
             else
             {
                 m_Dict[TensorNames.ActionOutput] =
-                    new DiscreteActionOutputApplier(bp.vectorActionSize, seed, allocator);
+                    new DiscreteActionOutputApplier(bp.VectorActionSize, seed, allocator);
             }
             m_Dict[TensorNames.RecurrentOutput] = new MemoryOutputApplier(memories);
 
@@ -79,11 +78,12 @@ namespace MLAgents.InferenceBrain
         /// Updates the state of the agents based on the data present in the tensor.
         /// </summary>
         /// <param name="tensors"> Enumerable of tensors containing the data.</param>
-        /// <param name="agents"> List of Agents that will be updated using the tensor's data</param>
+        /// <param name="actionIds"> List of Agents Ids that will be updated using the tensor's data</param>
+        /// <param name="lastActions"> Dictionary of AgentId to Actions to be updated</param>
         /// <exception cref="UnityAgentsException"> One of the tensor does not have an
         /// associated applier.</exception>
         public void ApplyTensors(
-            IEnumerable<TensorProxy> tensors, IEnumerable<Agent> agents)
+            IEnumerable<TensorProxy> tensors, IEnumerable<int> actionIds, Dictionary<int, float[]> lastActions)
         {
             foreach (var tensor in tensors)
             {
@@ -92,7 +92,7 @@ namespace MLAgents.InferenceBrain
                     throw new UnityAgentsException(
                         $"Unknown tensorProxy expected as output : {tensor.name}");
                 }
-                m_Dict[tensor.name].Apply(tensor, agents);
+                m_Dict[tensor.name].Apply(tensor, actionIds, lastActions);
             }
         }
     }

@@ -1,30 +1,37 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Barracuda;
-using MLAgents.InferenceBrain.Utils;
+using Unity.MLAgents.Inference.Utils;
+using Unity.Barracuda;
 using UnityEngine;
 
-namespace MLAgents.InferenceBrain
+namespace Unity.MLAgents.Inference
 {
     /// <summary>
     /// The Applier for the Continuous Action output tensor. Tensor is assumed to contain the
     /// continuous action data of the agents in the batch.
     /// </summary>
-    public class ContinuousActionOutputApplier : TensorApplier.IApplier
+    internal class ContinuousActionOutputApplier : TensorApplier.IApplier
     {
-        public void Apply(TensorProxy tensorProxy, IEnumerable<Agent> agents)
+        public void Apply(TensorProxy tensorProxy, IEnumerable<int> actionIds, Dictionary<int, float[]> lastActions)
         {
             var actionSize = tensorProxy.shape[tensorProxy.shape.Length - 1];
             var agentIndex = 0;
-            foreach (var agent in agents)
+            foreach (int agentId in actionIds)
             {
-                var action = new float[actionSize];
-                for (var j = 0; j < actionSize; j++)
+                if (lastActions.ContainsKey(agentId))
                 {
-                    action[j] = tensorProxy.data[agentIndex, j];
+                    var actionValue = lastActions[agentId];
+                    if (actionValue == null)
+                    {
+                        actionValue = new float[actionSize];
+                        lastActions[agentId] = actionValue;
+                    }
+                    for (var j = 0; j < actionSize; j++)
+                    {
+                        actionValue[j] = tensorProxy.data[agentIndex, j];
+                    }
                 }
-                agent.UpdateVectorAction(action);
                 agentIndex++;
             }
         }
@@ -34,7 +41,7 @@ namespace MLAgents.InferenceBrain
     /// The Applier for the Discrete Action output tensor. Uses multinomial to sample discrete
     /// actions from the logits contained in the tensor.
     /// </summary>
-    public class DiscreteActionOutputApplier : TensorApplier.IApplier
+    internal class DiscreteActionOutputApplier : TensorApplier.IApplier
     {
         readonly int[] m_ActionSize;
         readonly Multinomial m_Multinomial;
@@ -47,12 +54,12 @@ namespace MLAgents.InferenceBrain
             m_Allocator = allocator;
         }
 
-        public void Apply(TensorProxy tensorProxy, IEnumerable<Agent> agents)
+        public void Apply(TensorProxy tensorProxy, IEnumerable<int> actionIds, Dictionary<int, float[]> lastActions)
         {
             //var tensorDataProbabilities = tensorProxy.Data as float[,];
-            var agentsArray = agents as List<Agent> ?? agents.ToList();
-            var batchSize = agentsArray.Count;
-            var actions = new float[batchSize, m_ActionSize.Length];
+            var idActionPairList = actionIds as List<int> ?? actionIds.ToList();
+            var batchSize = idActionPairList.Count;
+            var actionValues = new float[batchSize, m_ActionSize.Length];
             var startActionIndices = Utilities.CumSum(m_ActionSize);
             for (var actionIndex = 0; actionIndex < m_ActionSize.Length; actionIndex++)
             {
@@ -86,20 +93,27 @@ namespace MLAgents.InferenceBrain
 
                 for (var ii = 0; ii < batchSize; ii++)
                 {
-                    actions[ii, actionIndex] = outputTensor.data[ii, 0];
+                    actionValues[ii, actionIndex] = outputTensor.data[ii, 0];
                 }
                 actionProbs.data.Dispose();
                 outputTensor.data.Dispose();
             }
             var agentIndex = 0;
-            foreach (var agent in agentsArray)
+            foreach (int agentId in actionIds)
             {
-                var action = new float[m_ActionSize.Length];
-                for (var j = 0; j < m_ActionSize.Length; j++)
+                if (lastActions.ContainsKey(agentId))
                 {
-                    action[j] = actions[agentIndex, j];
+                    var actionVal = lastActions[agentId];
+                    if (actionVal == null)
+                    {
+                        actionVal = new float[m_ActionSize.Length];
+                        lastActions[agentId] = actionVal;
+                    }
+                    for (var j = 0; j < m_ActionSize.Length; j++)
+                    {
+                        actionVal[j] = actionValues[agentIndex, j];
+                    }
                 }
-                agent.UpdateVectorAction(action);
                 agentIndex++;
             }
         }
@@ -173,7 +187,7 @@ namespace MLAgents.InferenceBrain
     /// The Applier for the Memory output tensor. Tensor is assumed to contain the new
     /// memory data of the agents in the batch.
     /// </summary>
-    public class MemoryOutputApplier : TensorApplier.IApplier
+    internal class MemoryOutputApplier : TensorApplier.IApplier
     {
         Dictionary<int, List<float>> m_Memories;
 
@@ -182,27 +196,28 @@ namespace MLAgents.InferenceBrain
         {
             m_Memories = memories;
         }
-        public void Apply(TensorProxy tensorProxy, IEnumerable<Agent> agents)
+
+        public void Apply(TensorProxy tensorProxy, IEnumerable<int> actionIds, Dictionary<int, float[]> lastActions)
         {
             var agentIndex = 0;
             var memorySize = (int)tensorProxy.shape[tensorProxy.shape.Length - 1];
-            foreach (var agent in agents)
+            foreach (int agentId in actionIds)
             {
-                List<float> memory = null;
-                if (!m_Memories.TryGetValue(agent.Info.id, out memory)
+                List<float> memory;
+                if (!m_Memories.TryGetValue(agentId, out memory)
                     || memory.Count < memorySize)
                 {
                     memory = new List<float>();
                     memory.AddRange(Enumerable.Repeat(0f, memorySize));
                 }
 
-                m_Memories[agent.Info.id] = memory;
+                m_Memories[agentId] = memory;
                 agentIndex++;
             }
         }
     }
 
-    public class BarracudaMemoryOutputApplier : TensorApplier.IApplier
+    internal class BarracudaMemoryOutputApplier : TensorApplier.IApplier
     {
         readonly int m_MemoriesCount;
         readonly int m_MemoryIndex;
@@ -219,15 +234,15 @@ namespace MLAgents.InferenceBrain
             m_Memories = memories;
         }
 
-        public void Apply(TensorProxy tensorProxy, IEnumerable<Agent> agents)
+        public void Apply(TensorProxy tensorProxy, IEnumerable<int> actionIds, Dictionary<int, float[]> lastActions)
         {
             var agentIndex = 0;
             var memorySize = (int)tensorProxy.shape[tensorProxy.shape.Length - 1];
 
-            foreach (var agent in agents)
+            foreach (int agentId in actionIds)
             {
-                List<float> memory = null;
-                if (!m_Memories.TryGetValue(agent.Info.id, out memory)
+                List<float> memory;
+                if (!m_Memories.TryGetValue(agentId, out memory)
                     || memory.Count < memorySize * m_MemoriesCount)
                 {
                     memory = new List<float>();
@@ -239,25 +254,7 @@ namespace MLAgents.InferenceBrain
                     memory[memorySize * m_MemoryIndex + j] = tensorProxy.data[agentIndex, j];
                 }
 
-                m_Memories[agent.Info.id] = memory;
-                agentIndex++;
-            }
-        }
-    }
-
-
-    /// <summary>
-    /// The Applier for the Value Estimate output tensor. Tensor is assumed to contain the
-    /// value estimates of the agents in the batch.
-    /// </summary>
-    public class ValueEstimateApplier : TensorApplier.IApplier
-    {
-        public void Apply(TensorProxy tensorProxy, IEnumerable<Agent> agents)
-        {
-            var agentIndex = 0;
-            foreach (var agent in agents)
-            {
-                agent.UpdateValueAction(tensorProxy.data[agentIndex, 0]);
+                m_Memories[agentId] = memory;
                 agentIndex++;
             }
         }

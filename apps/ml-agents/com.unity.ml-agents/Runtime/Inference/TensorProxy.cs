@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Barracuda;
-using MLAgents.InferenceBrain.Utils;
+using Unity.Barracuda;
+using Unity.MLAgents.Inference.Utils;
 
-namespace MLAgents.InferenceBrain
+namespace Unity.MLAgents.Inference
 {
     /// <summary>
     /// Tensor - A class to encapsulate a Tensor used for inference.
@@ -13,7 +13,7 @@ namespace MLAgents.InferenceBrain
     /// allowing the user to specify everything but the data in a graphical way.
     /// </summary>
     [Serializable]
-    public class TensorProxy
+    internal class TensorProxy
     {
         public enum TensorType
         {
@@ -37,7 +37,7 @@ namespace MLAgents.InferenceBrain
         public Tensor data;
     }
 
-    public static class TensorUtils
+    internal static class TensorUtils
     {
         public static void ResizeTensor(TensorProxy tensor, int batch, ITensorAllocator allocator)
         {
@@ -72,10 +72,10 @@ namespace MLAgents.InferenceBrain
         {
             if (src.height == 1 && src.width == 1)
             {
-                return new long[] {src.batch, src.channels};
+                return new long[] { src.batch, src.channels };
             }
 
-            return new long[] {src.batch, src.height, src.width, src.channels};
+            return new long[] { src.batch, src.height, src.width, src.channels };
         }
 
         public static TensorProxy TensorProxyFromBarracuda(Tensor src, string nameOverride = null)
@@ -88,6 +88,29 @@ namespace MLAgents.InferenceBrain
                 shape = shape,
                 data = src
             };
+        }
+
+        /// <summary>
+        /// Fill a specific batch of a TensorProxy with a given value
+        /// </summary>
+        /// <param name="tensorProxy"></param>
+        /// <param name="batch">The batch index to fill.</param>
+        /// <param name="fillValue"></param>
+        public static void FillTensorBatch(TensorProxy tensorProxy, int batch, float fillValue)
+        {
+            var height = tensorProxy.data.height;
+            var width = tensorProxy.data.width;
+            var channels = tensorProxy.data.channels;
+            for (var h = 0; h < height; h++)
+            {
+                for (var w = 0; w < width; w++)
+                {
+                    for (var c = 0; c < channels; c++)
+                    {
+                        tensorProxy.data[batch, h, w, c] = fillValue;
+                    }
+                }
+            }
         }
 
         /// <summary>

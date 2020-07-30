@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - input_field
+  - drop_down
+  - input_field_tmp
   layers:
   - Default
   - TransparentFX

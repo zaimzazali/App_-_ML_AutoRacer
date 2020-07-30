@@ -1,4 +1,6 @@
-namespace MLAgents.Sensor
+using System;
+
+namespace Unity.MLAgents.Sensors
 {
     /// <summary>
     /// Sensor that wraps around another Sensor to provide temporal stacking.
@@ -6,6 +8,8 @@ namespace MLAgents.Sensor
     /// For example, 4 stacked sets of observations would be output like
     ///   |  t = now - 3  |  t = now -3  |  t = now - 2  |  t = now  |
     /// Internally, a circular buffer of arrays is used. The m_CurrentIndex represents the most recent observation.
+    ///
+    /// Currently, compressed and multidimensional observations are not supported.
     /// </summary>
     public class StackingSensor : ISensor
     {
@@ -29,13 +33,13 @@ namespace MLAgents.Sensor
         float[][] m_StackedObservations;
 
         int m_CurrentIndex;
-        WriteAdapter m_LocalAdapter = new WriteAdapter();
+        ObservationWriter m_LocalWriter = new ObservationWriter();
 
         /// <summary>
-        ///
+        /// Initializes the sensor.
         /// </summary>
-        /// <param name="wrapped">The wrapped sensor</param>
-        /// <param name="numStackedObservations">Number of stacked observations to keep</param>
+        /// <param name="wrapped">The wrapped sensor.</param>
+        /// <param name="numStackedObservations">Number of stacked observations to keep.</param>
         public StackingSensor(ISensor wrapped, int numStackedObservations)
         {
             // TODO ensure numStackedObservations > 1
@@ -44,7 +48,16 @@ namespace MLAgents.Sensor
 
             m_Name = $"StackingSensor_size{numStackedObservations}_{wrapped.GetName()}";
 
-            var shape = wrapped.GetFloatObservationShape();
+            if (wrapped.GetCompressionType() != SensorCompressionType.None)
+            {
+                throw new UnityAgentsException("StackingSensor doesn't support compressed observations.'");
+            }
+
+            var shape = wrapped.GetObservationShape();
+            if (shape.Length != 1)
+            {
+                throw new UnityAgentsException("Only 1-D observations are supported by StackingSensor");
+            }
             m_Shape = new int[shape.Length];
 
             m_UnstackedObservationSize = wrapped.ObservationSize();
@@ -62,18 +75,20 @@ namespace MLAgents.Sensor
             }
         }
 
-        public int Write(WriteAdapter adapter)
+        /// <inheritdoc/>
+        public int Write(ObservationWriter writer)
         {
-            // First, call the wrapped sensor's write method. Make sure to use our own adapater, not the passed one.
-            m_LocalAdapter.SetTarget(m_StackedObservations[m_CurrentIndex], 0);
-            m_WrappedSensor.Write(m_LocalAdapter);
+            // First, call the wrapped sensor's write method. Make sure to use our own writer, not the passed one.
+            var wrappedShape = m_WrappedSensor.GetObservationShape();
+            m_LocalWriter.SetTarget(m_StackedObservations[m_CurrentIndex], wrappedShape, 0);
+            m_WrappedSensor.Write(m_LocalWriter);
 
             // Now write the saved observations (oldest first)
             var numWritten = 0;
             for (var i = 0; i < m_NumStackedObservations; i++)
             {
                 var obsIndex = (m_CurrentIndex + 1 + i) % m_NumStackedObservations;
-                adapter.AddRange(m_StackedObservations[obsIndex], numWritten);
+                writer.AddRange(m_StackedObservations[obsIndex], numWritten);
                 numWritten += m_UnstackedObservationSize;
             }
 
@@ -89,27 +104,41 @@ namespace MLAgents.Sensor
             m_CurrentIndex = (m_CurrentIndex + 1) % m_NumStackedObservations;
         }
 
-        public int[] GetFloatObservationShape()
+        /// <inheritdoc/>
+        public void Reset()
+        {
+            m_WrappedSensor.Reset();
+            // Zero out the buffer.
+            for (var i = 0; i < m_NumStackedObservations; i++)
+            {
+                Array.Clear(m_StackedObservations[i], 0, m_StackedObservations[i].Length);
+            }
+        }
+
+        /// <inheritdoc/>
+        public int[] GetObservationShape()
         {
             return m_Shape;
         }
 
+        /// <inheritdoc/>
         public string GetName()
         {
             return m_Name;
         }
 
+        /// <inheritdoc/>
         public virtual byte[] GetCompressedObservation()
         {
             return null;
         }
 
+        /// <inheritdoc/>
         public virtual SensorCompressionType GetCompressionType()
         {
             return SensorCompressionType.None;
         }
 
         // TODO support stacked compressed observations (byte stream)
-
     }
 }

@@ -1,9 +1,8 @@
 using System;
-using UnityEngine;
 
-namespace MLAgents.Sensor
+namespace Unity.MLAgents.Sensors
 {
-    public struct Observation
+    internal struct Observation
     {
         /// <summary>
         /// The compressed sensor data. Assumed to be non-null if CompressionType != CompressionType.None
@@ -22,7 +21,7 @@ namespace MLAgents.Sensor
 
         /// <summary>
         /// The uncompressed dimensions of the data.
-        /// E.g. for RGB visual observations, this will be {Width, Height, 3}
+        /// E.g. for RGB visual observations, this will be {Height, Width, 3}
         /// </summary>
         public int[] Shape;
     }

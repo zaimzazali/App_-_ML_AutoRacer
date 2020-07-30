@@ -1,81 +1,43 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
+using Unity.MLAgents.Sensors;
 
-namespace MLAgents
+namespace Unity.MLAgents.Policies
 {
     /// <summary>
     /// The Remote Policy only works when training.
     /// When training your Agents, the RemotePolicy will be controlled by Python.
     /// </summary>
-    public class RemotePolicy : IPolicy
+    internal class RemotePolicy : IPolicy
     {
-        string m_BehaviorName;
-        protected ICommunicator m_Communicator;
+        int m_AgentId;
+        string m_FullyQualifiedBehaviorName;
 
-        /// <summary>
-        /// Sensor shapes for the associated Agents. All Agents must have the same shapes for their Sensors.
-        /// </summary>
-        List<int[]> m_SensorShapes;
+        internal ICommunicator m_Communicator;
 
         /// <inheritdoc />
         public RemotePolicy(
             BrainParameters brainParameters,
-            string behaviorName)
+            string fullyQualifiedBehaviorName)
         {
-            m_BehaviorName = behaviorName;
-            var aca = Object.FindObjectOfType<Academy>();
-            aca.LazyInitialization();
-            m_Communicator = aca.Communicator;
-            aca.Communicator.SubscribeBrain(m_BehaviorName, brainParameters);
+            m_FullyQualifiedBehaviorName = fullyQualifiedBehaviorName;
+            m_Communicator = Academy.Instance.Communicator;
+            m_Communicator.SubscribeBrain(m_FullyQualifiedBehaviorName, brainParameters);
         }
 
         /// <inheritdoc />
-        public void RequestDecision(Agent agent)
+        public void RequestDecision(AgentInfo info, List<ISensor> sensors)
         {
-#if DEBUG
-            ValidateAgentSensorShapes(agent);
-#endif
-            m_Communicator?.PutObservations(m_BehaviorName, agent);
+            m_AgentId = info.episodeId;
+            m_Communicator?.PutObservations(m_FullyQualifiedBehaviorName, info, sensors);
         }
 
         /// <inheritdoc />
-        public void DecideAction()
+        public float[] DecideAction()
         {
             m_Communicator?.DecideBatch();
-        }
-
-        /// <summary>
-        /// Check that the Agent Sensors are the same shape as the the other Agents using the same Brain.
-        /// If this is the first Agent being checked, its Sensor sizes will be saved.
-        /// </summary>
-        /// <param name="agent">The Agent to check</param>
-        void ValidateAgentSensorShapes(Agent agent)
-        {
-            if (m_SensorShapes == null)
-            {
-                m_SensorShapes = new List<int[]>(agent.sensors.Count);
-                // First agent, save the sensor sizes
-                foreach (var sensor in agent.sensors)
-                {
-                    m_SensorShapes.Add(sensor.GetFloatObservationShape());
-                }
-            }
-            else
-            {
-                // Check for compatibility with the other Agents' Sensors
-                // TODO make sure this only checks once per agent
-                Debug.Assert(m_SensorShapes.Count == agent.sensors.Count, $"Number of Sensors must match. {m_SensorShapes.Count} != {agent.sensors.Count}");
-                for (var i = 0; i < m_SensorShapes.Count; i++)
-                {
-                    var cachedShape = m_SensorShapes[i];
-                    var sensorShape = agent.sensors[i].GetFloatObservationShape();
-                    Debug.Assert(cachedShape.Length == sensorShape.Length, "Sensor dimensions must match.");
-                    for (var j = 0; j < cachedShape.Length; j++)
-                    {
-                        Debug.Assert(cachedShape[j] == sensorShape[j], "Sensor sizes much match.");
-                    }
-                }
-            }
+            return m_Communicator?.GetActions(m_FullyQualifiedBehaviorName, m_AgentId);
         }
 
         public void Dispose()

@@ -1,16 +1,25 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
-namespace MLAgents.Sensor
+namespace Unity.MLAgents.Sensors
 {
+    /// <summary>
+    /// A sensor implementation for vector observations.
+    /// </summary>
     public class VectorSensor : ISensor
     {
         // TODO use float[] instead
-        // TOOD allow setting float[]
+        // TODO allow setting float[]
         List<float> m_Observations;
         int[] m_Shape;
         string m_Name;
 
+        /// <summary>
+        /// Initializes the sensor.
+        /// </summary>
+        /// <param name="observationSize">Number of vector observations.</param>
+        /// <param name="name">Name of the sensor.</param>
         public VectorSensor(int observationSize, string name = null)
         {
             if (name == null)
@@ -23,7 +32,8 @@ namespace MLAgents.Sensor
             m_Shape = new[] { observationSize };
         }
 
-        public int Write(WriteAdapter adapter)
+        /// <inheritdoc/>
+        public int Write(ObservationWriter writer)
         {
             var expectedObservations = m_Shape[0];
             if (m_Observations.Count > expectedObservations)
@@ -47,30 +57,50 @@ namespace MLAgents.Sensor
                     m_Observations.Add(0);
                 }
             }
-            adapter.AddRange(m_Observations);
+            writer.AddRange(m_Observations);
             return expectedObservations;
         }
 
+        /// <summary>
+        /// Returns a read-only view of the observations that added.
+        /// </summary>
+        /// <returns>A read-only view of the observations list.</returns>
+        internal ReadOnlyCollection<float> GetObservations()
+        {
+            return m_Observations.AsReadOnly();
+        }
+
+        /// <inheritdoc/>
         public void Update()
         {
             Clear();
         }
 
-        public int[] GetFloatObservationShape()
+        /// <inheritdoc/>
+        public void Reset()
+        {
+            Clear();
+        }
+
+        /// <inheritdoc/>
+        public int[] GetObservationShape()
         {
             return m_Shape;
         }
 
+        /// <inheritdoc/>
         public string GetName()
         {
             return m_Name;
         }
 
+        /// <inheritdoc/>
         public virtual byte[] GetCompressedObservation()
         {
             return null;
         }
 
+        /// <inheritdoc/>
         public virtual SensorCompressionType GetCompressionType()
         {
             return SensorCompressionType.None;
@@ -83,6 +113,9 @@ namespace MLAgents.Sensor
 
         void AddFloatObs(float obs)
         {
+#if DEBUG
+            Utilities.DebugCheckNanAndInfinity(obs, nameof(obs), nameof(AddFloatObs));
+#endif
             m_Observations.Add(obs);
         }
 
@@ -154,13 +187,17 @@ namespace MLAgents.Sensor
         /// <summary>
         /// Adds a boolean observation to the vector observation of the agent.
         /// </summary>
-        /// <param name="observation"></param>
+        /// <param name="observation">Observation.</param>
         public void AddObservation(bool observation)
         {
             AddFloatObs(observation ? 1f : 0f);
         }
 
-
+        /// <summary>
+        /// Adds a one-hot encoding observation.
+        /// </summary>
+        /// <param name="observation">The index of this observation.</param>
+        /// <param name="range">The max index for any observation.</param>
         public void AddOneHotObservation(int observation, int range)
         {
             for (var i = 0; i < range; i++)

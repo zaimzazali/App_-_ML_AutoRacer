@@ -9,10 +9,10 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace MLAgents.CommunicatorObjects {
+namespace Unity.MLAgents.CommunicatorObjects {
 
   /// <summary>Holder for reflection information generated from mlagents_envs/communicator_objects/command.proto</summary>
-  public static partial class CommandReflection {
+  internal static partial class CommandReflection {
 
     #region Descriptor
     /// <summary>File descriptor for mlagents_envs/communicator_objects/command.proto</summary>
@@ -26,17 +26,17 @@ namespace MLAgents.CommunicatorObjects {
           string.Concat(
             "CjBtbGFnZW50c19lbnZzL2NvbW11bmljYXRvcl9vYmplY3RzL2NvbW1hbmQu",
             "cHJvdG8SFGNvbW11bmljYXRvcl9vYmplY3RzKi0KDENvbW1hbmRQcm90bxII",
-            "CgRTVEVQEAASCQoFUkVTRVQQARIICgRRVUlUEAJCH6oCHE1MQWdlbnRzLkNv",
-            "bW11bmljYXRvck9iamVjdHNiBnByb3RvMw=="));
+            "CgRTVEVQEAASCQoFUkVTRVQQARIICgRRVUlUEAJCJaoCIlVuaXR5Lk1MQWdl",
+            "bnRzLkNvbW11bmljYXRvck9iamVjdHNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::MLAgents.CommunicatorObjects.CommandProto), }, null));
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Unity.MLAgents.CommunicatorObjects.CommandProto), }, null));
     }
     #endregion
 
   }
   #region Enums
-  public enum CommandProto {
+  internal enum CommandProto {
     [pbr::OriginalName("STEP")] Step = 0,
     [pbr::OriginalName("RESET")] Reset = 1,
     [pbr::OriginalName("QUIT")] Quit = 2,
