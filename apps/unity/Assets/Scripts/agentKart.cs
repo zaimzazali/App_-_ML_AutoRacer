@@ -436,4 +436,9 @@ public class agentKart : MonoBehaviour
     public void SetCanMove(bool move) {
         canMove = move;
     }
+
+    public void setTopSpeed(float newTopSpeed) {
+        baseStats.TopSpeed = newTopSpeed;
+        baseStats.Braking = newTopSpeed;
+    }
 }
