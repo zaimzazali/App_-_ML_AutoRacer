@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using MoonSharp.Interpreter;
@@ -108,14 +109,19 @@ public class agentBrain : Agent
     private List<float> distanceToWall;
 #endregion
 
-    private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer - Copy - Copy\apps\settings\rewardFunction.lua";
-    // private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer - Copy - Copy\apps\settings\rewardFunction.lua";
+    private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer\apps\python-lua\rewardFunction.lua";
+    // private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer\apps\python-lua\rewardFunction.lua";
     private string rewardScript = "";
     private Script script;
     private string functionHeader = "function rewardFunction (passedCheckpoint, distanceToCheckpoint, distanceToWall, " + 
-                                    "speed, isOutBound, checkpointPassed, cumCheckpointPassed, " + 
+                                    "speed, isOutBound, checkpointPassed, cumCheckpointPassed, isCarReversed, " + 
                                     "finishedLap, steering, acceleration)";
-    private string functionFooter = "\n" +"end";
+    private string functionFooter = "\n" + "end";
+    [SerializeField]
+    private GameObject statusBackground = null;
+    [SerializeField]
+    private Text statusText = null;
+    private bool toProceed = false;
 
     private void Awake() {
         kart = GetComponent<agentKart>();
@@ -123,7 +129,7 @@ public class agentBrain : Agent
             AgentSensorTransform = transform;
         }
 
-        if (File.Exists(filePath)){
+        if (File.Exists(filePath)) {
             rewardScript = File.ReadAllText(filePath);
             rewardScript = functionHeader +
                             "\n" + rewardScript + "\n" +
@@ -133,12 +139,10 @@ public class agentBrain : Agent
 
             script = new Script();
             script.DoString(rewardScript);
+            toProceed = true;
         } else {
-            /*
-            backgroundPanel.color = new Color32(255,0,0,255);
-            signalText.text = "ERROR\nReward Function FIle Not Found";
-            proceed = false;
-            */
+            statusBackground.GetComponent<Image>().color = Color.red;
+            statusText.text = "Cannot find reward function file";
         }
     }
 
@@ -238,8 +242,7 @@ public class agentBrain : Agent
         } else {
             isCarReversed = false;
         }
-        sensor.AddObservation(isCarReversed);
-
+        
         // Add an observation for direction of the agent to the next checkpoint.
         var next          = (checkpointIndex + 1) % Colliders.Length;
         var nextCollider  = Colliders[next];
@@ -274,15 +277,23 @@ public class agentBrain : Agent
         sensor.AddObservation(gameObject.transform.localRotation);
         sensor.AddObservation(checkpointPassed);
         sensor.AddObservation(cumCheckpointPassed);
+        sensor.AddObservation(isCarReversed);
         sensor.AddObservation(finishedLap);
         sensor.AddObservation(steering);
         sensor.AddObservation(acceleration);
 
         // ------------------------------------------------------------------------------------------------
 
-        AddReward(getRewardFromFunction(passedCheckpoint, distanceToCheckpoint, distanceToWall, 
-                                        kart.LocalSpeed(), isOutBound, checkpointPassed, 
-                                        cumCheckpointPassed, finishedLap, steering, acceleration));
+        float thisReward = 0f;
+
+        if (toProceed) {
+            thisReward = getRewardFromFunction(passedCheckpoint, distanceToCheckpoint, distanceToWall, 
+                                                    kart.LocalSpeed(), isOutBound, checkpointPassed, isCarReversed,
+                                                    cumCheckpointPassed, finishedLap, steering, acceleration);
+        }
+
+        // Debug.Log(thisReward);
+        AddReward(thisReward);
 
         if (isOutBound) {
             OnEpisodeBegin();
@@ -290,7 +301,7 @@ public class agentBrain : Agent
     }
 
     private float getRewardFromFunction(bool passedCheckpoint, float distanceToCheckpoint, List<float> distanceToWall, 
-                                        float speed, bool isOutBound, int checkpointPassed, 
+                                        float speed, bool isOutBound, int checkpointPassed, bool isCarReversed,
                                         int cumCheckpointPassed, bool finishedLap, float steering, float acceleration) {
 
         try {
@@ -301,7 +312,8 @@ public class agentBrain : Agent
             script.Globals["isOutBound"]            = isOutBound;
             script.Globals["checkpointPassed"]      = checkpointPassed;
             script.Globals["cumCheckpointPassed"]   = cumCheckpointPassed;
-            script.Globals["finishedLap"]           = finishedLap;
+            script.Globals["cumCheckpointPassed"]   = cumCheckpointPassed;
+            script.Globals["isCarReversed"]         = isCarReversed;
             script.Globals["steering"]              = steering;
             script.Globals["acceleration"]          = acceleration;
 
@@ -309,8 +321,12 @@ public class agentBrain : Agent
                                                                             speed, isOutBound, checkpointPassed, cumCheckpointPassed,
                                                                             finishedLap, steering, acceleration);
 
+            statusText.text = "Training";
             return (float)res.Number;
+
         } catch (System.Exception) {
+            statusBackground.GetComponent<Image>().color = Color.red;
+            statusText.text = "Error in Reward Function";
             return 0f;
         }
     }

@@ -7,6 +7,7 @@ TagManager:
   - input_field
   - drop_down
   - input_field_tmp
+  - agentKart
   layers:
   - Default
   - TransparentFX
