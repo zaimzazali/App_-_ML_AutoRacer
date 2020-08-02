@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class agentSpawner : MonoBehaviour
 {
     private string externalContent = "";
-    private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer\apps\settings\training_variables.txt";
-    // private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer\apps\settings\training_variables.txt";
+    // private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer\apps\settings\training_variables.txt"; // Testing
+    private string filePath = @".\settings\training_variables.txt"; // Production
     [SerializeField]
     private GameObject parent = null;
     [SerializeField]

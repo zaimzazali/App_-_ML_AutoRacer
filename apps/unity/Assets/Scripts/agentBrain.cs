@@ -109,8 +109,8 @@ public class agentBrain : Agent
     private List<float> distanceToWall;
 #endregion
 
-    private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer\apps\python-lua\rewardFunction.lua";
-    // private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer\apps\python-lua\rewardFunction.lua";
+    // private string filePath = @"D:\Git_Clone\App_-_ML_AutoRacer\apps\python-lua\rewardFunction.lua"; // testing
+    private string filePath = @".\build\python-lua\rewardFunction.lua"; // production
     private string rewardScript = "";
     private Script script;
     private string functionHeader = "function rewardFunction (passedCheckpoint, distanceToCheckpoint, distanceToWall, " + 
@@ -322,6 +322,8 @@ public class agentBrain : Agent
                                                                             finishedLap, steering, acceleration);
 
             statusText.text = "Training";
+
+            // Debug.Log((float)res.Number);
             return (float)res.Number;
 
         } catch (System.Exception) {
