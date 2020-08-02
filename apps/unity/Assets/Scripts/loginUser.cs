@@ -24,14 +24,19 @@ public class loginUser : MonoBehaviour
     playerData playerData = null;
 
     private void Awake() {
-        parentObj = gameObject.transform.parent.parent.gameObject;
-        inputfield_username = parentObj.transform.Find("Holder_Input_00/InputField_Login_Username").gameObject.GetComponent<TMP_InputField>();
-        inputfield_password = parentObj.transform.Find("Holder_Input_01/InputField_Login_Password").gameObject.GetComponent<TMP_InputField>();
-    
-        controlCanvas01 = gameObject.GetComponent<controlCanvas01>();
-        controlCanvas03 = gameObject.GetComponent<controlCanvas03>();
-        serverAPI = gameObject.GetComponent<serverAPI>();
-        waitForServer = gameObject.GetComponent<waitForServer>();
+        try {
+            parentObj = gameObject.transform.parent.parent.gameObject;
+            inputfield_username = parentObj.transform.Find("Holder_Input_00/InputField_Login_Username").gameObject.GetComponent<TMP_InputField>();
+            inputfield_password = parentObj.transform.Find("Holder_Input_01/InputField_Login_Password").gameObject.GetComponent<TMP_InputField>();
+        
+            controlCanvas01 = gameObject.GetComponent<controlCanvas01>();
+            controlCanvas03 = gameObject.GetComponent<controlCanvas03>();
+            serverAPI = gameObject.GetComponent<serverAPI>();
+            waitForServer = gameObject.GetComponent<waitForServer>();
+        } catch (System.Exception) {
+            // Do Nothing
+        }
+        
     }
 
     public void tryLoginUser() {
@@ -63,7 +68,7 @@ public class loginUser : MonoBehaviour
                 PlayerPrefs.SetInt("nextSceneIndex", 3);
                 // Set player info
                 playerData.setPlayerInfo(jsonData, username);
-                StartCoroutine(prepareToChangeScene());
+                StartCoroutine(prepareToChangeScene(1f));
             } else {
                 StartCoroutine(waitForServer.hideWaitingText(callback => {
                     if (signal == "not active") {
@@ -78,8 +83,13 @@ public class loginUser : MonoBehaviour
         })); 
     }
 
-    private IEnumerator prepareToChangeScene() {
-        yield return new WaitForSeconds(1);
+    private IEnumerator prepareToChangeScene(float toHold) {
+        yield return new WaitForSeconds(toHold);
         StartCoroutine(goNextScene.changeScene());
+    }
+
+    public void offlineLogin() {
+        PlayerPrefs.SetInt("nextSceneIndex", 3);
+        StartCoroutine(prepareToChangeScene(0f));
     }
 }

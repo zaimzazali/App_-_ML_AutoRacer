@@ -11041,8 +11041,9 @@ GameObject:
   - component: {fileID: 1392375650}
   - component: {fileID: 1392375649}
   - component: {fileID: 1392375648}
+  - component: {fileID: 1392375647}
   m_Layer: 5
-  m_Name: Tile
+  m_Name: Tile_Offline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11068,6 +11069,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1392375647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392375645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1625426d204e4dc45903fc4cf833d9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goNextScene: {fileID: 1774814231}
+  playerData: {fileID: 0}
 --- !u!114 &1392375648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11286,13 +11301,13 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1392375651}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: nextDiv
+      - m_Target: {fileID: 1392375647}
+        m_MethodName: offlineLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
