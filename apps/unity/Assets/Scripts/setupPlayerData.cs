@@ -22,7 +22,7 @@ public class setupPlayerData : MonoBehaviour
     }
 
     private void setUsername() {
-        if (text_username != null) {
+        if (playerData.getPlayer_Username() != null) {
             text_username.text = playerData.getPlayer_Username();
         } else {
             text_username.text = "Offline Player";

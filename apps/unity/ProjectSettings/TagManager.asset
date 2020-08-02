@@ -8,6 +8,9 @@ TagManager:
   - drop_down
   - input_field_tmp
   - agentKart
+  - set_first
+  - button_close
+  - dont_destroy
   layers:
   - Default
   - TransparentFX

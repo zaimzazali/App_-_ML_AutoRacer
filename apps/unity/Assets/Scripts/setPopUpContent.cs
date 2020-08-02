@@ -10,7 +10,7 @@ public class setPopUpContent : MonoBehaviour
     [SerializeField]
     private GameObject popUpObj = null;
 
-    GameObject btnYes = null;
+    private GameObject btnYes = null;
 
     private void Awake() {
         btnYes = popUpObj.transform.Find("PopUp_Window/Holder_Buttons/Holder_Yes/Button_Yes").gameObject;
@@ -45,6 +45,9 @@ public class setPopUpContent : MonoBehaviour
 
     private IEnumerator prepareToChangeScene() {
         yield return new WaitForEndOfFrame();
+        GameObject.Find("Background_Music").gameObject.tag = "dont_destroy";
+        GameObject.Find("Cursor").gameObject.tag = "dont_destroy";
+        GameObject.Find("Player_Data").gameObject.tag = "dont_destroy";
         StartCoroutine(btnYes.GetComponent<goNextScene>().changeScene());
     }
 }
