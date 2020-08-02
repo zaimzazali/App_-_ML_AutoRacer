@@ -336,7 +336,6 @@
      <Compile Include="Assets\Scripts\Any_Colours.cs" />
      <Compile Include="Assets\Scripts\Any_Dropdown.cs" />
      <Compile Include="Assets\Scripts\Any_Inputfield.cs" />
-     <Compile Include="Assets\Scripts\GameObjectSearcher.cs" />
      <Compile Include="Assets\Scripts\SimpleJSON.cs" />
      <Compile Include="Assets\Scripts\agentBrain.cs" />
      <Compile Include="Assets\Scripts\agentKart.cs" />
@@ -353,6 +352,7 @@
      <Compile Include="Assets\Scripts\controlCanvas03.cs" />
      <Compile Include="Assets\Scripts\cursorEvents.cs" />
      <Compile Include="Assets\Scripts\exitGame.cs" />
+     <Compile Include="Assets\Scripts\gameObjectSearcher.cs" />
      <Compile Include="Assets\Scripts\goNextScene.cs" />
      <Compile Include="Assets\Scripts\initiateBgMusic.cs" />
      <Compile Include="Assets\Scripts\initiateGame.cs" />
