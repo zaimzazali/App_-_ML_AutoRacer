@@ -121,6 +121,8 @@ public class agentKart : MonoBehaviour
     private GameObject lastGroundCollided = null;
     private agentKart.Stats finalStats;
 
+    private bool toStopRace = false;
+
     private void Awake() {
         Rigidbody = GetComponent<Rigidbody>();
         suspensionNeutralPos = SuspensionBody.transform.localPosition;
@@ -130,6 +132,8 @@ public class agentKart : MonoBehaviour
 
     private void FixedUpdate() {
         ResetIfStuck();
+
+        toStopRace = toEnd();
 
         // apply our powerups to create our finalStats
         TickPowerups();
@@ -156,6 +160,10 @@ public class agentKart : MonoBehaviour
 
         // animation
         AnimateSuspension();
+    }
+
+    public bool getStopRace() {
+        return toStopRace;
     }
 
     public void GatherInputs(float x, float y) {
@@ -390,6 +398,20 @@ public class agentKart : MonoBehaviour
         return false;
     }
 
+    private bool isFalling() {
+        if (gameObject.transform.localPosition.y < 0f) {
+            return true;
+        }
+        return false;
+    }
+
+    private bool isUpsideDown() {
+        if (Vector3.Dot(transform.up, Vector3.down) > 0f) {
+            return true;
+        }
+        return false;
+    }
+
     private void OnCollisionEnter(Collision other) {
         if(GroundLayers == (GroundLayers | (1 << other.collider.gameObject.layer))) {
             lastGroundCollided = other.collider.gameObject;
@@ -407,6 +429,13 @@ public class agentKart : MonoBehaviour
                 transform.position = pos;
             }
         }
+    }
+
+    private bool toEnd() {
+        if (isFalling() || isUpsideDown()) {
+            return true;
+        }
+        return false;
     }
 
     public void AddPowerup(StatPowerup statPowerup) {

@@ -1,12 +1,18 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Any_Inputfield
+    - FileDragAndDrop
     - agentBrain
     - agentKart
-    - agentSpawner
     - cameraController
     - cameraFollow
     - checkpointDebug
+    - initiateSceneFading
+    - lapRecord
+    - masterAudioControls
+    - sceneFader
+    - startInference
     Unity.ML-Agents.dll:
     - Unity.MLAgents.DecisionRequester
     - Unity.MLAgents.Policies.BehaviorParameters
@@ -24,12 +30,16 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
-    Assets/Scenes/Scene_Training.unity:
+    Assets/Scenes/Scene_Race.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -69,6 +79,10 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 11190}
+    - Class: 114
+      Script: {instanceID: 11194}
+    - Class: 114
       Script: {instanceID: 11198}
     - Class: 114
       Script: {instanceID: 11228}
@@ -81,9 +95,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11698}
     - Class: 114
+      Script: {instanceID: 12044}
+    - Class: 114
+      Script: {instanceID: 12120}
+    - Class: 114
       Script: {instanceID: 12256}
     - Class: 114
+      Script: {instanceID: 12310}
+    - Class: 114
       Script: {instanceID: 12314}
+    - Class: 114
+      Script: {instanceID: 13172}
+    - Class: 114
+      Script: {instanceID: 13384}
     - Class: 114
       Script: {instanceID: 13390}
     - Class: 114
@@ -93,17 +117,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13682}
     - Class: 114
+      Script: {instanceID: 13704}
+    - Class: 114
       Script: {instanceID: 13754}
     - Class: 114
       Script: {instanceID: 13874}
     - Class: 114
       Script: {instanceID: 14132}
     - Class: 114
-      Script: {instanceID: 14156}
-    - Class: 114
       Script: {instanceID: 14168}
     - Class: 114
       Script: {instanceID: 14498}
+    - Class: 114
+      Script: {instanceID: 84468}
+    - Class: 114
+      Script: {instanceID: 205456}
+    - Class: 114
+      Script: {instanceID: 339544}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -113,6 +143,8 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -848,6 +880,12 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
+    className: gameObjectSearcher
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
     className: underlineEvents
   - hash:
       serializedVersion: 2
@@ -1035,7 +1073,31 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: c446da245b74a913f276d18375baad23
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: lapRecord
+  - hash:
+      serializedVersion: 2
+      Hash: 3e54c34ba807df14b01ff47906bcdfff
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: startInference
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ImageExample
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FileDragAndDrop
   platform: 19
   scenePathNames:
-  - Assets/Scenes/Scene_Training.unity
-  playerPath: D:/Git_Clone/App_-_ML_AutoRacer/release/trainer/build/ML_AutoRacer_Trainer.exe
+  - Assets/Scenes/Scene_Race.unity
+  playerPath: D:/Git_Clone/App_-_ML_AutoRacer/release/ml_autoracer/ML_AutoRacer_Trainer.exe

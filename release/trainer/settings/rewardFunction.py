@@ -6,9 +6,6 @@ if passedCheckpoint:
 reward += (distanceToCheckpoint * 0.03)
 reward += (speed * 0.02)
 
-if speed > 0.0:
-    reward += 0.05
-
 count = 0
 for index, value in ipairs(distanceToWall):
     if (count == 0) or (count == 2) or (count == 3) or (count == 4) or (count == 6):
