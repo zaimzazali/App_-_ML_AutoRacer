@@ -373,6 +373,7 @@
      <Compile Include="Assets\Scripts\setupDropdown.cs" />
      <Compile Include="Assets\Scripts\setupPlayerData.cs" />
      <Compile Include="Assets\Scripts\startInference.cs" />
+     <Compile Include="Assets\Scripts\testing\huhu.cs" />
      <Compile Include="Assets\Scripts\tileEvents.cs" />
      <Compile Include="Assets\Scripts\underlineEvents.cs" />
      <Compile Include="Assets\Scripts\waitForServer.cs" />
