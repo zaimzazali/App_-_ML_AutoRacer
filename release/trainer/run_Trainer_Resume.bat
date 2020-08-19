@@ -13,7 +13,7 @@ echo:
 
 python .\build\python-lua\__main__.py .\settings\rewardFunction.py
 
-start cmd /k tensorboard --logdir=summaries --port=6006
+start cmd /k tensorboard --logdir=results --port=6006
 timeout 5
 start "" http://localhost:6006/
 

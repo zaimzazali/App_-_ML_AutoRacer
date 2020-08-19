@@ -9,5 +9,13 @@ public class initiateSceneFading : MonoBehaviour
 
     private void Awake() {
         canvas_fader.SetActive(true);
+        destroyAnyDontDestroy();
+    }
+
+    private void destroyAnyDontDestroy() {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("dont_destroy");
+        for (int i=0; i<objs.Length; i++) {
+            Destroy(objs[i]);
+        }
     }
 }

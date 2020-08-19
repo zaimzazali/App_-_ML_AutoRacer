@@ -129,21 +129,26 @@ public class agentBrain : Agent
             AgentSensorTransform = transform;
         }
 
-        if (File.Exists(filePath)) {
-            rewardScript = File.ReadAllText(filePath);
-            rewardScript = functionHeader +
-                            "\n" + rewardScript + "\n" +
-                            functionFooter;
+        try {
+            if (File.Exists(filePath)) {
+                rewardScript = File.ReadAllText(filePath);
+                rewardScript = functionHeader +
+                                "\n" + rewardScript + "\n" +
+                                functionFooter;
 
-            Debug.Log(rewardScript);
+                Debug.Log(rewardScript);
 
-            script = new Script();
-            script.DoString(rewardScript);
-            toProceed = true;
-        } else {
-            statusBackground.GetComponent<Image>().color = Color.red;
-            statusText.text = "Cannot find reward function file";
+                script = new Script();
+                script.DoString(rewardScript);
+                toProceed = true;
+            } else {
+                statusBackground.GetComponent<Image>().color = Color.red;
+                statusText.text = "Cannot find reward function file";
+            }
+        } catch (System.Exception) {
+            // Do Nothing
         }
+        
     }
 
     private void Start() {
@@ -371,4 +376,6 @@ public class agentBrain : Agent
         actionsOut[0] = Input.GetAxis("Horizontal") + 1f;
         actionsOut[1] = Input.GetAxis("Vertical") + 1f;
     }
+
+
 }

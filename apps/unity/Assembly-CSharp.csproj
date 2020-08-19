@@ -358,6 +358,7 @@
      <Compile Include="Assets\Scripts\initiateGame.cs" />
      <Compile Include="Assets\Scripts\initiateSceneFading.cs" />
      <Compile Include="Assets\Scripts\inputValidator.cs" />
+     <Compile Include="Assets\Scripts\lapRecord.cs" />
      <Compile Include="Assets\Scripts\loginUser.cs" />
      <Compile Include="Assets\Scripts\masterAudioControls.cs" />
      <Compile Include="Assets\Scripts\objectMover.cs" />
@@ -371,6 +372,8 @@
      <Compile Include="Assets\Scripts\setterChecker.cs" />
      <Compile Include="Assets\Scripts\setupDropdown.cs" />
      <Compile Include="Assets\Scripts\setupPlayerData.cs" />
+     <Compile Include="Assets\Scripts\startInference.cs" />
+     <Compile Include="Assets\Scripts\testing\huhu.cs" />
      <Compile Include="Assets\Scripts\tileEvents.cs" />
      <Compile Include="Assets\Scripts\underlineEvents.cs" />
      <Compile Include="Assets\Scripts\waitForServer.cs" />
@@ -586,17 +589,17 @@
     <Reference Include="Unity.Burst.Unsafe">
         <HintPath>D:/Git_Clone/App_-_ML_AutoRacer/apps/unity/Library/PackageCache/com.unity.burst@1.2.3/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
-    <Reference Include="System.IO.Abstractions">
-        <HintPath>C:/Users/zaimp/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
-    </Reference>
     <Reference Include="System.IO.Abstractions.TestingHelpers">
         <HintPath>C:/Users/zaimp/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.TestingHelpers.dll</HintPath>
     </Reference>
-    <Reference Include="Grpc.Core">
-        <HintPath>C:/Users/zaimp/Desktop/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
+    <Reference Include="System.IO.Abstractions">
+        <HintPath>C:/Users/zaimp/Desktop/ml-agents/com.unity.ml-agents/Plugins/System.IO.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System.Interactive.Async">
         <HintPath>C:/Users/zaimp/Desktop/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core">
+        <HintPath>C:/Users/zaimp/Desktop/ml-agents/com.unity.ml-agents/Plugins/ProtoBuffer/Grpc.Core.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
         <HintPath>D:/Program Files/Unity/2019.4.4f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -1014,11 +1017,6 @@
       <Name>Unity.Barracuda.iOSBLAS</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="Unity.ML-Agents.CommunicatorObjects.csproj">
-      <Project>{86319772-01a9-4e92-92f0-aa455563fe9e}</Project>
-      <Name>Unity.ML-Agents.CommunicatorObjects</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
       <Project>{0de76d01-e2b5-6b43-634d-7958d0d10654}</Project>
       <Name>Unity.Rider.Editor</Name>
@@ -1044,6 +1042,16 @@
       <Name>Unity.TextMeshPro</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{c69cdfb4-e234-2892-09e0-f3bd60e5c932}</Project>
+      <Name>UnityEditor.UI</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ML-Agents.CommunicatorObjects.csproj">
+      <Project>{86319772-01a9-4e92-92f0-aa455563fe9e}</Project>
+      <Name>Unity.ML-Agents.CommunicatorObjects</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
     <ProjectReference Include="Unity.ML-Agents.Editor.csproj">
       <Project>{8a870a27-13a7-c9f9-37f6-44c438902a00}</Project>
       <Name>Unity.ML-Agents.Editor</Name>
@@ -1052,11 +1060,6 @@
     <ProjectReference Include="Unity.ML-Agents.csproj">
       <Project>{928669e8-2768-a7e0-0705-60be5e8a1205}</Project>
       <Name>Unity.ML-Agents</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{c69cdfb4-e234-2892-09e0-f3bd60e5c932}</Project>
-      <Name>UnityEditor.UI</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
   </ItemGroup>
